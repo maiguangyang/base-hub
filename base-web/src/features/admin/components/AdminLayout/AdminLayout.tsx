@@ -48,8 +48,7 @@ export function AdminLayout() {
           <AdminNotFoundPage />
         )}
       </SidebarInset>
-		<AiDrawer open={aiOpen} onOpenChange={setAiOpen} session={aiSession} showSensitivePhoneNotice={workspaceType === 'HEADQUARTERS'}
-			allowProductImageAttachment={workspaceType === 'HEADQUARTERS'} />
+		<AiDrawer open={aiOpen} onOpenChange={setAiOpen} session={aiSession} />
     </SidebarProvider>
   );
 }

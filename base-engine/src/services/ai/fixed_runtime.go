@@ -34,9 +34,6 @@ func (s *Service) callFixedTool(ctx agent.Context, proposed ToolSpec, variables 
 	if err != nil {
 		return FixedResponse{}, err
 	}
-	if err := state.validateFixedImageAttachment(ctx, principal, spec, arguments); err != nil {
-		return FixedResponse{}, err
-	}
 	path, document, method := fixedToolTransport(spec)
 	protectedContext := audit.WithAIInvocation(ctx, state.runID, spec.ID)
 	return ProtectedCall(protectedContext, s.protectedHandler, FixedRequest{Method: method, Path: path, Document: document,
@@ -50,19 +47,6 @@ func (s *Service) fixedToolPrincipal(ctx agent.Context) (*runState, *auth.Worksp
 	}
 	principal, err := state.checkPrincipal(ctx)
 	return state, principal, err
-}
-
-func (state *runState) validateFixedImageAttachment(ctx agent.Context, principal *auth.WorkspacePrincipal, spec ToolSpec, arguments json.RawMessage) error {
-	if spec.ID != productMainImageToolID {
-		return nil
-	}
-	if err := validateImageAttachmentStep(ApprovedStep{ToolID: spec.ID, Arguments: arguments}, state.attachmentID); err != nil {
-		return err
-	}
-	if state.service.config.ValidateImageAttachment == nil {
-		return errors.New("IMAGE_ATTACHMENT_UNAVAILABLE")
-	}
-	return state.service.config.ValidateImageAttachment(ctx, principal, state.attachmentID)
 }
 
 func (state *runState) preparedFixedArguments(spec ToolSpec, variables json.RawMessage) (json.RawMessage, error) {

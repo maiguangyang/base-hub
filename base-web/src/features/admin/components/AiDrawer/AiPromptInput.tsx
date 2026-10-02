@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 
-export function AiPromptInput({ prompt, onPromptChange, disabled, busy, requiredInputs, attachment, allowAttachment = true, onAttachment, onSubmit, onStop }: { prompt: string; onPromptChange(value: string): void; disabled: boolean; busy: boolean; requiredInputs: string[]; attachment?: File; allowAttachment?: boolean; onAttachment(file?: File): void; onSubmit(prompt: string, attestation?: { evidenceReference: string; attested: true }): void | Promise<void>; onStop(): void }) {
+export function AiPromptInput({ prompt, onPromptChange, disabled, busy, requiredInputs, attachment, allowAttachment = false, onAttachment, onSubmit, onStop }: { prompt: string; onPromptChange(value: string): void; disabled: boolean; busy: boolean; requiredInputs: string[]; attachment?: File; allowAttachment?: boolean; onAttachment?(file?: File): void; onSubmit(prompt: string, attestation?: { evidenceReference: string; attested: true }): void | Promise<void>; onStop(): void }) {
   const [evidence, setEvidence] = useState('');
   const [attested, setAttested] = useState(false);
   const needsEvidence = requiredInputs.includes('evidenceReference');
@@ -41,20 +41,20 @@ export function AiPromptInput({ prompt, onPromptChange, disabled, busy, required
 }
 
 function AiAttachmentPreview({ allowAttachment, attachment, onAttachment }: {
-  allowAttachment: boolean; attachment?: File; onAttachment(file?: File): void;
+  allowAttachment: boolean; attachment?: File; onAttachment?(file?: File): void;
 }) {
   if (!allowAttachment || !attachment) return null;
   return <div className="flex items-center justify-between rounded-md border px-3 py-2 text-xs"><span className="truncate">图片：{attachment.name}</span>
-    <Button type="button" size="sm" variant="ghost" onClick={() => onAttachment(undefined)}>移除附件</Button></div>;
+    <Button type="button" size="sm" variant="ghost" onClick={() => onAttachment?.(undefined)}>移除附件</Button></div>;
 }
 
 function AiAttachmentButton({ allowAttachment, onAttachment, disabled }: {
-  allowAttachment: boolean; onAttachment(file?: File): void; disabled: boolean;
+  allowAttachment: boolean; onAttachment?(file?: File): void; disabled: boolean;
 }) {
   const fileInput = useRef<HTMLInputElement>(null);
   if (!allowAttachment) return null;
-  return <><input ref={fileInput} type="file" accept="image/jpeg,image/png,image/webp" className="sr-only" aria-label="选择商品图片"
-    onChange={(event) => { onAttachment(event.target.files?.[0]); event.target.value = ''; }} />
+  return <><input ref={fileInput} type="file" accept="image/jpeg,image/png,image/webp" className="sr-only" aria-label="选择图片附件"
+    onChange={(event) => { onAttachment?.(event.target.files?.[0]); event.target.value = ''; }} />
     <Button type="button" size="icon-sm" variant="ghost" aria-label="添加图片附件" title="添加图片附件"
       onClick={() => fileInput.current?.click()} disabled={disabled}><Plus aria-hidden="true" /></Button></>;
 }

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
+	"base-engine/auth"
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/gorilla/mux"
-	"base-engine/auth"
 )
 
 func GetHTTPServeMux(c Config, db *DB) *mux.Router {

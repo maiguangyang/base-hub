@@ -12,13 +12,10 @@ import (
 	"base-engine/src/services/audit"
 	"base-engine/src/services/authentication"
 	"base-engine/src/services/authorization"
-	"base-engine/src/services/customer"
 	"base-engine/src/services/membership"
 	"base-engine/src/services/organization"
-	"base-engine/src/services/productcatalog"
 	sessionservice "base-engine/src/services/session"
 	storeservice "base-engine/src/services/store"
-	"base-engine/src/services/storemerchandising"
 	"gorm.io/gorm"
 )
 
@@ -34,9 +31,6 @@ type Dependencies struct {
 	Memberships    *membership.Service
 	Roles          *membership.RoleService
 	Stores         *storeservice.Service
-	Customers      *customer.Service
-	ProductCatalog *productcatalog.Service
-	Merchandising  *storemerchandising.Service
 	Publisher      sessionservice.Publisher
 }
 
@@ -49,9 +43,8 @@ func NewDependencies(db *gorm.DB, cfg config.SecurityConfig, publisher sessionse
 		limit = 20
 	}
 	limiter := authentication.NewLoginLimiter(limit, time.Minute)
-	products := productcatalog.NewService(db, auditService)
 	stores := storeservice.NewService(db, auditService)
-	stores.SetDocumentRoot(products.ImageRoot())
+	stores.SetDocumentRoot("uploads")
 	return Dependencies{
 		DB: db, SecurityConfig: cfg,
 		Audit:          auditService,
@@ -63,7 +56,6 @@ func NewDependencies(db *gorm.DB, cfg config.SecurityConfig, publisher sessionse
 		}),
 		Roles:     membership.NewRoleService(db, auditService),
 		Stores:    stores,
-		Customers: customer.NewService(db, auditService), ProductCatalog: products,
-		Merchandising: storemerchandising.NewService(db, auditService), Publisher: publisher,
+		Publisher: publisher,
 	}
 }

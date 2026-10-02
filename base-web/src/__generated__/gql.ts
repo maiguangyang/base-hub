@@ -37,17 +37,6 @@ type Documents = {
     "\n  mutation FranchiseInviteStaff($input: InviteOperatorInput!) {\n    inviteOperator(input: $input) {\n      membership { id status accountId organizationId }\n      temporaryPassword invitationPending\n    }\n  }\n": typeof types.FranchiseInviteStaffDocument,
     "\n  mutation FranchiseUpdateStaff($id: ID!, $input: UpdateOperatorMembershipInput!) {\n    updateOperatorMembership(id: $id, input: $input) { id status storeAccessMode rolesIds storesIds }\n  }\n": typeof types.FranchiseUpdateStaffDocument,
     "\n  mutation FranchiseChangeMembershipStatus($input: ChangeMembershipStatusInput!) {\n    changeMembershipStatus(input: $input) { id status }\n  }\n": typeof types.FranchiseChangeMembershipStatusDocument,
-    "query FranchiseStocktakes($storeId:ID!,$status:StocktakeStatus,$listingId:ID,$batchId:ID,$hasDifference:Boolean,$from:Time,$to:Time,$page:Int!,$perPage:Int!){franchiseStocktakes(storeId:$storeId,status:$status,listingId:$listingId,batchId:$batchId,hasDifference:$hasDifference,from:$from,to:$to,page:$page,perPage:$perPage,includeHistory:false){data{id status startedAt lines{id countedQuantity snapshotQuantity difference needsRecount}} total currentPage perPage}}": typeof types.FranchiseStocktakesDocument,
-    "query FranchiseStocktake($storeId:ID!,$id:ID!){franchiseStocktake(storeId:$storeId,id:$id){id storeId status startedAt reviewedAt postedAt canceledAt initiatedByAccountId postedById addLineChoices{batchId packageId packageName packageEnabled} lines{id batchId listingId batchNumber expiresAt packageId packageName packageSetVersion packageEnabled countedQuantity snapshotQuantity difference reasonCode reasonNote countHistory{actorAccountId countedQuantity countedAt} needsRecount}}}": typeof types.FranchiseStocktakeDocument,
-    "query FranchiseStocktakeBatchChoices($storeId:ID!,$listingId:ID!,$page:Int!,$perPage:Int!){franchiseStocktakeBatchChoices(storeId:$storeId,listingId:$listingId,page:$page,perPage:$perPage){data{id listingId batchNumber expiresAt} total currentPage perPage}}": typeof types.FranchiseStocktakeBatchChoicesDocument,
-    "mutation FranchiseCreateStocktake($input:FranchiseCreateStocktakeInput!){franchiseCreateStocktake(input:$input){id status}}": typeof types.FranchiseCreateStocktakeDocument,
-    "mutation FranchiseAddStocktakeLine($storeId:ID!,$id:ID!,$batchId:ID!,$packageId:ID!){franchiseAddStocktakeLine(storeId:$storeId,id:$id,batchId:$batchId,packageId:$packageId){id status}}": typeof types.FranchiseAddStocktakeLineDocument,
-    "mutation FranchiseRecordStocktakeLine($storeId:ID!,$id:ID!,$lineId:ID!,$quantity:Int!){franchiseRecordStocktakeLine(storeId:$storeId,id:$id,lineId:$lineId,quantity:$quantity){id status}}": typeof types.FranchiseRecordStocktakeLineDocument,
-    "mutation FranchiseSubmitStocktake($storeId:ID!,$id:ID!){franchiseSubmitStocktake(storeId:$storeId,id:$id){id status}}": typeof types.FranchiseSubmitStocktakeDocument,
-    "mutation FranchiseSetStocktakeReason($storeId:ID!,$id:ID!,$lineId:ID!,$reasonCode:String!,$note:String){franchiseSetStocktakeReason(storeId:$storeId,id:$id,lineId:$lineId,reasonCode:$reasonCode,note:$note){id status}}": typeof types.FranchiseSetStocktakeReasonDocument,
-    "mutation FranchiseReturnStocktake($storeId:ID!,$id:ID!){franchiseReturnStocktake(storeId:$storeId,id:$id){id status}}": typeof types.FranchiseReturnStocktakeDocument,
-    "mutation FranchiseCancelStocktake($storeId:ID!,$id:ID!){franchiseCancelStocktake(storeId:$storeId,id:$id){id status}}": typeof types.FranchiseCancelStocktakeDocument,
-    "mutation FranchisePostStocktake($storeId:ID!,$id:ID!){franchisePostStocktake(storeId:$storeId,id:$id){id status}}": typeof types.FranchisePostStocktakeDocument,
     "\n  query FranchiseStores($page: Int!, $pageSize: Int!, $q: String, $filter: StoreFilterType) {\n    stores(current_page: $page, per_page: $pageSize, q: $q, filter: $filter) {\n      data {\n        id code name lifecycle rejectionReason organizationId\n        contactPhone managerName managerPhone province city district address\n        businessHours businessStatus supportDineIn supportTakeout storeArea tableCount receiptFooter\n      }\n      total current_page per_page total_page\n    }\n  }\n": typeof types.FranchiseStoresDocument,
     "\n  mutation FranchiseCreateStore($input: CreateStoreInput!) {\n    createStore(input: $input) { id code name lifecycle organizationId }\n  }\n": typeof types.FranchiseCreateStoreDocument,
     "\n  mutation FranchiseUpdateStore($id: ID!, $input: UpdateStoreInput!) {\n    updateStore(id: $id, input: $input) { id code name lifecycle organizationId }\n  }\n": typeof types.FranchiseUpdateStoreDocument,
@@ -106,17 +95,6 @@ const documents: Documents = {
     "\n  mutation FranchiseInviteStaff($input: InviteOperatorInput!) {\n    inviteOperator(input: $input) {\n      membership { id status accountId organizationId }\n      temporaryPassword invitationPending\n    }\n  }\n": types.FranchiseInviteStaffDocument,
     "\n  mutation FranchiseUpdateStaff($id: ID!, $input: UpdateOperatorMembershipInput!) {\n    updateOperatorMembership(id: $id, input: $input) { id status storeAccessMode rolesIds storesIds }\n  }\n": types.FranchiseUpdateStaffDocument,
     "\n  mutation FranchiseChangeMembershipStatus($input: ChangeMembershipStatusInput!) {\n    changeMembershipStatus(input: $input) { id status }\n  }\n": types.FranchiseChangeMembershipStatusDocument,
-    "query FranchiseStocktakes($storeId:ID!,$status:StocktakeStatus,$listingId:ID,$batchId:ID,$hasDifference:Boolean,$from:Time,$to:Time,$page:Int!,$perPage:Int!){franchiseStocktakes(storeId:$storeId,status:$status,listingId:$listingId,batchId:$batchId,hasDifference:$hasDifference,from:$from,to:$to,page:$page,perPage:$perPage,includeHistory:false){data{id status startedAt lines{id countedQuantity snapshotQuantity difference needsRecount}} total currentPage perPage}}": types.FranchiseStocktakesDocument,
-    "query FranchiseStocktake($storeId:ID!,$id:ID!){franchiseStocktake(storeId:$storeId,id:$id){id storeId status startedAt reviewedAt postedAt canceledAt initiatedByAccountId postedById addLineChoices{batchId packageId packageName packageEnabled} lines{id batchId listingId batchNumber expiresAt packageId packageName packageSetVersion packageEnabled countedQuantity snapshotQuantity difference reasonCode reasonNote countHistory{actorAccountId countedQuantity countedAt} needsRecount}}}": types.FranchiseStocktakeDocument,
-    "query FranchiseStocktakeBatchChoices($storeId:ID!,$listingId:ID!,$page:Int!,$perPage:Int!){franchiseStocktakeBatchChoices(storeId:$storeId,listingId:$listingId,page:$page,perPage:$perPage){data{id listingId batchNumber expiresAt} total currentPage perPage}}": types.FranchiseStocktakeBatchChoicesDocument,
-    "mutation FranchiseCreateStocktake($input:FranchiseCreateStocktakeInput!){franchiseCreateStocktake(input:$input){id status}}": types.FranchiseCreateStocktakeDocument,
-    "mutation FranchiseAddStocktakeLine($storeId:ID!,$id:ID!,$batchId:ID!,$packageId:ID!){franchiseAddStocktakeLine(storeId:$storeId,id:$id,batchId:$batchId,packageId:$packageId){id status}}": types.FranchiseAddStocktakeLineDocument,
-    "mutation FranchiseRecordStocktakeLine($storeId:ID!,$id:ID!,$lineId:ID!,$quantity:Int!){franchiseRecordStocktakeLine(storeId:$storeId,id:$id,lineId:$lineId,quantity:$quantity){id status}}": types.FranchiseRecordStocktakeLineDocument,
-    "mutation FranchiseSubmitStocktake($storeId:ID!,$id:ID!){franchiseSubmitStocktake(storeId:$storeId,id:$id){id status}}": types.FranchiseSubmitStocktakeDocument,
-    "mutation FranchiseSetStocktakeReason($storeId:ID!,$id:ID!,$lineId:ID!,$reasonCode:String!,$note:String){franchiseSetStocktakeReason(storeId:$storeId,id:$id,lineId:$lineId,reasonCode:$reasonCode,note:$note){id status}}": types.FranchiseSetStocktakeReasonDocument,
-    "mutation FranchiseReturnStocktake($storeId:ID!,$id:ID!){franchiseReturnStocktake(storeId:$storeId,id:$id){id status}}": types.FranchiseReturnStocktakeDocument,
-    "mutation FranchiseCancelStocktake($storeId:ID!,$id:ID!){franchiseCancelStocktake(storeId:$storeId,id:$id){id status}}": types.FranchiseCancelStocktakeDocument,
-    "mutation FranchisePostStocktake($storeId:ID!,$id:ID!){franchisePostStocktake(storeId:$storeId,id:$id){id status}}": types.FranchisePostStocktakeDocument,
     "\n  query FranchiseStores($page: Int!, $pageSize: Int!, $q: String, $filter: StoreFilterType) {\n    stores(current_page: $page, per_page: $pageSize, q: $q, filter: $filter) {\n      data {\n        id code name lifecycle rejectionReason organizationId\n        contactPhone managerName managerPhone province city district address\n        businessHours businessStatus supportDineIn supportTakeout storeArea tableCount receiptFooter\n      }\n      total current_page per_page total_page\n    }\n  }\n": types.FranchiseStoresDocument,
     "\n  mutation FranchiseCreateStore($input: CreateStoreInput!) {\n    createStore(input: $input) { id code name lifecycle organizationId }\n  }\n": types.FranchiseCreateStoreDocument,
     "\n  mutation FranchiseUpdateStore($id: ID!, $input: UpdateStoreInput!) {\n    updateStore(id: $id, input: $input) { id code name lifecycle organizationId }\n  }\n": types.FranchiseUpdateStoreDocument,
@@ -258,50 +236,6 @@ export function gql(source: "\n  mutation FranchiseUpdateStaff($id: ID!, $input:
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "\n  mutation FranchiseChangeMembershipStatus($input: ChangeMembershipStatusInput!) {\n    changeMembershipStatus(input: $input) { id status }\n  }\n"): (typeof documents)["\n  mutation FranchiseChangeMembershipStatus($input: ChangeMembershipStatusInput!) {\n    changeMembershipStatus(input: $input) { id status }\n  }\n"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "query FranchiseStocktakes($storeId:ID!,$status:StocktakeStatus,$listingId:ID,$batchId:ID,$hasDifference:Boolean,$from:Time,$to:Time,$page:Int!,$perPage:Int!){franchiseStocktakes(storeId:$storeId,status:$status,listingId:$listingId,batchId:$batchId,hasDifference:$hasDifference,from:$from,to:$to,page:$page,perPage:$perPage,includeHistory:false){data{id status startedAt lines{id countedQuantity snapshotQuantity difference needsRecount}} total currentPage perPage}}"): (typeof documents)["query FranchiseStocktakes($storeId:ID!,$status:StocktakeStatus,$listingId:ID,$batchId:ID,$hasDifference:Boolean,$from:Time,$to:Time,$page:Int!,$perPage:Int!){franchiseStocktakes(storeId:$storeId,status:$status,listingId:$listingId,batchId:$batchId,hasDifference:$hasDifference,from:$from,to:$to,page:$page,perPage:$perPage,includeHistory:false){data{id status startedAt lines{id countedQuantity snapshotQuantity difference needsRecount}} total currentPage perPage}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "query FranchiseStocktake($storeId:ID!,$id:ID!){franchiseStocktake(storeId:$storeId,id:$id){id storeId status startedAt reviewedAt postedAt canceledAt initiatedByAccountId postedById addLineChoices{batchId packageId packageName packageEnabled} lines{id batchId listingId batchNumber expiresAt packageId packageName packageSetVersion packageEnabled countedQuantity snapshotQuantity difference reasonCode reasonNote countHistory{actorAccountId countedQuantity countedAt} needsRecount}}}"): (typeof documents)["query FranchiseStocktake($storeId:ID!,$id:ID!){franchiseStocktake(storeId:$storeId,id:$id){id storeId status startedAt reviewedAt postedAt canceledAt initiatedByAccountId postedById addLineChoices{batchId packageId packageName packageEnabled} lines{id batchId listingId batchNumber expiresAt packageId packageName packageSetVersion packageEnabled countedQuantity snapshotQuantity difference reasonCode reasonNote countHistory{actorAccountId countedQuantity countedAt} needsRecount}}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "query FranchiseStocktakeBatchChoices($storeId:ID!,$listingId:ID!,$page:Int!,$perPage:Int!){franchiseStocktakeBatchChoices(storeId:$storeId,listingId:$listingId,page:$page,perPage:$perPage){data{id listingId batchNumber expiresAt} total currentPage perPage}}"): (typeof documents)["query FranchiseStocktakeBatchChoices($storeId:ID!,$listingId:ID!,$page:Int!,$perPage:Int!){franchiseStocktakeBatchChoices(storeId:$storeId,listingId:$listingId,page:$page,perPage:$perPage){data{id listingId batchNumber expiresAt} total currentPage perPage}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "mutation FranchiseCreateStocktake($input:FranchiseCreateStocktakeInput!){franchiseCreateStocktake(input:$input){id status}}"): (typeof documents)["mutation FranchiseCreateStocktake($input:FranchiseCreateStocktakeInput!){franchiseCreateStocktake(input:$input){id status}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "mutation FranchiseAddStocktakeLine($storeId:ID!,$id:ID!,$batchId:ID!,$packageId:ID!){franchiseAddStocktakeLine(storeId:$storeId,id:$id,batchId:$batchId,packageId:$packageId){id status}}"): (typeof documents)["mutation FranchiseAddStocktakeLine($storeId:ID!,$id:ID!,$batchId:ID!,$packageId:ID!){franchiseAddStocktakeLine(storeId:$storeId,id:$id,batchId:$batchId,packageId:$packageId){id status}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "mutation FranchiseRecordStocktakeLine($storeId:ID!,$id:ID!,$lineId:ID!,$quantity:Int!){franchiseRecordStocktakeLine(storeId:$storeId,id:$id,lineId:$lineId,quantity:$quantity){id status}}"): (typeof documents)["mutation FranchiseRecordStocktakeLine($storeId:ID!,$id:ID!,$lineId:ID!,$quantity:Int!){franchiseRecordStocktakeLine(storeId:$storeId,id:$id,lineId:$lineId,quantity:$quantity){id status}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "mutation FranchiseSubmitStocktake($storeId:ID!,$id:ID!){franchiseSubmitStocktake(storeId:$storeId,id:$id){id status}}"): (typeof documents)["mutation FranchiseSubmitStocktake($storeId:ID!,$id:ID!){franchiseSubmitStocktake(storeId:$storeId,id:$id){id status}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "mutation FranchiseSetStocktakeReason($storeId:ID!,$id:ID!,$lineId:ID!,$reasonCode:String!,$note:String){franchiseSetStocktakeReason(storeId:$storeId,id:$id,lineId:$lineId,reasonCode:$reasonCode,note:$note){id status}}"): (typeof documents)["mutation FranchiseSetStocktakeReason($storeId:ID!,$id:ID!,$lineId:ID!,$reasonCode:String!,$note:String){franchiseSetStocktakeReason(storeId:$storeId,id:$id,lineId:$lineId,reasonCode:$reasonCode,note:$note){id status}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "mutation FranchiseReturnStocktake($storeId:ID!,$id:ID!){franchiseReturnStocktake(storeId:$storeId,id:$id){id status}}"): (typeof documents)["mutation FranchiseReturnStocktake($storeId:ID!,$id:ID!){franchiseReturnStocktake(storeId:$storeId,id:$id){id status}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "mutation FranchiseCancelStocktake($storeId:ID!,$id:ID!){franchiseCancelStocktake(storeId:$storeId,id:$id){id status}}"): (typeof documents)["mutation FranchiseCancelStocktake($storeId:ID!,$id:ID!){franchiseCancelStocktake(storeId:$storeId,id:$id){id status}}"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "mutation FranchisePostStocktake($storeId:ID!,$id:ID!){franchisePostStocktake(storeId:$storeId,id:$id){id status}}"): (typeof documents)["mutation FranchisePostStocktake($storeId:ID!,$id:ID!){franchisePostStocktake(storeId:$storeId,id:$id){id status}}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

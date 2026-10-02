@@ -11,9 +11,9 @@ import (
 
 func TestContractInventoryGraphQLCoverageAndDrift(t *testing.T) {
 	schema := gen.NewExecutableSchema(gen.Config{}).Schema()
-	if schema.Query.Fields.ForName("customerMembers") == nil ||
-		schema.Mutation.Fields.ForName("createCustomerMember") == nil {
-		t.Fatal("customer generated root operations missing")
+	if schema.Query.Fields.ForName("accounts") == nil ||
+		schema.Mutation.Fields.ForName("createAccount") == nil {
+		t.Fatal("account generated root operations missing")
 	}
 	records, err := DiscoverContracts(schema, mux.NewRouter())
 	expected := len(schema.Query.Fields) + len(schema.Mutation.Fields) + len(schema.Subscription.Fields)

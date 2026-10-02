@@ -9,9 +9,10 @@ import (
 	"strings"
 	"time"
 
+	"base-engine/enums"
+
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/iancoleman/strcase"
-	"base-engine/enums"
 	"github.com/vektah/gqlparser/v2/ast"
 	"gorm.io/gorm"
 )

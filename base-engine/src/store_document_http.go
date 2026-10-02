@@ -33,30 +33,30 @@ func (h storeDocumentHTTPHandler) upload(w http.ResponseWriter, r *http.Request)
 	w.Header().Set("Cache-Control", "no-store")
 	w.Header().Set("Referrer-Policy", "no-referrer")
 	if origin := strings.TrimSpace(r.Header.Get("Origin")); origin == "" || !h.security.OriginAllowed(origin) {
-		productImageError(w, http.StatusForbidden, auth.CodePermissionDenied)
+		storeDocumentError(w, http.StatusForbidden, auth.CodePermissionDenied)
 		return
 	}
 	p, err := auth.RequirePrincipal(r.Context())
 	if err != nil {
-		productImageError(w, http.StatusUnauthorized, auth.CodeAuthRequired)
+		storeDocumentError(w, http.StatusUnauthorized, auth.CodeAuthRequired)
 		return
 	}
 	if h.store == nil {
-		productImageError(w, http.StatusServiceUnavailable, auth.CodeInternalError)
+		storeDocumentError(w, http.StatusServiceUnavailable, auth.CodeInternalError)
 		return
 	}
 	if !strings.HasPrefix(r.Header.Get("Content-Type"), "image/") {
-		productImageError(w, http.StatusUnsupportedMediaType, auth.CodeValidationFailed)
+		storeDocumentError(w, http.StatusUnsupportedMediaType, auth.CodeValidationFailed)
 		return
 	}
 	data, err := io.ReadAll(http.MaxBytesReader(w, r.Body, 5<<20))
 	if err != nil {
-		productImageError(w, http.StatusBadRequest, auth.CodeValidationFailed)
+		storeDocumentError(w, http.StatusBadRequest, auth.CodeValidationFailed)
 		return
 	}
 	id, err := h.store.UploadDocument(r.Context(), p, data)
 	if err != nil {
-		productImageServiceError(w, err)
+		storeDocumentServiceError(w, err)
 		return
 	}
 	writeInitializationJSON(w, http.StatusCreated, storeDocumentUploadResult{AttachmentID: id})
@@ -89,4 +89,22 @@ func (h storeDocumentHTTPHandler) read(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", contentType)
 	http.ServeContent(w, r, vars["filename"], stat.ModTime(), file)
+}
+
+func storeDocumentServiceError(w http.ResponseWriter, err error) {
+	code := auth.ErrorCode(err)
+	status := http.StatusBadRequest
+	switch code {
+	case auth.CodePermissionDenied:
+		status = http.StatusForbidden
+	case auth.CodeAuthRequired:
+		status = http.StatusUnauthorized
+	case auth.CodeInternalError:
+		status = http.StatusInternalServerError
+	}
+	storeDocumentError(w, status, code)
+}
+
+func storeDocumentError(w http.ResponseWriter, status int, code auth.Code) {
+	writeInitializationJSON(w, status, map[string]string{"code": string(code)})
 }

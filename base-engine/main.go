@@ -198,9 +198,6 @@ func newEngineRouter(db *gen.DB, security config.SecurityConfig, aiSecurity conf
 		return nil, src.Dependencies{}, nil, err
 	}
 	dependencies := src.NewDependencies(db.Query(), security, sessionservice.NewPublisher())
-	if err := dependencies.ProductCatalog.SweepImageFiles(context.Background()); err != nil {
-		log.Printf("PRODUCT_IMAGE_SWEEP_FAILED: %v", err)
-	}
 	if err := dependencies.Stores.SweepDocumentFiles(context.Background()); err != nil {
 		log.Printf("STORE_DOCUMENT_SWEEP_FAILED: %v", err)
 	}
@@ -218,7 +215,6 @@ func newEngineRouter(db *gen.DB, security config.SecurityConfig, aiSecurity conf
 		log.Printf("PAYMENT_CONFIG_SECURITY_UNAVAILABLE")
 	}
 	src.RegisterPaymentConfigRoutes(router, paymentconfig.NewStore(db.Query(), paymentKeys), security)
-	src.RegisterProductImageRoutes(router, dependencies.ProductCatalog, security)
 	src.RegisterStoreDocumentRoutes(router, dependencies.Stores, security)
 	aiService.RegisterRoutes(router, security)
 	return router, dependencies, aiService, nil

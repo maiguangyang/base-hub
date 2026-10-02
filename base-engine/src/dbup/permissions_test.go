@@ -43,20 +43,6 @@ func TestPaymentConfigPermissionSeeds(t *testing.T) {
 	}
 }
 
-func TestCouponDistributionJobPermissionSeeds(t *testing.T) {
-	byAction := make(map[string]PermissionSeed)
-	for _, seed := range PermissionSeeds() {
-		byAction[seed.Action] = seed
-	}
-	for _, verb := range []string{"read", "create", "update", "delete"} {
-		action := "customerCouponDistributionJob:" + verb
-		seed, ok := byAction[action]
-		if !ok || seed.Scope != gen.PermissionScopeSystem {
-			t.Fatalf("missing system job permission %s", action)
-		}
-	}
-}
-
 // TestPermissionSeedsAreIdempotentAndNormalized 验证重复启动不增行并修复作用域漂移。
 func TestPermissionSeedsAreIdempotentAndNormalized(t *testing.T) {
 	db := openTestDB(t)
@@ -93,11 +79,16 @@ func TestPermissionSeedsAreIdempotentAndNormalized(t *testing.T) {
 
 func assertEntityCRUDScopes(t *testing.T, seeds map[string]PermissionSeed) {
 	t.Helper()
-	system := map[string]bool{"account": true, "organization": true, "permission": true, "session": true, "auditLog": true, "franchiseOpeningRecord": true,
-		"customerMember": true, "customerBenefitPolicy": true, "customerDailyPointGrantBudget": true,
-		"customerPointEntry": true, "customerCouponTemplate": true, "customerCouponGrant": true, "customerCouponDistributionJob": true}
-	resources := []string{"account", "organization", "operatorMembership", "permission", "operatorRole", "store", "session", "membershipInvitation", "auditLog", "franchiseOpeningRecord",
-		"customerMember", "customerBenefitPolicy", "customerDailyPointGrantBudget", "customerPointEntry", "customerCouponTemplate", "customerCouponGrant", "customerCouponDistributionJob"}
+	system := map[string]bool{
+		"account": true, "organization": true, "permission": true, "session": true,
+		"auditLog": true, "franchiseOpeningRecord": true,
+		"globalPaymentConfig": true, "franchisePaymentConfig": true, "storePaymentConfig": true,
+	}
+	resources := []string{
+		"account", "organization", "operatorMembership", "permission", "operatorRole",
+		"store", "session", "membershipInvitation", "auditLog", "franchiseOpeningRecord",
+		"globalPaymentConfig", "franchisePaymentConfig", "storePaymentConfig",
+	}
 	for _, resource := range resources {
 		expected := gen.PermissionScopeTenant
 		if system[resource] {
@@ -114,11 +105,15 @@ func assertEntityCRUDScopes(t *testing.T, seeds map[string]PermissionSeed) {
 
 func assertAdditionalActions(t *testing.T, seeds map[string]PermissionSeed) {
 	t.Helper()
-	system := []string{"franchise:provision", "organization:suspend", "organization:restore", "hqRole:read", "hqRole:create", "hqRole:update", "hqRole:delete", "hqMembership:read", "hqMembership:create", "hqMembership:update", "hqMembership:delete", "hqStore:read", "hqStore:create", "hqStore:update", "hqStore:delete", "store:read_all", "store:approve", "store:reject", "customer:read_sensitive", "report:export", "aiModelConfig:read", "aiModelConfig:manage",
-		"hqCustomer:read", "hqCustomer:create", "hqCustomer:update", "hqCustomer:cancel",
-		"hqCustomerPolicy:read", "hqCustomerPolicy:manage",
-		"hqCustomerPoints:read", "hqCustomerPoints:grant", "hqCustomerPoints:reverse", "hqCustomerPoints:correct",
-		"hqCustomerCoupon:read", "hqCustomerCoupon:manage", "hqCustomerCoupon:grant", "hqCustomerCoupon:revoke"}
+	system := []string{
+		"franchise:provision", "organization:suspend", "organization:restore",
+		"hqRole:read", "hqRole:create", "hqRole:update", "hqRole:delete",
+		"hqMembership:read", "hqMembership:create", "hqMembership:update", "hqMembership:delete",
+		"hqStore:read", "hqStore:create", "hqStore:update", "hqStore:delete",
+		"store:read_all", "store:approve", "store:reject", "report:export",
+		"aiModelConfig:read", "aiModelConfig:manage",
+		"paymentConfig:read", "paymentConfig:manage",
+	}
 	for _, action := range system {
 		if seeds[action].Scope != gen.PermissionScopeSystem {
 			t.Fatalf("%s must be SYSTEM", action)

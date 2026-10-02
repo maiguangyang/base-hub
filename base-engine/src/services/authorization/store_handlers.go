@@ -169,7 +169,7 @@ func rejectStoreManagedRelations(input map[string]interface{}) error {
 	if err := rejectStoreDocumentFields(input); err != nil {
 		return err
 	}
-	for _, key := range []string{"members", "membersIds", "reviewedByAccount", "reviewedByAccountId", "auditLogs", "auditLogsIds", "paymentConfigs", "paymentConfigsIds", "stocktakes", "stocktakesIds"} {
+	for _, key := range []string{"members", "membersIds", "reviewedByAccount", "reviewedByAccountId", "auditLogs", "auditLogsIds", "paymentConfigs", "paymentConfigsIds"} {
 		if input[key] != nil {
 			return auth.NewError(auth.CodePermissionDenied)
 		}

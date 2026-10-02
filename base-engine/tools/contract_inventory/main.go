@@ -18,7 +18,6 @@ func main() {
 	src.RegisterFranchiseInitialAccountRoute(router, nil, config.SecurityConfig{})
 	src.RegisterAIModelConfigRoutes(router, nil, config.SecurityConfig{})
 	src.RegisterPaymentConfigRoutes(router, nil, config.SecurityConfig{})
-	src.RegisterProductImageRoutes(router, nil, config.SecurityConfig{})
 	src.RegisterStoreDocumentRoutes(router, nil, config.SecurityConfig{})
 	var service *ai.Service
 	service.RegisterRoutes(router, config.SecurityConfig{})

@@ -15,9 +15,9 @@ function PromptHarness(props: Omit<ComponentProps<typeof AiPromptInput>, 'prompt
 it('聊天输入区可选择图片附件并在发送后清空', async () => {
   const onSubmit = vi.fn();
   const onAttachment = vi.fn();
-  render(<PromptHarness disabled={false} busy={false} requiredInputs={[]} onSubmit={onSubmit} onAttachment={onAttachment} onStop={vi.fn()} />);
-  const file = new File(['image'], 'product.png', { type: 'image/png' });
-  fireEvent.change(screen.getByLabelText('选择商品图片'), { target: { files: [file] } });
+  render(<PromptHarness disabled={false} busy={false} requiredInputs={[]} allowAttachment onSubmit={onSubmit} onAttachment={onAttachment} onStop={vi.fn()} />);
+  const file = new File(['image'], 'attachment.png', { type: 'image/png' });
+  fireEvent.change(screen.getByLabelText('选择图片附件'), { target: { files: [file] } });
   expect(onAttachment).toHaveBeenCalledWith(file);
   const field = screen.getByRole('textbox', { name: '向 AI 助手发送消息' }) as HTMLTextAreaElement;
   fireEvent.change(field, { target: { value: '你好' } });

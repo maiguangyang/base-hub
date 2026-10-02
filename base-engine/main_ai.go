@@ -40,9 +40,8 @@ func newAIService(store *ai.ModelConfigStore, dependencies src.Dependencies) (*a
 		return nil, err
 	}
 	return ai.NewService(ai.ServiceConfig{Catalog: catalog, Prompt: system_prompt.AdminAgent,
-		ResolvePrincipal:        dependencies.Principal.Resolve,
-		ValidateImageAttachment: dependencies.ProductCatalog.ValidateMainImageAttachment,
-		ModelContextTokens:      budget.ModelContextTokens, InputTokenBudget: budget.InputTokenBudget, OutputTokenBudget: budget.OutputTokenBudget,
+		ResolvePrincipal:   dependencies.Principal.Resolve,
+		ModelContextTokens: budget.ModelContextTokens, InputTokenBudget: budget.InputTokenBudget, OutputTokenBudget: budget.OutputTokenBudget,
 		ModelProvider: func(ctx context.Context) (model.LLM, uint64, error) {
 			modelConfig, version, err := store.ActiveWithVersion(ctx)
 			if err != nil {

@@ -21,7 +21,7 @@ func reviewedSpec(id, operation, document string, mode ai.ToolMode, risk, permis
 
 func remainingSpecs() []ai.ToolSpec {
 	var all []ai.ToolSpec
-	for _, group := range [][]ai.ToolSpec{task8Specs(), task9Specs(), task10Specs(), task11Specs(), task12Specs(), task13Specs(), paymentConfigSpecs(), contractGapSpecs(), customerReadSpecs(), customerWriteSpecs(), productReadSpecs(), productWriteSpecs()} {
+	for _, group := range [][]ai.ToolSpec{task8Specs(), task9Specs(), task10Specs(), task11Specs(), task12Specs(), task13Specs(), paymentConfigSpecs(), contractGapSpecs()} {
 		all = append(all, group...)
 	}
 	return all

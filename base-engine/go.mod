@@ -16,7 +16,6 @@ require (
 	github.com/iancoleman/strcase v0.3.0
 	github.com/maiguangyang/aescrypto v0.0.0-20181106090456-e3bda2891c3d
 	github.com/maiguangyang/cloudevents-aws-transport v0.0.0-20200430035158-c952a06ccf03
-	github.com/mattn/go-sqlite3 v1.14.22
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/sj-distributor/dolphin v0.0.0-20260902065042-e9a784dea5ca
 	github.com/urfave/cli v1.22.15
@@ -66,6 +65,7 @@ require (
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/lightstep/tracecontext.go v0.0.0-20181129014701-1757c391b1ac // indirect
+	github.com/mattn/go-sqlite3 v1.14.22 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pkg/errors v0.8.1 // indirect
 	github.com/rogpeppe/go-internal v1.16.0 // indirect

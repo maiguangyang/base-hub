@@ -31,14 +31,11 @@ func RegisterHandlers(handlers gen.ResolutionHandlers, dependencies ...HandlerDe
 	registerAuditHandlers(&handlers)
 	registerOpeningRecordHandlers(&handlers)
 	registerPaymentConfigHandlers(&handlers)
-	registerCustomerHandlers(&handlers)
-	registerProductHandlers(&handlers)
 	// Verify the handwritten handlers before wrapping query functions, so the
 	// wrapper cannot mask an accidental generated fallback.
 	if err := ValidateHandlerCoverage(handlers, gen.DefaultResolutionHandlers()); err != nil {
 		panic(err)
 	}
-	rejectGeneratedStocktakeProjections(&handlers)
 	return handlers
 }
 

@@ -98,7 +98,6 @@ extend type Query {
   viewer: Viewer!
   workspaces: [Workspace!]!
   pendingMembershipInvitations: [MembershipInvitation!]!
-  securityBootstrapStatus: SecurityBootstrapStatus!
 }
 
 extend type Mutation {
@@ -109,9 +108,11 @@ extend type Mutation {
   provisionFranchise(input: ProvisionFranchiseInput!): ProvisionFranchisePayload! @hasPermission(action: "organization:create")
   suspendOrganization(input: SuspendOrganizationInput!): Organization! @hasPermission(action: "organization:suspend")
   restoreOrganization(id: ID!): Organization! @hasPermission(action: "organization:restore")
-  inviteOperator(input: InviteOperatorInput!): ProvisionFranchisePayload! @hasPermission(action: "operatorMembership:create")
+  inviteOperator(input: InviteOperatorInput!): InviteOperatorPayload! @hasPermission(action: "operatorMembership:create")
   changeMembershipStatus(input: ChangeMembershipStatusInput!): OperatorMembership! @hasPermission(action: "operatorMembership:update")
-  reviewStore(input: ReviewStoreInput!): Store! @hasPermission(action: "store:approve")
+  acceptMembershipInvitation(id: ID!): OperatorMembership!
+  reviewStore(input: ReviewStoreInput!): Store!
+  submitStore(id: ID!): Store! @hasPermission(action: "store:submit")
   setStoreDocument(storeId: ID!, kind: StoreDocumentKind!, attachmentId: ID!): Store! @hasPermission(action: "store:update")
   removeStoreDocument(storeId: ID!, kind: StoreDocumentKind!): Store! @hasPermission(action: "store:update")
   resetTemporaryPassword(accountId: ID!): TemporaryPasswordPayload! @hasPermission(action: "account:update")
@@ -120,10 +121,6 @@ extend type Mutation {
 
 extend type Subscription {
   sessionEvents: SessionEvent!
-}
-
-type SecurityBootstrapStatus {
-  hqAdministratorBootstrapped: Boolean!
 }
 
 enum SessionEventCode {

@@ -1,0 +1,3837 @@
+
+  # Workspace Workspace 接口字段
+  fragment WorkspacesFields on Workspace {
+
+  }
+
+  # 列表
+  query Workspaces ($currentPage: Int = 1, $perPage: Int = 10, $sort: [WorkspaceSortType!], $search: String, $filter: WorkspaceFilterType, $rand: Boolean = false) {
+    workspaces(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query WorkspaceDetail ($id: ID, $search: String, $filter: WorkspaceFilterType) {
+    workspace(id: $id, q: $search, filter: $filter) {
+
+    }
+  }
+
+  # 新增
+  mutation createWorkspace ($data: CreateWorkspaceInput!) {
+    createWorkspace(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateWorkspace ($id: ID!, $data: UpdateWorkspaceInput!) {
+    updateWorkspace(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteWorkspaces ($id: [ID!]!) {
+    deleteWorkspaces(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryWorkspaces ($id: [ID!]!) {
+    recoveryWorkspaces(id: $id)
+  }
+
+  # Viewer Viewer 接口字段
+  fragment ViewersFields on Viewer {
+
+  }
+
+  # 列表
+  query Viewers ($currentPage: Int = 1, $perPage: Int = 10, $sort: [ViewerSortType!], $search: String, $filter: ViewerFilterType, $rand: Boolean = false) {
+    viewers(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query ViewerDetail ($id: ID, $search: String, $filter: ViewerFilterType) {
+    viewer(id: $id, q: $search, filter: $filter) {
+
+    }
+  }
+
+  # 新增
+  mutation createViewer ($data: CreateViewerInput!) {
+    createViewer(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateViewer ($id: ID!, $data: UpdateViewerInput!) {
+    updateViewer(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteViewers ($id: [ID!]!) {
+    deleteViewers(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryViewers ($id: [ID!]!) {
+    recoveryViewers(id: $id)
+  }
+
+  # LoginPayload LoginPayload 接口字段
+  fragment LoginPayloadsFields on LoginPayload {
+
+  }
+
+  # 列表
+  query LoginPayloads ($currentPage: Int = 1, $perPage: Int = 10, $sort: [LoginPayloadSortType!], $search: String, $filter: LoginPayloadFilterType, $rand: Boolean = false) {
+    loginPayloads(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query LoginPayloadDetail ($id: ID, $search: String, $filter: LoginPayloadFilterType) {
+    loginPayload(id: $id, q: $search, filter: $filter) {
+
+    }
+  }
+
+  # 新增
+  mutation createLoginPayload ($data: CreateLoginPayloadInput!) {
+    createLoginPayload(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateLoginPayload ($id: ID!, $data: UpdateLoginPayloadInput!) {
+    updateLoginPayload(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteLoginPayloads ($id: [ID!]!) {
+    deleteLoginPayloads(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryLoginPayloads ($id: [ID!]!) {
+    recoveryLoginPayloads(id: $id)
+  }
+
+  # ProvisionFranchisePayload ProvisionFranchisePayload 接口字段
+  fragment ProvisionFranchisePayloadsFields on ProvisionFranchisePayload {
+
+  }
+
+  # 列表
+  query ProvisionFranchisePayloads ($currentPage: Int = 1, $perPage: Int = 10, $sort: [ProvisionFranchisePayloadSortType!], $search: String, $filter: ProvisionFranchisePayloadFilterType, $rand: Boolean = false) {
+    provisionFranchisePayloads(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query ProvisionFranchisePayloadDetail ($id: ID, $search: String, $filter: ProvisionFranchisePayloadFilterType) {
+    provisionFranchisePayload(id: $id, q: $search, filter: $filter) {
+
+    }
+  }
+
+  # 新增
+  mutation createProvisionFranchisePayload ($data: CreateProvisionFranchisePayloadInput!) {
+    createProvisionFranchisePayload(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateProvisionFranchisePayload ($id: ID!, $data: UpdateProvisionFranchisePayloadInput!) {
+    updateProvisionFranchisePayload(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteProvisionFranchisePayloads ($id: [ID!]!) {
+    deleteProvisionFranchisePayloads(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryProvisionFranchisePayloads ($id: [ID!]!) {
+    recoveryProvisionFranchisePayloads(id: $id)
+  }
+
+  # InviteOperatorPayload InviteOperatorPayload 接口字段
+  fragment InviteOperatorPayloadsFields on InviteOperatorPayload {
+
+  }
+
+  # 列表
+  query InviteOperatorPayloads ($currentPage: Int = 1, $perPage: Int = 10, $sort: [InviteOperatorPayloadSortType!], $search: String, $filter: InviteOperatorPayloadFilterType, $rand: Boolean = false) {
+    inviteOperatorPayloads(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query InviteOperatorPayloadDetail ($id: ID, $search: String, $filter: InviteOperatorPayloadFilterType) {
+    inviteOperatorPayload(id: $id, q: $search, filter: $filter) {
+
+    }
+  }
+
+  # 新增
+  mutation createInviteOperatorPayload ($data: CreateInviteOperatorPayloadInput!) {
+    createInviteOperatorPayload(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateInviteOperatorPayload ($id: ID!, $data: UpdateInviteOperatorPayloadInput!) {
+    updateInviteOperatorPayload(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteInviteOperatorPayloads ($id: [ID!]!) {
+    deleteInviteOperatorPayloads(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryInviteOperatorPayloads ($id: [ID!]!) {
+    recoveryInviteOperatorPayloads(id: $id)
+  }
+
+  # TemporaryPasswordPayload TemporaryPasswordPayload 接口字段
+  fragment TemporaryPasswordPayloadsFields on TemporaryPasswordPayload {
+
+  }
+
+  # 列表
+  query TemporaryPasswordPayloads ($currentPage: Int = 1, $perPage: Int = 10, $sort: [TemporaryPasswordPayloadSortType!], $search: String, $filter: TemporaryPasswordPayloadFilterType, $rand: Boolean = false) {
+    temporaryPasswordPayloads(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query TemporaryPasswordPayloadDetail ($id: ID, $search: String, $filter: TemporaryPasswordPayloadFilterType) {
+    temporaryPasswordPayload(id: $id, q: $search, filter: $filter) {
+
+    }
+  }
+
+  # 新增
+  mutation createTemporaryPasswordPayload ($data: CreateTemporaryPasswordPayloadInput!) {
+    createTemporaryPasswordPayload(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateTemporaryPasswordPayload ($id: ID!, $data: UpdateTemporaryPasswordPayloadInput!) {
+    updateTemporaryPasswordPayload(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteTemporaryPasswordPayloads ($id: [ID!]!) {
+    deleteTemporaryPasswordPayloads(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryTemporaryPasswordPayloads ($id: [ID!]!) {
+    recoveryTemporaryPasswordPayloads(id: $id)
+  }
+
+  # StoreDocumentPayload StoreDocumentPayload 接口字段
+  fragment StoreDocumentPayloadsFields on StoreDocumentPayload {
+
+  }
+
+  # 列表
+  query StoreDocumentPayloads ($currentPage: Int = 1, $perPage: Int = 10, $sort: [StoreDocumentPayloadSortType!], $search: String, $filter: StoreDocumentPayloadFilterType, $rand: Boolean = false) {
+    storeDocumentPayloads(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query StoreDocumentPayloadDetail ($id: ID, $search: String, $filter: StoreDocumentPayloadFilterType) {
+    storeDocumentPayload(id: $id, q: $search, filter: $filter) {
+
+    }
+  }
+
+  # 新增
+  mutation createStoreDocumentPayload ($data: CreateStoreDocumentPayloadInput!) {
+    createStoreDocumentPayload(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateStoreDocumentPayload ($id: ID!, $data: UpdateStoreDocumentPayloadInput!) {
+    updateStoreDocumentPayload(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteStoreDocumentPayloads ($id: [ID!]!) {
+    deleteStoreDocumentPayloads(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryStoreDocumentPayloads ($id: [ID!]!) {
+    recoveryStoreDocumentPayloads(id: $id)
+  }
+
+  # SessionEvent SessionEvent 接口字段
+  fragment SessionEventsFields on SessionEvent {
+
+  }
+
+  # 列表
+  query SessionEvents ($currentPage: Int = 1, $perPage: Int = 10, $sort: [SessionEventSortType!], $search: String, $filter: SessionEventFilterType, $rand: Boolean = false) {
+    sessionEvents(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query SessionEventDetail ($id: ID, $search: String, $filter: SessionEventFilterType) {
+    sessionEvent(id: $id, q: $search, filter: $filter) {
+
+    }
+  }
+
+  # 新增
+  mutation createSessionEvent ($data: CreateSessionEventInput!) {
+    createSessionEvent(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateSessionEvent ($id: ID!, $data: UpdateSessionEventInput!) {
+    updateSessionEvent(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteSessionEvents ($id: [ID!]!) {
+    deleteSessionEvents(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoverySessionEvents ($id: [ID!]!) {
+    recoverySessionEvents(id: $id)
+  }
+
+  # 账号 Account 接口字段
+  fragment AccountsFields on Account {
+    id
+    phone
+    displayName
+    email
+    status
+    mustChangePassword
+    credentialVersion
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query Accounts ($currentPage: Int = 1, $perPage: Int = 10, $sort: [AccountSortType!], $search: String, $filter: AccountFilterType, $rand: Boolean = false) {
+    accounts(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query AccountDetail ($id: ID, $search: String, $filter: AccountFilterType) {
+    account(id: $id, q: $search, filter: $filter) {
+      id
+      phone
+      displayName
+      email
+      status
+      mustChangePassword
+      credentialVersion
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      memberships {
+        ...OperatorMembershipsFields
+      }
+      initializedOrganizations {
+        ...OrganizationsFields
+      }
+      openingRecords {
+        ...FranchiseOpeningRecordsFields
+      }
+      recordedOpeningRecords {
+        ...FranchiseOpeningRecordsFields
+      }
+      sessions {
+        ...SessionsFields
+      }
+      reviewedStores {
+        ...StoresFields
+      }
+      sentMembershipInvitations {
+        ...MembershipInvitationsFields
+      }
+      auditLogs {
+        ...AuditLogsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createAccount ($data: CreateAccountInput!) {
+    createAccount(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateAccount ($id: ID!, $data: UpdateAccountInput!) {
+    updateAccount(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteAccounts ($id: [ID!]!) {
+    deleteAccounts(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryAccounts ($id: [ID!]!) {
+    recoveryAccounts(id: $id)
+  }
+
+  # 加盟商 Organization 接口字段
+  fragment OrganizationsFields on Organization {
+    id
+    code
+    name
+    type
+    status
+    suspendedAt
+    suspensionReasonCode
+    initialAccountId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query Organizations ($currentPage: Int = 1, $perPage: Int = 10, $sort: [OrganizationSortType!], $search: String, $filter: OrganizationFilterType, $rand: Boolean = false) {
+    organizations(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        code
+        name
+        type
+        status
+        suspendedAt
+        suspensionReasonCode
+        initialAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        stores {
+          ...StoresFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...FranchisePaymentConfigsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query OrganizationDetail ($id: ID, $search: String, $filter: OrganizationFilterType) {
+    organization(id: $id, q: $search, filter: $filter) {
+      id
+      code
+      name
+      type
+      status
+      suspendedAt
+      suspensionReasonCode
+      initialAccountId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      memberships {
+        ...OperatorMembershipsFields
+      }
+      initialAccount {
+        ...AccountsFields
+      }
+      openingRecords {
+        ...FranchiseOpeningRecordsFields
+      }
+      stores {
+        ...StoresFields
+      }
+      roles {
+        ...OperatorRolesFields
+      }
+      sessions {
+        ...SessionsFields
+      }
+      auditLogs {
+        ...AuditLogsFields
+      }
+      paymentConfigs {
+        ...FranchisePaymentConfigsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createOrganization ($data: CreateOrganizationInput!) {
+    createOrganization(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateOrganization ($id: ID!, $data: UpdateOrganizationInput!) {
+    updateOrganization(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteOrganizations ($id: [ID!]!) {
+    deleteOrganizations(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryOrganizations ($id: [ID!]!) {
+    recoveryOrganizations(id: $id)
+  }
+
+  # 加盟商成员 OperatorMembership 接口字段
+  fragment OperatorMembershipsFields on OperatorMembership {
+    id
+    status
+    storeAccessMode
+    invitedAt
+    acceptedAt
+    accountId
+    organizationId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query OperatorMemberships ($currentPage: Int = 1, $perPage: Int = 10, $sort: [OperatorMembershipSortType!], $search: String, $filter: OperatorMembershipFilterType, $rand: Boolean = false) {
+    operatorMemberships(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        status
+        storeAccessMode
+        invitedAt
+        acceptedAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        stores {
+          ...StoresFields
+        }
+        invitations {
+          ...MembershipInvitationsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query OperatorMembershipDetail ($id: ID, $search: String, $filter: OperatorMembershipFilterType) {
+    operatorMembership(id: $id, q: $search, filter: $filter) {
+      id
+      status
+      storeAccessMode
+      invitedAt
+      acceptedAt
+      accountId
+      organizationId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      account {
+        ...AccountsFields
+      }
+      organization {
+        ...OrganizationsFields
+      }
+      roles {
+        ...OperatorRolesFields
+      }
+      stores {
+        ...StoresFields
+      }
+      invitations {
+        ...MembershipInvitationsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createOperatorMembership ($data: CreateOperatorMembershipInput!) {
+    createOperatorMembership(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateOperatorMembership ($id: ID!, $data: UpdateOperatorMembershipInput!) {
+    updateOperatorMembership(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteOperatorMemberships ($id: [ID!]!) {
+    deleteOperatorMemberships(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryOperatorMemberships ($id: [ID!]!) {
+    recoveryOperatorMemberships(id: $id)
+  }
+
+  # 权限 Permission 接口字段
+  fragment PermissionsFields on Permission {
+    id
+    name
+    action
+    module
+    scope
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query Permissions ($currentPage: Int = 1, $perPage: Int = 10, $sort: [PermissionSortType!], $search: String, $filter: PermissionFilterType, $rand: Boolean = false) {
+    permissions(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        name
+        action
+        module
+        scope
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        roles {
+          ...OperatorRolesFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query PermissionDetail ($id: ID, $search: String, $filter: PermissionFilterType) {
+    permission(id: $id, q: $search, filter: $filter) {
+      id
+      name
+      action
+      module
+      scope
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      roles {
+        ...OperatorRolesFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createPermission ($data: CreatePermissionInput!) {
+    createPermission(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updatePermission ($id: ID!, $data: UpdatePermissionInput!) {
+    updatePermission(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deletePermissions ($id: [ID!]!) {
+    deletePermissions(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryPermissions ($id: [ID!]!) {
+    recoveryPermissions(id: $id)
+  }
+
+  # 角色 OperatorRole 接口字段
+  fragment OperatorRolesFields on OperatorRole {
+    id
+    name
+    kind
+    organizationId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query OperatorRoles ($currentPage: Int = 1, $perPage: Int = 10, $sort: [OperatorRoleSortType!], $search: String, $filter: OperatorRoleFilterType, $rand: Boolean = false) {
+    operatorRoles(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        name
+        kind
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        permissions {
+          ...PermissionsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query OperatorRoleDetail ($id: ID, $search: String, $filter: OperatorRoleFilterType) {
+    operatorRole(id: $id, q: $search, filter: $filter) {
+      id
+      name
+      kind
+      organizationId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      organization {
+        ...OrganizationsFields
+      }
+      members {
+        ...OperatorMembershipsFields
+      }
+      permissions {
+        ...PermissionsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createOperatorRole ($data: CreateOperatorRoleInput!) {
+    createOperatorRole(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateOperatorRole ($id: ID!, $data: UpdateOperatorRoleInput!) {
+    updateOperatorRole(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteOperatorRoles ($id: [ID!]!) {
+    deleteOperatorRoles(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryOperatorRoles ($id: [ID!]!) {
+    recoveryOperatorRoles(id: $id)
+  }
+
+  # 门店 Store 接口字段
+  fragment StoresFields on Store {
+    id
+    code
+    name
+    lifecycle
+    submittedAt
+    reviewedAt
+    rejectionReason
+    contactPhone
+    managerName
+    managerPhone
+    province
+    city
+    district
+    address
+    businessHours
+    businessStatus
+    supportDineIn
+    supportTakeout
+    storeArea
+    tableCount
+    receiptFooter
+    businessLicenseImageUrl
+    otherDocumentImageUrl
+    organizationId
+    reviewedByAccountId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query Stores ($currentPage: Int = 1, $perPage: Int = 10, $sort: [StoreSortType!], $search: String, $filter: StoreFilterType, $rand: Boolean = false) {
+    stores(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        code
+        name
+        lifecycle
+        submittedAt
+        reviewedAt
+        rejectionReason
+        contactPhone
+        managerName
+        managerPhone
+        province
+        city
+        district
+        address
+        businessHours
+        businessStatus
+        supportDineIn
+        supportTakeout
+        storeArea
+        tableCount
+        receiptFooter
+        businessLicenseImageUrl
+        otherDocumentImageUrl
+        organizationId
+        reviewedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        reviewedByAccount {
+          ...AccountsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...StorePaymentConfigsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query StoreDetail ($id: ID, $search: String, $filter: StoreFilterType) {
+    store(id: $id, q: $search, filter: $filter) {
+      id
+      code
+      name
+      lifecycle
+      submittedAt
+      reviewedAt
+      rejectionReason
+      contactPhone
+      managerName
+      managerPhone
+      province
+      city
+      district
+      address
+      businessHours
+      businessStatus
+      supportDineIn
+      supportTakeout
+      storeArea
+      tableCount
+      receiptFooter
+      businessLicenseImageUrl
+      otherDocumentImageUrl
+      organizationId
+      reviewedByAccountId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      organization {
+        ...OrganizationsFields
+      }
+      members {
+        ...OperatorMembershipsFields
+      }
+      reviewedByAccount {
+        ...AccountsFields
+      }
+      auditLogs {
+        ...AuditLogsFields
+      }
+      paymentConfigs {
+        ...StorePaymentConfigsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createStore ($data: CreateStoreInput!) {
+    createStore(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateStore ($id: ID!, $data: UpdateStoreInput!) {
+    updateStore(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteStores ($id: [ID!]!) {
+    deleteStores(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryStores ($id: [ID!]!) {
+    recoveryStores(id: $id)
+  }
+
+  # 登录会话 Session 接口字段
+  fragment SessionsFields on Session {
+    id
+    workspaceType
+    credentialVersion
+    expiresAt
+    revokedAt
+    revocationCode
+    lastSeenAt
+    accountId
+    organizationId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query Sessions ($currentPage: Int = 1, $perPage: Int = 10, $sort: [SessionSortType!], $search: String, $filter: SessionFilterType, $rand: Boolean = false) {
+    sessions(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        workspaceType
+        credentialVersion
+        expiresAt
+        revokedAt
+        revocationCode
+        lastSeenAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query SessionDetail ($id: ID, $search: String, $filter: SessionFilterType) {
+    session(id: $id, q: $search, filter: $filter) {
+      id
+      workspaceType
+      credentialVersion
+      expiresAt
+      revokedAt
+      revocationCode
+      lastSeenAt
+      accountId
+      organizationId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      account {
+        ...AccountsFields
+      }
+      organization {
+        ...OrganizationsFields
+      }
+      auditLogs {
+        ...AuditLogsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createSession ($data: CreateSessionInput!) {
+    createSession(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateSession ($id: ID!, $data: UpdateSessionInput!) {
+    updateSession(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteSessions ($id: [ID!]!) {
+    deleteSessions(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoverySessions ($id: [ID!]!) {
+    recoverySessions(id: $id)
+  }
+
+  # 成员邀请 MembershipInvitation 接口字段
+  fragment MembershipInvitationsFields on MembershipInvitation {
+    id
+    expiresAt
+    acceptedAt
+    revokedAt
+    membershipId
+    invitedByAccountId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query MembershipInvitations ($currentPage: Int = 1, $perPage: Int = 10, $sort: [MembershipInvitationSortType!], $search: String, $filter: MembershipInvitationFilterType, $rand: Boolean = false) {
+    membershipInvitations(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        expiresAt
+        acceptedAt
+        revokedAt
+        membershipId
+        invitedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        membership {
+          ...OperatorMembershipsFields
+        }
+        invitedByAccount {
+          ...AccountsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query MembershipInvitationDetail ($id: ID, $search: String, $filter: MembershipInvitationFilterType) {
+    membershipInvitation(id: $id, q: $search, filter: $filter) {
+      id
+      expiresAt
+      acceptedAt
+      revokedAt
+      membershipId
+      invitedByAccountId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      membership {
+        ...OperatorMembershipsFields
+      }
+      invitedByAccount {
+        ...AccountsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createMembershipInvitation ($data: CreateMembershipInvitationInput!) {
+    createMembershipInvitation(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateMembershipInvitation ($id: ID!, $data: UpdateMembershipInvitationInput!) {
+    updateMembershipInvitation(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteMembershipInvitations ($id: [ID!]!) {
+    deleteMembershipInvitations(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryMembershipInvitations ($id: [ID!]!) {
+    recoveryMembershipInvitations(id: $id)
+  }
+
+  # 审计日志 AuditLog 接口字段
+  fragment AuditLogsFields on AuditLog {
+    id
+    action
+    resourceType
+    resourceId
+    resultCode
+    metadataJson
+    actorAccountId
+    sessionId
+    organizationId
+    storeId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query AuditLogs ($currentPage: Int = 1, $perPage: Int = 10, $sort: [AuditLogSortType!], $search: String, $filter: AuditLogFilterType, $rand: Boolean = false) {
+    auditLogs(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        action
+        resourceType
+        resourceId
+        resultCode
+        metadataJson
+        actorAccountId
+        sessionId
+        organizationId
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        actorAccount {
+          ...AccountsFields
+        }
+        session {
+          ...SessionsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        store {
+          ...StoresFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query AuditLogDetail ($id: ID, $search: String, $filter: AuditLogFilterType) {
+    auditLog(id: $id, q: $search, filter: $filter) {
+      id
+      action
+      resourceType
+      resourceId
+      resultCode
+      metadataJson
+      actorAccountId
+      sessionId
+      organizationId
+      storeId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      actorAccount {
+        ...AccountsFields
+      }
+      session {
+        ...SessionsFields
+      }
+      organization {
+        ...OrganizationsFields
+      }
+      store {
+        ...StoresFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createAuditLog ($data: CreateAuditLogInput!) {
+    createAuditLog(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateAuditLog ($id: ID!, $data: UpdateAuditLogInput!) {
+    updateAuditLog(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteAuditLogs ($id: [ID!]!) {
+    deleteAuditLogs(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryAuditLogs ($id: [ID!]!) {
+    recoveryAuditLogs(id: $id)
+  }
+
+  # 加盟商开通记录 FranchiseOpeningRecord 接口字段
+  fragment FranchiseOpeningRecordsFields on FranchiseOpeningRecord {
+    id
+    recordNumber
+    source
+    organizationId
+    initialAccountId
+    recordedByAccountId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query FranchiseOpeningRecords ($currentPage: Int = 1, $perPage: Int = 10, $sort: [FranchiseOpeningRecordSortType!], $search: String, $filter: FranchiseOpeningRecordFilterType, $rand: Boolean = false) {
+    franchiseOpeningRecords(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        recordNumber
+        source
+        organizationId
+        initialAccountId
+        recordedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        recordedByAccount {
+          ...AccountsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query FranchiseOpeningRecordDetail ($id: ID, $search: String, $filter: FranchiseOpeningRecordFilterType) {
+    franchiseOpeningRecord(id: $id, q: $search, filter: $filter) {
+      id
+      recordNumber
+      source
+      organizationId
+      initialAccountId
+      recordedByAccountId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      organization {
+        ...OrganizationsFields
+      }
+      initialAccount {
+        ...AccountsFields
+      }
+      recordedByAccount {
+        ...AccountsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createFranchiseOpeningRecord ($data: CreateFranchiseOpeningRecordInput!) {
+    createFranchiseOpeningRecord(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateFranchiseOpeningRecord ($id: ID!, $data: UpdateFranchiseOpeningRecordInput!) {
+    updateFranchiseOpeningRecord(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteFranchiseOpeningRecords ($id: [ID!]!) {
+    deleteFranchiseOpeningRecords(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryFranchiseOpeningRecords ($id: [ID!]!) {
+    recoveryFranchiseOpeningRecords(id: $id)
+  }
+
+  # 全局支付配置 GlobalPaymentConfig 接口字段
+  fragment GlobalPaymentConfigsFields on GlobalPaymentConfig {
+    id
+    channel
+    merchantId
+    environment
+    ratePpm
+    configState
+    version
+    keyId
+    credentialCiphertext
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query GlobalPaymentConfigs ($currentPage: Int = 1, $perPage: Int = 10, $sort: [GlobalPaymentConfigSortType!], $search: String, $filter: GlobalPaymentConfigFilterType, $rand: Boolean = false) {
+    globalPaymentConfigs(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query GlobalPaymentConfigDetail ($id: ID, $search: String, $filter: GlobalPaymentConfigFilterType) {
+    globalPaymentConfig(id: $id, q: $search, filter: $filter) {
+      id
+      channel
+      merchantId
+      environment
+      ratePpm
+      configState
+      version
+      keyId
+      credentialCiphertext
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+
+    }
+  }
+
+  # 新增
+  mutation createGlobalPaymentConfig ($data: CreateGlobalPaymentConfigInput!) {
+    createGlobalPaymentConfig(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateGlobalPaymentConfig ($id: ID!, $data: UpdateGlobalPaymentConfigInput!) {
+    updateGlobalPaymentConfig(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteGlobalPaymentConfigs ($id: [ID!]!) {
+    deleteGlobalPaymentConfigs(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryGlobalPaymentConfigs ($id: [ID!]!) {
+    recoveryGlobalPaymentConfigs(id: $id)
+  }
+
+  # 加盟商支付配置 FranchisePaymentConfig 接口字段
+  fragment FranchisePaymentConfigsFields on FranchisePaymentConfig {
+    id
+    channel
+    merchantId
+    environment
+    ratePpm
+    configState
+    version
+    keyId
+    credentialCiphertext
+    organizationId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query FranchisePaymentConfigs ($currentPage: Int = 1, $perPage: Int = 10, $sort: [FranchisePaymentConfigSortType!], $search: String, $filter: FranchisePaymentConfigFilterType, $rand: Boolean = false) {
+    franchisePaymentConfigs(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query FranchisePaymentConfigDetail ($id: ID, $search: String, $filter: FranchisePaymentConfigFilterType) {
+    franchisePaymentConfig(id: $id, q: $search, filter: $filter) {
+      id
+      channel
+      merchantId
+      environment
+      ratePpm
+      configState
+      version
+      keyId
+      credentialCiphertext
+      organizationId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      organization {
+        ...OrganizationsFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createFranchisePaymentConfig ($data: CreateFranchisePaymentConfigInput!) {
+    createFranchisePaymentConfig(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateFranchisePaymentConfig ($id: ID!, $data: UpdateFranchisePaymentConfigInput!) {
+    updateFranchisePaymentConfig(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteFranchisePaymentConfigs ($id: [ID!]!) {
+    deleteFranchisePaymentConfigs(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryFranchisePaymentConfigs ($id: [ID!]!) {
+    recoveryFranchisePaymentConfigs(id: $id)
+  }
+
+  # 门店支付配置 StorePaymentConfig 接口字段
+  fragment StorePaymentConfigsFields on StorePaymentConfig {
+    id
+    channel
+    merchantId
+    environment
+    ratePpm
+    configState
+    version
+    keyId
+    credentialCiphertext
+    storeId
+    isDelete
+    weight
+    state
+    deletedBy
+    updatedBy
+    createdBy
+    deletedAt
+    updatedAt
+    createdAt
+
+  }
+
+  # 列表
+  query StorePaymentConfigs ($currentPage: Int = 1, $perPage: Int = 10, $sort: [StorePaymentConfigSortType!], $search: String, $filter: StorePaymentConfigFilterType, $rand: Boolean = false) {
+    storePaymentConfigs(current_page: $currentPage, per_page: $perPage, sort: $sort, q: $search, filter: $filter, rand: $rand) {
+      data {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        store {
+          ...StoresFields
+        }
+
+      }
+      current_page
+      per_page
+      total
+      total_page
+    }
+  }
+
+  # 详情
+  query StorePaymentConfigDetail ($id: ID, $search: String, $filter: StorePaymentConfigFilterType) {
+    storePaymentConfig(id: $id, q: $search, filter: $filter) {
+      id
+      channel
+      merchantId
+      environment
+      ratePpm
+      configState
+      version
+      keyId
+      credentialCiphertext
+      storeId
+      isDelete
+      weight
+      state
+      deletedBy
+      updatedBy
+      createdBy
+      deletedAt
+      updatedAt
+      createdAt
+      store {
+        ...StoresFields
+      }
+
+    }
+  }
+
+  # 新增
+  mutation createStorePaymentConfig ($data: CreateStorePaymentConfigInput!) {
+    createStorePaymentConfig(input: $data) {
+      id
+    }
+  }
+
+  # 修改
+  mutation updateStorePaymentConfig ($id: ID!, $data: UpdateStorePaymentConfigInput!) {
+    updateStorePaymentConfig(id: $id, input: $data) {
+      id
+    }
+  }
+
+  # 删除
+  mutation deleteStorePaymentConfigs ($id: [ID!]!) {
+    deleteStorePaymentConfigs(id: $id)
+  }
+
+  # 恢复删除
+  mutation recoveryStorePaymentConfigs ($id: [ID!]!) {
+    recoveryStorePaymentConfigs(id: $id)
+  }
+
+
+
+  # viewer 接口
+  query viewer {
+    viewer {
+      ...ViewersFields
+    }
+  }
+  # workspaces 接口
+  query workspaces {
+    workspaces {
+      ...WorkspacesFields
+    }
+  }
+  # pendingMembershipInvitations 接口
+  query pendingMembershipInvitations {
+    pendingMembershipInvitations {
+      ...MembershipInvitationsFields
+
+      membership {
+        id
+        status
+        storeAccessMode
+        invitedAt
+        acceptedAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        stores {
+          ...StoresFields
+        }
+        invitations {
+          ...MembershipInvitationsFields
+        }
+
+      }
+      invitedByAccount {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+    }
+  }
+
+  # login 接口
+  mutation login($input: LoginInput!) {
+    login(input: $input) {
+      ...LoginPayloadsFields
+    }
+  }
+  # logout 接口
+  mutation logout {
+    logout
+  }
+  # changeTemporaryPassword 接口
+  mutation changeTemporaryPassword($input: ChangePasswordInput!) {
+    changeTemporaryPassword(input: $input) {
+      ...ViewersFields
+    }
+  }
+  # selectWorkspace 接口
+  mutation selectWorkspace($input: SelectWorkspaceInput!) {
+    selectWorkspace(input: $input) {
+      ...ViewersFields
+    }
+  }
+  # provisionFranchise 接口
+  mutation provisionFranchise($input: ProvisionFranchiseInput!) {
+    provisionFranchise(input: $input) {
+      ...ProvisionFranchisePayloadsFields
+    }
+  }
+  # suspendOrganization 接口
+  mutation suspendOrganization($input: SuspendOrganizationInput!) {
+    suspendOrganization(input: $input) {
+      ...OrganizationsFields
+
+      memberships {
+        id
+        status
+        storeAccessMode
+        invitedAt
+        acceptedAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        stores {
+          ...StoresFields
+        }
+        invitations {
+          ...MembershipInvitationsFields
+        }
+
+      }
+      initialAccount {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      openingRecords {
+        id
+        recordNumber
+        source
+        organizationId
+        initialAccountId
+        recordedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        recordedByAccount {
+          ...AccountsFields
+        }
+
+      }
+      stores {
+        id
+        code
+        name
+        lifecycle
+        submittedAt
+        reviewedAt
+        rejectionReason
+        contactPhone
+        managerName
+        managerPhone
+        province
+        city
+        district
+        address
+        businessHours
+        businessStatus
+        supportDineIn
+        supportTakeout
+        storeArea
+        tableCount
+        receiptFooter
+        businessLicenseImageUrl
+        otherDocumentImageUrl
+        organizationId
+        reviewedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        reviewedByAccount {
+          ...AccountsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...StorePaymentConfigsFields
+        }
+
+      }
+      roles {
+        id
+        name
+        kind
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        permissions {
+          ...PermissionsFields
+        }
+
+      }
+      sessions {
+        id
+        workspaceType
+        credentialVersion
+        expiresAt
+        revokedAt
+        revocationCode
+        lastSeenAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      auditLogs {
+        id
+        action
+        resourceType
+        resourceId
+        resultCode
+        metadataJson
+        actorAccountId
+        sessionId
+        organizationId
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        actorAccount {
+          ...AccountsFields
+        }
+        session {
+          ...SessionsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        store {
+          ...StoresFields
+        }
+
+      }
+      paymentConfigs {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+
+      }
+    }
+  }
+  # restoreOrganization 接口
+  mutation restoreOrganization($id: ID!) {
+    restoreOrganization(id: $id) {
+      ...OrganizationsFields
+
+      memberships {
+        id
+        status
+        storeAccessMode
+        invitedAt
+        acceptedAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        stores {
+          ...StoresFields
+        }
+        invitations {
+          ...MembershipInvitationsFields
+        }
+
+      }
+      initialAccount {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      openingRecords {
+        id
+        recordNumber
+        source
+        organizationId
+        initialAccountId
+        recordedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        recordedByAccount {
+          ...AccountsFields
+        }
+
+      }
+      stores {
+        id
+        code
+        name
+        lifecycle
+        submittedAt
+        reviewedAt
+        rejectionReason
+        contactPhone
+        managerName
+        managerPhone
+        province
+        city
+        district
+        address
+        businessHours
+        businessStatus
+        supportDineIn
+        supportTakeout
+        storeArea
+        tableCount
+        receiptFooter
+        businessLicenseImageUrl
+        otherDocumentImageUrl
+        organizationId
+        reviewedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        reviewedByAccount {
+          ...AccountsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...StorePaymentConfigsFields
+        }
+
+      }
+      roles {
+        id
+        name
+        kind
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        permissions {
+          ...PermissionsFields
+        }
+
+      }
+      sessions {
+        id
+        workspaceType
+        credentialVersion
+        expiresAt
+        revokedAt
+        revocationCode
+        lastSeenAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      auditLogs {
+        id
+        action
+        resourceType
+        resourceId
+        resultCode
+        metadataJson
+        actorAccountId
+        sessionId
+        organizationId
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        actorAccount {
+          ...AccountsFields
+        }
+        session {
+          ...SessionsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        store {
+          ...StoresFields
+        }
+
+      }
+      paymentConfigs {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+
+      }
+    }
+  }
+  # inviteOperator 接口
+  mutation inviteOperator($input: InviteOperatorInput!) {
+    inviteOperator(input: $input) {
+      ...InviteOperatorPayloadsFields
+    }
+  }
+  # changeMembershipStatus 接口
+  mutation changeMembershipStatus($input: ChangeMembershipStatusInput!) {
+    changeMembershipStatus(input: $input) {
+      ...OperatorMembershipsFields
+
+      account {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      organization {
+        id
+        code
+        name
+        type
+        status
+        suspendedAt
+        suspensionReasonCode
+        initialAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        stores {
+          ...StoresFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...FranchisePaymentConfigsFields
+        }
+
+      }
+      roles {
+        id
+        name
+        kind
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        permissions {
+          ...PermissionsFields
+        }
+
+      }
+      stores {
+        id
+        code
+        name
+        lifecycle
+        submittedAt
+        reviewedAt
+        rejectionReason
+        contactPhone
+        managerName
+        managerPhone
+        province
+        city
+        district
+        address
+        businessHours
+        businessStatus
+        supportDineIn
+        supportTakeout
+        storeArea
+        tableCount
+        receiptFooter
+        businessLicenseImageUrl
+        otherDocumentImageUrl
+        organizationId
+        reviewedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        reviewedByAccount {
+          ...AccountsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...StorePaymentConfigsFields
+        }
+
+      }
+      invitations {
+        id
+        expiresAt
+        acceptedAt
+        revokedAt
+        membershipId
+        invitedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        membership {
+          ...OperatorMembershipsFields
+        }
+        invitedByAccount {
+          ...AccountsFields
+        }
+
+      }
+    }
+  }
+  # acceptMembershipInvitation 接口
+  mutation acceptMembershipInvitation($id: ID!) {
+    acceptMembershipInvitation(id: $id) {
+      ...OperatorMembershipsFields
+
+      account {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      organization {
+        id
+        code
+        name
+        type
+        status
+        suspendedAt
+        suspensionReasonCode
+        initialAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        stores {
+          ...StoresFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...FranchisePaymentConfigsFields
+        }
+
+      }
+      roles {
+        id
+        name
+        kind
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        permissions {
+          ...PermissionsFields
+        }
+
+      }
+      stores {
+        id
+        code
+        name
+        lifecycle
+        submittedAt
+        reviewedAt
+        rejectionReason
+        contactPhone
+        managerName
+        managerPhone
+        province
+        city
+        district
+        address
+        businessHours
+        businessStatus
+        supportDineIn
+        supportTakeout
+        storeArea
+        tableCount
+        receiptFooter
+        businessLicenseImageUrl
+        otherDocumentImageUrl
+        organizationId
+        reviewedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        organization {
+          ...OrganizationsFields
+        }
+        members {
+          ...OperatorMembershipsFields
+        }
+        reviewedByAccount {
+          ...AccountsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...StorePaymentConfigsFields
+        }
+
+      }
+      invitations {
+        id
+        expiresAt
+        acceptedAt
+        revokedAt
+        membershipId
+        invitedByAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        membership {
+          ...OperatorMembershipsFields
+        }
+        invitedByAccount {
+          ...AccountsFields
+        }
+
+      }
+    }
+  }
+  # reviewStore 接口
+  mutation reviewStore($input: ReviewStoreInput!) {
+    reviewStore(input: $input) {
+      ...StoresFields
+
+      organization {
+        id
+        code
+        name
+        type
+        status
+        suspendedAt
+        suspensionReasonCode
+        initialAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        stores {
+          ...StoresFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...FranchisePaymentConfigsFields
+        }
+
+      }
+      members {
+        id
+        status
+        storeAccessMode
+        invitedAt
+        acceptedAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        stores {
+          ...StoresFields
+        }
+        invitations {
+          ...MembershipInvitationsFields
+        }
+
+      }
+      reviewedByAccount {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      auditLogs {
+        id
+        action
+        resourceType
+        resourceId
+        resultCode
+        metadataJson
+        actorAccountId
+        sessionId
+        organizationId
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        actorAccount {
+          ...AccountsFields
+        }
+        session {
+          ...SessionsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        store {
+          ...StoresFields
+        }
+
+      }
+      paymentConfigs {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        store {
+          ...StoresFields
+        }
+
+      }
+    }
+  }
+  # submitStore 接口
+  mutation submitStore($id: ID!) {
+    submitStore(id: $id) {
+      ...StoresFields
+
+      organization {
+        id
+        code
+        name
+        type
+        status
+        suspendedAt
+        suspensionReasonCode
+        initialAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        stores {
+          ...StoresFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...FranchisePaymentConfigsFields
+        }
+
+      }
+      members {
+        id
+        status
+        storeAccessMode
+        invitedAt
+        acceptedAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        stores {
+          ...StoresFields
+        }
+        invitations {
+          ...MembershipInvitationsFields
+        }
+
+      }
+      reviewedByAccount {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      auditLogs {
+        id
+        action
+        resourceType
+        resourceId
+        resultCode
+        metadataJson
+        actorAccountId
+        sessionId
+        organizationId
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        actorAccount {
+          ...AccountsFields
+        }
+        session {
+          ...SessionsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        store {
+          ...StoresFields
+        }
+
+      }
+      paymentConfigs {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        store {
+          ...StoresFields
+        }
+
+      }
+    }
+  }
+  # setStoreDocument 接口
+  mutation setStoreDocument($storeId: ID!, $kind: StoreDocumentKind!, $attachmentId: ID!) {
+    setStoreDocument(storeId: $storeId, kind: $kind, attachmentId: $attachmentId) {
+      ...StoresFields
+
+      organization {
+        id
+        code
+        name
+        type
+        status
+        suspendedAt
+        suspensionReasonCode
+        initialAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        stores {
+          ...StoresFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...FranchisePaymentConfigsFields
+        }
+
+      }
+      members {
+        id
+        status
+        storeAccessMode
+        invitedAt
+        acceptedAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        stores {
+          ...StoresFields
+        }
+        invitations {
+          ...MembershipInvitationsFields
+        }
+
+      }
+      reviewedByAccount {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      auditLogs {
+        id
+        action
+        resourceType
+        resourceId
+        resultCode
+        metadataJson
+        actorAccountId
+        sessionId
+        organizationId
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        actorAccount {
+          ...AccountsFields
+        }
+        session {
+          ...SessionsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        store {
+          ...StoresFields
+        }
+
+      }
+      paymentConfigs {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        store {
+          ...StoresFields
+        }
+
+      }
+    }
+  }
+  # removeStoreDocument 接口
+  mutation removeStoreDocument($storeId: ID!, $kind: StoreDocumentKind!) {
+    removeStoreDocument(storeId: $storeId, kind: $kind) {
+      ...StoresFields
+
+      organization {
+        id
+        code
+        name
+        type
+        status
+        suspendedAt
+        suspensionReasonCode
+        initialAccountId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initialAccount {
+          ...AccountsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        stores {
+          ...StoresFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+        paymentConfigs {
+          ...FranchisePaymentConfigsFields
+        }
+
+      }
+      members {
+        id
+        status
+        storeAccessMode
+        invitedAt
+        acceptedAt
+        accountId
+        organizationId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        account {
+          ...AccountsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        roles {
+          ...OperatorRolesFields
+        }
+        stores {
+          ...StoresFields
+        }
+        invitations {
+          ...MembershipInvitationsFields
+        }
+
+      }
+      reviewedByAccount {
+        id
+        phone
+        displayName
+        email
+        status
+        mustChangePassword
+        credentialVersion
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        memberships {
+          ...OperatorMembershipsFields
+        }
+        initializedOrganizations {
+          ...OrganizationsFields
+        }
+        openingRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        recordedOpeningRecords {
+          ...FranchiseOpeningRecordsFields
+        }
+        sessions {
+          ...SessionsFields
+        }
+        reviewedStores {
+          ...StoresFields
+        }
+        sentMembershipInvitations {
+          ...MembershipInvitationsFields
+        }
+        auditLogs {
+          ...AuditLogsFields
+        }
+
+      }
+      auditLogs {
+        id
+        action
+        resourceType
+        resourceId
+        resultCode
+        metadataJson
+        actorAccountId
+        sessionId
+        organizationId
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        actorAccount {
+          ...AccountsFields
+        }
+        session {
+          ...SessionsFields
+        }
+        organization {
+          ...OrganizationsFields
+        }
+        store {
+          ...StoresFields
+        }
+
+      }
+      paymentConfigs {
+        id
+        channel
+        merchantId
+        environment
+        ratePpm
+        configState
+        version
+        keyId
+        credentialCiphertext
+        storeId
+        isDelete
+        weight
+        state
+        deletedBy
+        updatedBy
+        createdBy
+        deletedAt
+        updatedAt
+        createdAt
+        store {
+          ...StoresFields
+        }
+
+      }
+    }
+  }
+  # resetTemporaryPassword 接口
+  mutation resetTemporaryPassword($accountId: ID!) {
+    resetTemporaryPassword(accountId: $accountId) {
+      ...TemporaryPasswordPayloadsFields
+    }
+  }
+  # resetFranchiseInitialPassword 接口
+  mutation resetFranchiseInitialPassword($organizationId: ID!) {
+    resetFranchiseInitialPassword(organizationId: $organizationId) {
+      ...TemporaryPasswordPayloadsFields
+    }
+  }
+
+  # sessionEvents 接口
+  subscription sessionEvents {
+    sessionEvents {
+      ...SessionEventsFields
+    }
+  }

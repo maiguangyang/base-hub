@@ -37,12 +37,6 @@ func main() {
 	if err := patchFile(generatedExecutionPath, patchInitialAccountProjection); err != nil {
 		panic(err)
 	}
-	if err := patchFile(generatedQueriesPath, patchCustomerCouponDistributionJobIDProjections); err != nil {
-		panic(err)
-	}
-	if err := patchGraphqlDocsFile(); err != nil {
-		panic(err)
-	}
 }
 
 func patchCustomerCouponDistributionJobIDProjections(source string) (string, error) {

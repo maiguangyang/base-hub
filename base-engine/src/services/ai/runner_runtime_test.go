@@ -138,16 +138,16 @@ func TestAISecretEventIncludesToolID(t *testing.T) {
 	}
 }
 
-func TestAICustomerPhoneStaysOutOfToolEventsAndDiagnostics(t *testing.T) {
+func TestAISensitiveDataStaysOutOfToolEventsAndDiagnostics(t *testing.T) {
 	service, _, principal, _ := fixedRuntimeFixture(t)
-	const phone = "13800138000"
-	spec := ToolSpec{ID: "HqCustomerSensitivePhone", OperationID: "graphql.query.hqCustomerSensitivePhone",
-		Document: "query HqCustomerSensitivePhone($id: ID!) { hqCustomerSensitivePhone(id: $id) }",
-		Mode:     ModeReadOnly, Permission: "customer:read_sensitive", Workspaces: []auth.WorkspaceType{auth.WorkspaceTypeHeadquarters}}
+	const secret = "13800138000"
+	spec := ToolSpec{ID: "HqAccountSensitiveData", OperationID: "graphql.query.hqAccountSensitiveData",
+		Document: "query HqAccountSensitiveData($id: ID!) { hqAccountSensitiveData(id: $id) }",
+		Mode:     ModeReadOnly, Permission: "account:read", Workspaces: []auth.WorkspaceType{auth.WorkspaceTypeHeadquarters}}
 	service.config.Catalog.byID[spec.ID] = spec
 	principal.Permissions[spec.Permission] = struct{}{}
 	service.protectedHandler = http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
-		_, _ = w.Write([]byte(`{"data":{"hqCustomerSensitivePhone":"` + phone + `"}}`))
+		_, _ = w.Write([]byte(`{"data":{"hqAccountSensitiveData":"` + secret + `"}}`))
 	})
 	sink := newEventSink(t.Context())
 	state := &runState{service: service, principal: principal, token: "signed", origin: "https://admin.example",
@@ -156,20 +156,20 @@ func TestAICustomerPhoneStaysOutOfToolEventsAndDiagnostics(t *testing.T) {
 	if err := state.beforeTool(ctx, spec.ID); err != nil {
 		t.Fatal(err)
 	}
-	result, err := service.FixedToolRuntime().Call(ctx, spec, json.RawMessage(`{"id":"member-1"}`))
-	if err != nil || !bytes.Contains(result.Body, []byte(phone)) {
-		t.Fatalf("authorized phone query failed: %v", err)
+	result, err := service.FixedToolRuntime().Call(ctx, spec, json.RawMessage(`{"id":"acc-1"}`))
+	if err != nil || !bytes.Contains(result.Body, []byte(secret)) {
+		t.Fatalf("authorized query failed: %v", err)
 	}
 	state.afterTool(spec.ID, "", nil)
 	for range 2 {
 		event := <-sink.events
 		encoded, err := json.Marshal(event)
-		if err != nil || bytes.Contains(encoded, []byte(phone)) {
-			t.Fatalf("phone leaked in tool event: %s, %v", encoded, err)
+		if err != nil || bytes.Contains(encoded, []byte(secret)) {
+			t.Fatalf("sensitive data leaked in tool event: %s, %v", encoded, err)
 		}
 	}
-	if code := safeRunErrorCode(errors.New("upstream response contained " + phone)); code == "" || bytes.Contains([]byte(code), []byte(phone)) {
-		t.Fatalf("phone leaked in diagnostic code: %s", code)
+	if code := safeRunErrorCode(errors.New("upstream response contained " + secret)); code == "" || bytes.Contains([]byte(code), []byte(secret)) {
+		t.Fatalf("secret leaked in diagnostic code: %s", code)
 	}
 }
 

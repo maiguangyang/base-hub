@@ -12,25 +12,21 @@ import { AiRetractConfirmationDialog } from './AiRetractConfirmationDialog';
 import { AiRiskConfirmationDialog } from './AiRiskConfirmationDialog';
 import { AiSecretCard } from './AiSecretCard';
 import type { AiSessionState } from './useAiSession';
-import { uploadProductMainImage } from '@/features/hq/lib/productImages';
 
-export function AiDrawer({ open, onOpenChange, session, showSensitivePhoneNotice, allowProductImageAttachment = false }: {
+export function AiDrawer({ open, onOpenChange, session }: {
   open: boolean; onOpenChange(open: boolean): void; session: ReturnType<typeof useAiSession>;
-  showSensitivePhoneNotice: boolean; allowProductImageAttachment?: boolean;
 }) {
-  const actions = useAiDrawerActions(session, allowProductImageAttachment);
+  const actions = useAiDrawerActions(session);
   return <>
-    <AiDrawerSheet open={open} onOpenChange={onOpenChange} session={session} actions={actions}
-      showSensitivePhoneNotice={showSensitivePhoneNotice} allowProductImageAttachment={allowProductImageAttachment} />
+    <AiDrawerSheet open={open} onOpenChange={onOpenChange} session={session} actions={actions} />
     <AiDrawerDialogs open={open} state={session.state} actions={actions} />
   </>;
 }
 
 type DrawerActions = ReturnType<typeof useAiDrawerActions>;
 
-function AiDrawerSheet({ open, onOpenChange, session, actions, showSensitivePhoneNotice, allowProductImageAttachment }: {
+function AiDrawerSheet({ open, onOpenChange, session, actions }: {
   open: boolean; onOpenChange(open: boolean): void; session: ReturnType<typeof useAiSession>; actions: DrawerActions;
-  showSensitivePhoneNotice: boolean; allowProductImageAttachment: boolean;
 }) {
   const { state } = session;
   const userTurn = state.messages.filter((message) => message.role === 'user').length;
@@ -41,7 +37,7 @@ function AiDrawerSheet({ open, onOpenChange, session, actions, showSensitivePhon
         <SheetHeader className="relative border-b pr-20">
           <SheetTitle>AI 助手</SheetTitle>
           <Button type="button" size="icon-sm" variant="ghost" aria-label="开始新对话" title="开始新对话" className="absolute right-12 top-0" disabled={busy} onClick={actions.newConversation}><MessageSquarePlus aria-hidden="true" /></Button>
-          <AiDrawerDescription showSensitivePhoneNotice={showSensitivePhoneNotice} />
+          <AiDrawerDescription />
           <AiConversationImageCopy source={() => contentRef.current?.querySelector<HTMLDivElement>('[data-ai-conversation]') ?? null} disabled={state.transcript.length === 0} />
         </SheetHeader>
         <ScrollArea ref={scrollRootRef} className="min-h-0 flex-1 px-4 py-4">
@@ -52,20 +48,17 @@ function AiDrawerSheet({ open, onOpenChange, session, actions, showSensitivePhon
             <AiRunStatus state={state} busy={busy} />
           </div>
         </ScrollArea>
-        <AiDrawerInput actions={actions} session={session} busy={busy} allowProductImageAttachment={allowProductImageAttachment} />
+        <AiDrawerInput actions={actions} session={session} busy={busy} />
       </SheetContent>
     </Sheet>;
 }
 
-function AiDrawerInput({ actions, session, busy, allowProductImageAttachment }: {
-  actions: DrawerActions; session: ReturnType<typeof useAiSession>; busy: boolean; allowProductImageAttachment: boolean;
+function AiDrawerInput({ actions, session, busy }: {
+  actions: DrawerActions; session: ReturnType<typeof useAiSession>; busy: boolean;
 }) {
-  return <>
-    {actions.uploadError && <p role="alert" className="px-4 text-sm text-destructive">{actions.uploadError}</p>}
-    <AiPromptInput key={actions.inputRevision} prompt={actions.draft} onPromptChange={actions.setDraft} disabled={busy || actions.confirmOpen || actions.uploading}
-      busy={busy} requiredInputs={session.state.preview?.requiredInputs ?? []} attachment={actions.attachment}
-      allowAttachment={allowProductImageAttachment} onAttachment={actions.setAttachment} onSubmit={actions.send} onStop={session.stop} />
-  </>;
+  return <AiPromptInput key={actions.inputRevision} prompt={actions.draft} onPromptChange={actions.setDraft} disabled={busy || actions.confirmOpen}
+    busy={busy} requiredInputs={session.state.preview?.requiredInputs ?? []}
+    onSubmit={actions.send} onStop={session.stop} />;
 }
 
 function AiDrawerDialogs({ open, state, actions }: { open: boolean; state: AiSessionState; actions: DrawerActions }) {
@@ -75,15 +68,11 @@ function AiDrawerDialogs({ open, state, actions }: { open: boolean; state: AiSes
   </>;
 }
 
-function useAiDrawerActions(session: ReturnType<typeof useAiSession>, allowAttachment: boolean) {
+function useAiDrawerActions(session: ReturnType<typeof useAiSession>) {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [retractOpen, setRetractOpen] = useState(false);
   const [draft, setDraft] = useState('');
-  const [attachment, setAttachment] = useState<File>();
-  const [uploading, setUploading] = useState(false);
-  const [uploadError, setUploadError] = useState('');
   const [inputRevision, setInputRevision] = useState(0);
-  useEffect(() => { if (!allowAttachment) setAttachment(undefined); }, [allowAttachment]);
   function confirm() {
     setConfirmOpen(false);
     void session.confirmRun();
@@ -97,26 +86,16 @@ function useAiDrawerActions(session: ReturnType<typeof useAiSession>, allowAttac
     }
   }
   async function send(prompt: string, attestation?: { evidenceReference: string; attested: true }) {
-    setUploadError('');
-    let attachmentId: string | undefined;
-    if (attachment && allowAttachment) {
-      setUploading(true);
-      try { attachmentId = await uploadProductMainImage(attachment); }
-      catch { setUploadError('图片上传失败，请检查格式和大小后重试。'); throw new Error('IMAGE_UPLOAD_FAILED'); }
-      finally { setUploading(false); }
-    }
-    setAttachment(undefined);
-    void session.startPreview(prompt, attestation, attachmentId);
+    void session.startPreview(prompt, attestation);
   }
-  function newConversation() { session.clear(); setAttachment(undefined); setDraft(''); setUploadError(''); }
-  return { confirmOpen, setConfirmOpen, retractOpen, setRetractOpen, draft, setDraft, attachment, setAttachment,
-    uploading, uploadError, inputRevision, confirm, retract, send, newConversation };
+  function newConversation() { session.clear(); setDraft(''); }
+  return { confirmOpen, setConfirmOpen, retractOpen, setRetractOpen, draft, setDraft,
+    inputRevision, confirm, retract, send, newConversation };
 }
 
-function AiDrawerDescription({ showSensitivePhoneNotice }: { showSensitivePhoneNotice: boolean }) {
+function AiDrawerDescription() {
   return <SheetDescription id="ai-drawer-description">
     提问、查询或处理当前工作区事务
-    {showSensitivePhoneNotice && <span className="block">查询会员完整手机号时，号码会发送给已配置的 AI 模型，并可能显示在当前对话中。</span>}
   </SheetDescription>;
 }
 

@@ -7,9 +7,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/iancoleman/strcase"
 	"base-engine/config"
 	"base-engine/utils"
+
+	"github.com/iancoleman/strcase"
 	"gorm.io/driver/mysql"
 	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"
@@ -126,46 +127,19 @@ var ShardingArray = []string{}
 var ShardingStruct = []any{}
 
 var TableMap = map[string]interface{}{
-	"accounts":                           Account{},
-	"organizations":                      Organization{},
-	"operator_memberships":               OperatorMembership{},
-	"permissions":                        Permission{},
-	"operator_roles":                     OperatorRole{},
-	"stores":                             Store{},
-	"sessions":                           Session{},
-	"membership_invitations":             MembershipInvitation{},
-	"audit_logs":                         AuditLog{},
-	"franchise_opening_records":          FranchiseOpeningRecord{},
-	"global_payment_configs":             GlobalPaymentConfig{},
-	"franchise_payment_configs":          FranchisePaymentConfig{},
-	"store_payment_configs":              StorePaymentConfig{},
-	"customer_members":                   CustomerMember{},
-	"customer_benefit_policies":          CustomerBenefitPolicy{},
-	"customer_daily_point_grant_budgets": CustomerDailyPointGrantBudget{},
-	"customer_point_entries":             CustomerPointEntry{},
-	"customer_coupon_templates":          CustomerCouponTemplate{},
-	"product_categories":                 ProductCategory{},
-	"product_brands":                     ProductBrand{},
-	"products":                           Product{},
-	"product_skus":                       ProductSku{},
-	"product_packages":                   ProductPackage{},
-	"specification_definitions":          SpecificationDefinition{},
-	"specification_values":               SpecificationValue{},
-	"product_specification_choices":      ProductSpecificationChoice{},
-	"product_sku_specification_values":   ProductSkuSpecificationValue{},
-	"product_package_templates":          ProductPackageTemplate{},
-	"store_listings":                     StoreListing{},
-	"store_package_offers":               StorePackageOffer{},
-	"store_price_revisions":              StorePriceRevision{},
-	"store_inventory_batches":            StoreInventoryBatch{},
-	"store_stock_balances":               StoreStockBalance{},
-	"store_stocktakes":                   StoreStocktake{},
-	"store_stocktake_lines":              StoreStocktakeLine{},
-	"store_stock_movements":              StoreStockMovement{},
-	"store_promotions":                   StorePromotion{},
-	"store_promotion_targets":            StorePromotionTarget{},
-	"customer_coupon_grants":             CustomerCouponGrant{},
-	"customer_coupon_distribution_jobs":  CustomerCouponDistributionJob{},
+	"accounts":                  Account{},
+	"organizations":             Organization{},
+	"operator_memberships":      OperatorMembership{},
+	"permissions":               Permission{},
+	"operator_roles":            OperatorRole{},
+	"stores":                    Store{},
+	"sessions":                  Session{},
+	"membership_invitations":    MembershipInvitation{},
+	"audit_logs":                AuditLog{},
+	"franchise_opening_records": FranchiseOpeningRecord{},
+	"global_payment_configs":    GlobalPaymentConfig{},
+	"franchise_payment_configs": FranchisePaymentConfig{},
+	"store_payment_configs":     StorePaymentConfig{},
 }
 
 // 获取表名
@@ -222,33 +196,6 @@ func (db *DB) AutoMigrate() error {
 		GlobalPaymentConfig{},
 		FranchisePaymentConfig{},
 		StorePaymentConfig{},
-		CustomerMember{},
-		CustomerBenefitPolicy{},
-		CustomerDailyPointGrantBudget{},
-		CustomerPointEntry{},
-		CustomerCouponTemplate{},
-		ProductCategory{},
-		ProductBrand{},
-		Product{},
-		ProductSku{},
-		ProductPackage{},
-		SpecificationDefinition{},
-		SpecificationValue{},
-		ProductSpecificationChoice{},
-		ProductSkuSpecificationValue{},
-		ProductPackageTemplate{},
-		StoreListing{},
-		StorePackageOffer{},
-		StorePriceRevision{},
-		StoreInventoryBatch{},
-		StoreStockBalance{},
-		StoreStocktake{},
-		StoreStocktakeLine{},
-		StoreStockMovement{},
-		StorePromotion{},
-		StorePromotionTarget{},
-		CustomerCouponGrant{},
-		CustomerCouponDistributionJob{},
 	)
 }
 

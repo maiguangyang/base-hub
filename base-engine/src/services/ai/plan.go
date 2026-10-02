@@ -87,9 +87,6 @@ func (s *ApprovalService) ValidateDraft(draft PlanDraft, principal *auth.Workspa
 		if len(required) > 0 {
 			return Plan{}, required, nil
 		}
-		if err := validateImageAttachmentStep(step, draft.attachmentID); err != nil {
-			return Plan{}, nil, err
-		}
 		if duplicatePlanStep(plan.Steps, step) {
 			return Plan{}, nil, errors.New("DUPLICATE_PLAN_STEP")
 		}

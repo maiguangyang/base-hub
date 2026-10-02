@@ -2,19 +2,9 @@
   "version": 1,
   "operations": [
     {
-      "operationId": "graphql.mutation.acceptMembershipInvitation",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "557b676bd006f0b88e34b04c23878155f26866aec14b3409005bd59869ffd1de",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "PERSONAL_INVITATION_REQUIRES_USER_SESSION"
-    },
-    {
       "operationId": "graphql.mutation.changeMembershipStatus",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b439e61fe772e0d6dd82e30d6dde732c9fc602a8fe41b1ba8cdd30a61a88e917",
+      "fingerprint": "3ff74fadee8009a8a4c3d069a6a622aea4bbdb4f666b67166a7795c48cb76a8a",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -24,7 +14,7 @@
     {
       "operationId": "graphql.mutation.changeTemporaryPassword",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "981614f805ef993a9c92f4180507dca912e6300d565aad4f353cd869f67697d1",
+      "fingerprint": "5e5de6cb98c635b6e0fe0ef6c745779d0238c4b70a123d75c65e42f2487a115f",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -34,7 +24,7 @@
     {
       "operationId": "graphql.mutation.createAccount",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "1ae85ea64f973516a81e23c7a6b89cc2445af1d6102b73110eecfb4f732122cc",
+      "fingerprint": "575bff5f1b5a91fa14086a9ad85663adf05ce34eb37dfa2a714817981ecbc50a",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -44,7 +34,7 @@
     {
       "operationId": "graphql.mutation.createAuditLog",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "0240f085f3a89152ff96d69d55729d212fb3c4f64eade9ad49e3dcfac8ea55d4",
+      "fingerprint": "7c66dcc4f12bcebebd2506d743a8c79b7ed7acad4fc634f0237bddf7ac9775fa",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -52,79 +42,9 @@
       "nonCallableReason": "AUDIT_LOG_MUTATION_DENIED"
     },
     {
-      "operationId": "graphql.mutation.createCustomerBenefitPolicy",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "4b7315fe1966def48125ded2a9da1fa9046412892438c55622405c7b545b4516",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createCustomerCouponDistributionJob",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "639554c7a6c1298c4207be446a9617af9288717e7906239f2177e5be0a68af7e",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createCustomerCouponGrant",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "07b193003852023db7c484b23edc641e53fce22b3434034fca2931a9243ce029",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createCustomerCouponTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "22117f3ba9f4de50fb68e816ea68e9b2f2e906fd2d09254cdcea36b48abbcde1",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createCustomerDailyPointGrantBudget",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b0bff06395779799f685348a8079b0792b2babc29d7b5e879d9c3283db2efb41",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createCustomerMember",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "d0a349eef806937597b17f371dc40e0add9d9f67c7603a82b0ed085beb7fbbb0",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createCustomerPointEntry",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "e763ee8c4bd15dc3c3491d6f2344b1955a062e4ce116827eec909961d04e5565",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.createFranchiseOpeningRecord",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "745d67e4fc13e36512d112b9dcdcd55d1074132aab35f1f88144392674dc43b5",
+      "fingerprint": "af7999cefb588285b1476dd9ac8038f20655c16b8a3dbc8981ec71f21e14cb33",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -134,7 +54,7 @@
     {
       "operationId": "graphql.mutation.createFranchisePaymentConfig",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "6defcacaa09f56ff01211c3dc23f6cde3c8e6372e3ee4ac4652dbce62e2d4106",
+      "fingerprint": "b37a5cfb41a7766b1a0124fa3956d247949f18fad5650f0dbf674f0a52c781cf",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -154,7 +74,7 @@
     {
       "operationId": "graphql.mutation.createMembershipInvitation",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "26ce3331d4b24d5b63643beddddcdbd7f72c62756fb8448fc4de978f7793de1b",
+      "fingerprint": "de04839f16b7aaf95cc5ae73ecf7b67c34c3d9525796d6beefdf13867abe6f84",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -164,7 +84,7 @@
     {
       "operationId": "graphql.mutation.createOperatorMembership",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "21d4f31f0d63f0700813adbf32a7c5ccf9893a3d06c9ee32ef6b140a38cba62e",
+      "fingerprint": "0874bf537fff4aaa4212575b15b3bd9b4c4d30fdd5a129233352a5825d4c7149",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -174,7 +94,7 @@
     {
       "operationId": "graphql.mutation.createOperatorRole",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "bc06b84c9185a9e0ff68c15ce5e67764f78963c0ca45a5582fb6b42a0851c7da",
+      "fingerprint": "364812aa2b9028157d0e227fdb373da8d1c05a1617f6f0f018e0657e35f27076",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -184,7 +104,7 @@
     {
       "operationId": "graphql.mutation.createOrganization",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "647610c3c9e235ce287967c515bb8537ef058cffafc2202050be246af1d8aba5",
+      "fingerprint": "24830ef1bf7d90dfbed88aa1b45bca1389afd56f35813ce535dca41614b81df2",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -194,7 +114,7 @@
     {
       "operationId": "graphql.mutation.createPermission",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "6de0e77f14bb02c3996f0fbc382d73638b4f59659d445d62f9b31755709ccb65",
+      "fingerprint": "40f3d176e975886eda0fad00fc269da929213f4735f448c29bf4b4aeef5c0071",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -202,89 +122,9 @@
       "nonCallableReason": "PERMISSION_CATALOG_MUTATION_DENIED"
     },
     {
-      "operationId": "graphql.mutation.createProduct",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "8e886a010fed17d80aa317007e0c40b1cbb7331b5ff9505393df5eb5ff12a932",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createProductBrand",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ff2101965e667f73cde2e5be7ddc01b54fe69d088bfa26edd2a102fbd72d2e74",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createProductCategory",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a17383967126d1fc75af6e2e4e6f29612be36e1203b9ca97907aa97c8dea8531",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createProductPackage",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "9006aa49f2df562e7c22ecefb9f05c1bdb251a5290743abda6cede801a78090b",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createProductPackageTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "5d0580989970d9dc0c5a3083d67dd39e232026e4b3bfed669b725fea8e9a2eb7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createProductSku",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a8f3f3c281c055a69c83d5ef7a48855da9fec8d61dbaf555afe2b81d789af20e",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createProductSkuSpecificationValue",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "dda63f2c72192d24ec0923b64fadbc07880035a674e89345a1958994292665c4",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createProductSpecificationChoice",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "45537052bb24d1488daac0500ca3ca0a7442c1067dd2a326a6a341e8fdbd57bf",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.createSession",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "7b7e592b1f78d12c9def0c99420b0cd7f146216ab9f6bc1a7f53a8e2d81e5e2a",
+      "fingerprint": "480a394742882e3cfaa50902a74d7ff6492fa13f24662da90113f4258df2b9a5",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -292,29 +132,9 @@
       "nonCallableReason": "SESSION_OR_IDENTITY_OPERATION"
     },
     {
-      "operationId": "graphql.mutation.createSpecificationDefinition",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "764db4cb3b051027f2764ae67757fe4f9798a69fb5acb93d660c9145e5963719",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createSpecificationValue",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "843394bc0aa531cee2a30296fcc5c2afb66da1b32ab8447a51ee2b2a0cf43ccd",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.createStore",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "68dbd5bc045215ff624c1307f9472866a62e9e658bb088b2beba335c35eb0eef",
+      "fingerprint": "f63b0485cfece6d19993a68b7faae32547fdac2b52723a68fbb750428ac68718",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -322,114 +142,14 @@
       "availability": "CALLABLE"
     },
     {
-      "operationId": "graphql.mutation.createStoreInventoryBatch",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "e198dde5b9cf0e7750c510feee2d078b06a7279d94b1d19c9dd395c7ed6286fd",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createStoreListing",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "4aa33b84cf8d89c17ab90731fd351d5a9bff0b2134eb2678e34136375b056b19",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createStorePackageOffer",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ece8929dc51f8e03073182495faad5543b16bf7b1d64f373a1b18fe4383f7dca",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.createStorePaymentConfig",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "871d2faa11b88480c8c77b8f96242ab382d3e550dfde15fe150898374481d2b4",
+      "fingerprint": "9b721cff19daeb23b0fb4591caf2f25a9f8d42735cd6082d62ee30427aaa02fe",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
       "availability": "NON_CALLABLE",
       "nonCallableReason": "GENERATED_PAYMENT_CONFIG_BYPASSES_PROTECTED_API"
-    },
-    {
-      "operationId": "graphql.mutation.createStorePriceRevision",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "9abc334ba7d9455d0724667756d4214502c4a60d0b35e1fdec05345f7912bd6f",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createStorePromotion",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ca87fa73875249a57f9cc5e50f9d33784dde5472c27386d7e26661c0901075b3",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createStorePromotionTarget",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a37d8fd7b08c0d253b1e3f7906d5a73063af7757557e77be3354fd311ac2790a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createStoreStockBalance",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "62793831b9d41a61cf5faf5c534050469b0a198afc96b5dc7f3c3feb1d38f7af",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createStoreStockMovement",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b1bdfc87984ed6f424f105c3a6647f22ba2e214e4debbda3edeeb6cf2bddb7b5",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createStoreStocktake",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b03c4680f3717665e9d7ba845e6fa820fb75628809f949a2ff8fe25691a5ae59",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.createStoreStocktakeLine",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "52d09098c2944d0b9852c795cbba7d267b412e5cf1125c8b61c85a4612fbd841",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
     },
     {
       "operationId": "graphql.mutation.deleteAccounts",
@@ -450,76 +170,6 @@
       ],
       "availability": "NON_CALLABLE",
       "nonCallableReason": "AUDIT_LOG_MUTATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteCustomerBenefitPolicies",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ffda25092011457b8fcae4dbcde5710ab2f5af1d4affe9a1fcc1574fcf1ae8b6",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteCustomerCouponDistributionJobs",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "2c256007c2de21934196526050da6c45ca7db67edf83ecb2c103584a63bcd8f3",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteCustomerCouponGrants",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "c560e996db45a151fc517b9c5221c94f6b31b0f31980301635c96916eac1031c",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteCustomerCouponTemplates",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "10735a18e08da49329fce7358bf9775140345378e7f37089c6c730cc5514f49e",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteCustomerDailyPointGrantBudgets",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "8408d0816e8984862c42ab5a472626403527cce0ad5c5568b40fa0f03e5cb16e",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteCustomerMembers",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "72dce4054f6c399604e9b9413f4d0848499a47a0d734427efbd8308ca85e4e36",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteCustomerPointEntries",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "c8df638181b5285f87f2fff7f7bc79945c0924df135b2cd3aa830a7cfc16404b",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
     },
     {
       "operationId": "graphql.mutation.deleteFranchiseOpeningRecords",
@@ -601,86 +251,6 @@
       "nonCallableReason": "PERMISSION_CATALOG_MUTATION_DENIED"
     },
     {
-      "operationId": "graphql.mutation.deleteProductBrands",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ff242f815d6ab013f986247faec512128d9e97d0d092ad6da378a23a534b6351",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteProductCategories",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "02a2e0ca605778ad90ddec2d2855da2996fb021d109b8c5aa372d04819744798",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteProductPackageTemplates",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "618e326b0d71858cee5004c64d473f025543586625096117f3f71b21250ab574",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteProductPackages",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f68ca25b00d915f1723987658af2e266b660f721837b0b99c8338c4083b7ffe1",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteProductSkuSpecificationValues",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a48b4893b7d8964f79693c0ba251a08332c8be7a68d8121888d9808198120233",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteProductSkus",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b2467aad0d78f271be243a43a36e0bf9c33a5c0e7a7438983f8b448f66e3fedf",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteProductSpecificationChoices",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "725252f2bdb627c737a4e3028867bb46f32b1aa6cd87a0a6a5842ed0289aa1b7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteProducts",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "043a7fe5cd371658cd872f4964f40f31036b0bc10efe2bf60dc1b52ef4e38a14",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.deleteSessions",
       "protocol": "GRAPHQL_MUTATION",
       "fingerprint": "337c987b27adf80c0b4d121951c0fac6b7847fccd24a3ef5f2af7bb9608f4736",
@@ -689,56 +259,6 @@
       ],
       "availability": "NON_CALLABLE",
       "nonCallableReason": "SESSION_OR_IDENTITY_OPERATION"
-    },
-    {
-      "operationId": "graphql.mutation.deleteSpecificationDefinitions",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "8a016ee740ec68c9df939e85a0c90dc97af3e78a4ecba422a2509c937d3248b0",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteSpecificationValues",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "09e2fcd3386663533d820d7a92b5ff30721a50a8f6dbede6daad91d0ffc08b54",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStoreInventoryBatches",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b7b57b997234a155ba5e8d6aabedb6222e4e0cd1fff32ae44a0019c98c9f7097",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStoreListings",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "4c46a1c4f744e1a0490c53ca812a034ad780661e64bed09c94ca369820f4cd11",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStorePackageOffers",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ff64c4bdd4a947f7f4affac6b32e86437480c92ab1a55511650062793d0129b7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
     },
     {
       "operationId": "graphql.mutation.deleteStorePaymentConfigs",
@@ -751,76 +271,6 @@
       "nonCallableReason": "GENERATED_PAYMENT_CONFIG_BYPASSES_PROTECTED_API"
     },
     {
-      "operationId": "graphql.mutation.deleteStorePriceRevisions",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "67bf0960b6dff916b0daaae7470bb2fd8dd0087b724a5fa04a721e302d6d80de",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStorePromotionTargets",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ea5867905d7e7ed0e54e98004e60b994467c7de8ddeb06ffb92fd1019563fedc",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStorePromotions",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "3a6d028a2e5c7be524906e3b05ec87285e0686f65ad4c639df722d2bd1fe855c",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStoreStockBalances",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "72643baf2c9b2a629be3a95488d1e4e23b1b20338d1877c7e6559f7ab913b57b",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStoreStockMovements",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "9bb697ebbffdf24892161273efa02a59fd5f17c22580784bea41d64974514bbe",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStoreStocktakeLines",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f5a0e7a5a64824f0083ab367d8fc2d3feaf923763158c66451e19a9fc00cc27e",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.deleteStoreStocktakes",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "12933d92a1ca7eaf9cc74b56e4bda5eb169973ded149e89a9db7d7507efcc1af",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.deleteStores",
       "protocol": "GRAPHQL_MUTATION",
       "fingerprint": "e50840547bb3c13567f180c27b30be28d59ebc4b38d9fa438800123f68521dcd",
@@ -831,576 +281,9 @@
       "availability": "CALLABLE"
     },
     {
-      "operationId": "graphql.mutation.franchiseAddStocktakeLine",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "26b5fe25403d2b41abaef76d25d1e1a55c7173de75ecbb430ffea46aa94db322",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseAdjustStock",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "1becd22d60ad0cd3cb9524f7898901bb8348458994afec6a4485500cc6346597",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseCancelStocktake",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "4dc5fc107cf5629f3129e6c3dc8ef145684e6bd1435436c7157f100427539c29",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseCreateCouponTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "cc89ab347c558a2c13ceb0c4f5b5657aac08783cab395760c502c5b532d5a414",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseCreateStocktake",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "7dba316f26de292549638c1844b939dcce09c734efb762c74212b11a398267a3",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseGrantCoupon",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "43a99926ccd6fcf78254d61df93676bd7ab276e5db978fd18c8205bf8100fa28",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchisePostStocktake",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "e366baa229043a22da8d211f3017c8daa879e135f3625d2a1257f22967cc3fd1",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseReceiveStock",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "55e509faa3b7a74439e0a2034bbb662e5c68fcd151ae95580b9b21bbac19efe3",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseRecordStocktakeLine",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "086204171f0b7b95f63102afa513ac6b65cd1bbd7afdc5ba561d269bbc023bc8",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseReturnStocktake",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b7033c1fe27a9502c89070783fcccfc910a99e385a8d1e44355811dddfc6ca84",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseRevokeCoupon",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "3429ac971586571ef2bd87229d493ef5bbf6997e92d38dd87f8b5e916252461c",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseSavePromotion",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "9d337aa585350702dd817539fe59409b677fc5154e00799ba073a3b276e03b7e",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseSetCouponTemplateEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "98804fdf29e16251010e5bcf00a9b158260f752559c18217e7f8acb4772e58e3",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseSetPromotionEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ef9e14f7ab06f0ed59733cc444b7a1f8d9a541bee72d39d57029597a7c9e7126",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseSetStocktakeReason",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "680dc35d4fb4039461142f83e08a5f15065778a6a6b45383fb35039559464dc0",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseSetStoreListing",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "e61d78e8eec3cbf5a0c5f50bd359cdd4d8e7fb90708e3bc14b12c36a6877806f",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseSetStorePrice",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "13aeab7dc25f899ce1b4d59cbee1cba0b7b015a301590118f9035d1b5ccd6bd1",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseSubmitStocktake",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "d629138fc921b863db8d35900c1d532198061b1f32e390195f9161c0cda03c28",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.franchiseUnpackStock",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "8fd8af2652b58d5ad56ebe47b73a9b2c9505e91a78fa34d32c89464d7a69f02d",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCompleteCustomerCancellation",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "c38cbde6ec807936799109160b334179b22e242caa1a7916f5a6244e14c696ef",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCorrectCustomerPoints",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "387d7e6024bbbf166604036ac381f0cbb482d7e430da5d6b21acf2c062567b60",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateCustomerCouponTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "6bc25e80d4f8deb301b117d29d71ca0ad895958fb1199b25754708b7a83bec7d",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateCustomerMember",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "4deae19b364715c7ea8d7ded2865e2f17a1efa1af36e88d1fbec19c9ba0c5f6b",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateProduct",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "dc10f82a264ecfd3a16c34390e4cb6f5c370ac8d70c5db058a5767cdabe0296e",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateProductBrand",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ff6bed814b8c437ffd2563e883358010ef0f12e2049b9317600902ceec5a29c2",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateProductCategory",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "70c129fd558dcb1ec05ebb1b2ae6b356cafe73f9997c9811a800178bbea1c9ee",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateProductPackage",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "0f696b89ab82f6149b2311c4d51ec9dac77304bedddbc629fefc4d11692cc082",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateProductPackageTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "e6504e1370d116702edb03506055ac94841688ca2c126ec0426844b70e8ac1cd",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateSpecification",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "c374edfe0e808629524ada504cf051ea943c7a224cc95d96cfaa3c3fef866092",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqCreateSpecificationValue",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ef24161c56b2bb1616bd9c6d6f62e67d399605b8c37eca5652dd2bdb620d46bb",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqDeleteProduct",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "21f87da58fa5e956816cc4e27a559e73bbcd9598b601eccb0417d5d16c8166c3",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqDeleteProductBrand",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "17a44c6d39568fb76072e5f5b2561f04cfcb6129a85d0a4bf875947c0f2e6dcd",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqDeleteProductPackageTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a1e4a9f2ff1bb5ee8650feb90da893fbaeb461d1c98e8d4da43a686149c29beb",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqDeleteSpecification",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a6c1eadadef3a7b6d88b032870cb7f3da070e182b88f08e61779cd41ab70e0c5",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqDeleteSpecificationValue",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "02b8db8f5ee9540c5921de51524a77e3e32e3a086fa2884945a11af16518355f",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqGrantCustomerCoupon",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "dac5495f6cf1723f1047506a3d4b538bf75db81b9836e25746032c3595f4a8d3",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqGrantCustomerPoints",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "91f807a6fa3ede6ba1909333e406fa132bc593f436f5d85ea9fd148e543e6c3c",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqPublishProductPackageSet",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "1dff930130a4d324c00b5d72dd15cb03a68e77aff9c897f271d26be334d721b4",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqRemoveProductMainImage",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "08351e97a73c208ca3fbac1b3d7376a08a0e3f46a3ff1e6df8725685e6a17eb6",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqReorderSpecificationValues",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "474700067415dbb964e7063649afa7f82615e6d64296c82730ece5a14b9704d2",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqRequestCustomerCancellation",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ba27fd70e51773608f13d1fb63625867e6703b68dda4f779338d07cccb19ae8a",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqRetireProductPackage",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b9591881f116caf62a691eb88bd15ba28b974ecbc771c18b8b0810fc4183e19e",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqReverseCustomerPoints",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "4b40b3bc5590d4522aabbe4077e4f1f5df88495644309f10b513ea092699f6aa",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqRevokeCustomerCoupon",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f8af40fd9ce45284ccd238f4c3c792d248cabd5124243ccbab010bf66541237d",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSaveCustomerBenefitPolicy",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b62dc957c9a73a4dbede8396dac4e65a6f84f24efac42c548d2bcee92170735e",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetCustomerCouponTemplateEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "3ca3cbe5a25a51ee6b6e0451ed2e3b7e21ea5e48d6a866ddf0955a780d7d27f2",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetCustomerMemberStatus",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ace823ff2888ecd633e6f06db47127994371f5b8add266a911e97d7b670100c6",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetProductBrandEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "4a4bd1ac98be59dc865501360b443b9a325c602dee966d6c1b461389d210b200",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetProductCategoryEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a161f75935cf2d2aa8756c15eda3c050e0ea3a353a42416764ce04aab50d360f",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetProductEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "7062744672393f40118738d1b208e963649d109f7e03263e64a48572bf0aa396",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetProductMainImage",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "57946cadd9107fcf1fe0c42ab27bfcc0cd68df05d826f9567eea070d83c843ae",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetProductPackageBarcode",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "e56f989b92d0c1ff623294e1c50c8afce8be33ec86a45394b184674acd09fd8d",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetProductPackageTemplateEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a085db5f55aa400097429dbf9a5106c6ad25845ed7752c2b75500bc6ec7304aa",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetProductSkuEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "7f90d5e16a052aa274abd49d5a97c4236b5636c2a5ac1003bd7e75db536adae9",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetSpecificationEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a8716369165c1c39ed400bdb993ade224d09836ee99faebb80dc7066a3abe0c8",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqSetSpecificationValueEnabled",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ac0c26893df71f9747c017fd50a196fd4b9bd68bf1471d21be262c977253548d",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqUpdateProduct",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "1e3670714204978999c27374095111f8a4b4d557f16c916c4cec83bd1275decb",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqUpdateProductBrand",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a3ad78dbe980e6ffcddcac10189b42b29454eecefd39d96f39619899ccb12bef",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqUpdateProductCategory",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "7da086a36ac2f461f4e9a639857ab46f237d0a45f50644af505037ffc55ce655",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqUpdateProductPackageMetadata",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ff5748a1546b4f1a151598cf158f565b3ae02bc44d01581be96b48f6c18ecf6f",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqUpdateProductPackageTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "cb3618faebfca05027b05ff0d9baa1a0371b1d88d619dbf8ddd3bcfb578b0e52",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqUpdateSpecification",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "d5e5643c86966651bb1d2e8f2163f27175a02784629f8b92e6ccd983762c2773",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.mutation.hqUpdateSpecificationValue",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b92c18ec17fc39383047f2386ea1910a13c6ec9fc1ae446e698df84c36409c3c",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
       "operationId": "graphql.mutation.inviteOperator",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "83f81e900eae8303942373b7250f02fefc5cef00fd54f85a522c85796d1802f7",
+      "fingerprint": "c099753a4e43a168037f6f9c4168db4d7316950211ba547111f3541f63f94e81",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -1410,7 +293,7 @@
     {
       "operationId": "graphql.mutation.login",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "614122b7fe27bbd704a0b2c0e066870e111dd68f27f9f88a7b3e741776732a36",
+      "fingerprint": "97fff10d4fd7ffbd1cc594e062bc86fb18bc03fd29ae6e065a3b78e0fc704629",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -1430,7 +313,7 @@
     {
       "operationId": "graphql.mutation.provisionFranchise",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ffeb14e291cc3331eafd87ca8e4a7d838addc634a8897f4d98d76a5a393f69cd",
+      "fingerprint": "886c297747a44ce582a1d6ac03bdcf261c2eea1b656262526b3d4876ede45433",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -1455,76 +338,6 @@
       ],
       "availability": "NON_CALLABLE",
       "nonCallableReason": "AUDIT_LOG_MUTATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryCustomerBenefitPolicies",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a6755c93986128d9767eba056754b1c88404bcf81372e7db80a1c5f3c482ca0d",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryCustomerCouponDistributionJobs",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "0ef8d663f68176c09f3d754d1456f958cbb7d5357060427a94aa20ae027c084a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryCustomerCouponGrants",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ff9c36f3c123625fa6b6f950d5667062520c10c9e296030f4e3fc0ea03d1581a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryCustomerCouponTemplates",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "20e279da8a96148e781ee9c4a630a29c1eaeac602eb084638b828434194ffe31",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryCustomerDailyPointGrantBudgets",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "88eec763aac1285d7fc5579971a8c4869edcd62988c39d05e12f036947dd1c7d",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryCustomerMembers",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ca042b5c4fcd38a35fcf4e85197bd6e8377e77c808970c0894ae0af6212f45c0",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryCustomerPointEntries",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "130dec709135ce55d5ff5ea4c14e5e02b9a3b390b63e2996306627d089aeeeef",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
     },
     {
       "operationId": "graphql.mutation.recoveryFranchiseOpeningRecords",
@@ -1607,86 +420,6 @@
       "nonCallableReason": "PERMISSION_CATALOG_MUTATION_DENIED"
     },
     {
-      "operationId": "graphql.mutation.recoveryProductBrands",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "fbd3544d10dab34ff49dec48ffccc86d8b3ac5659e1001a9abc9c251244296d8",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryProductCategories",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "71a6465a3bbb91fd2c4c97fcd1c21bbd47da7bd21f0f6b2f46cb59f798d45b8f",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryProductPackageTemplates",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "877eb2e78404cad5a7b2ca76ba4eabb1f1ed93a5f8071b17e3ec0e478664fa15",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryProductPackages",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "fd279c865f650cb56b4d6625401da6cebc1408b5bc92b6207bc0165c96364fd3",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryProductSkuSpecificationValues",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "756e0de818b0f009d1f03c9774f0fd32ba37da90759f730919879a0b7350d11a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryProductSkus",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "bf06cc0bab8172547b666704ca016479aebe457c09fe82ddedc6623a8d32e802",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryProductSpecificationChoices",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "565af5b030490c07c1d5a7720cc3b9304b2c9af018d53d8c3d77e4847735bf3a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryProducts",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ed8bda0d8d2495a9b58e4ad1629a91aa2e0f2e3b1afa99e8df2a2e36a0fd1ebf",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.recoverySessions",
       "protocol": "GRAPHQL_MUTATION",
       "fingerprint": "71554df55537c8cfd8395af766c2cfaf028289698c89d47a589cb3239492ea67",
@@ -1697,56 +430,6 @@
       "nonCallableReason": "SESSION_OR_IDENTITY_OPERATION"
     },
     {
-      "operationId": "graphql.mutation.recoverySpecificationDefinitions",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "38383dc8a8f3d0892f8b1d79f76608f8cecce3d31b65e20077353e626a31ac07",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoverySpecificationValues",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b55146e8c61d210802e22bde9ab7cbb7fcdd2159f47dcc632af55f0b154c1535",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStoreInventoryBatches",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "3edd6f922dc4bd4591570164afd4dd918df83114f4b4f2c817cd198436c7fbaf",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStoreListings",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f6561a3437aeba0bfd8bc22ac487f7adae76ab601409dbe2a532c06e81d7cde3",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStorePackageOffers",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b00245da38354952efe356ce365ec0a5d0df62c6759b1c7b456fe1563dfaea4a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.recoveryStorePaymentConfigs",
       "protocol": "GRAPHQL_MUTATION",
       "fingerprint": "2889e592181c78d997fa769fb0277f6c637deaa3dd737888d2f33bc860afebb6",
@@ -1755,76 +438,6 @@
       ],
       "availability": "NON_CALLABLE",
       "nonCallableReason": "GENERATED_PAYMENT_CONFIG_BYPASSES_PROTECTED_API"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStorePriceRevisions",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "560a4b553840c9c2f5a48e61a7a3efef2e45fcf85278bb4de487912a6e5dc7ac",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStorePromotionTargets",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "46ac185300320102406e77655408abd6493def0aabee180f9d7e4647653fcae1",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStorePromotions",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b28407a5431117b79ee9ebbee245fdf8ec930496e15c349d35afbfa3a537ec60",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStoreStockBalances",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "83f61939ddd869bd7dd76ea99860bd48b41270515990dd4cc0686a5fe15d752a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStoreStockMovements",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "91692a1b556eacf1098bd873a1a8d1512c996697c9e3cafbc0e6cbc7b5b16cf4",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStoreStocktakeLines",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "74fabbcfb1af0c01c833205876b7f912f706b5939e8d1de224acb0d14e9930d1",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.recoveryStoreStocktakes",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "e45f960392fc5b7e8c83b335538969c57a07ef91b3671adddd5f4373bae49d4a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
     },
     {
       "operationId": "graphql.mutation.recoveryStores",
@@ -1839,7 +452,7 @@
     {
       "operationId": "graphql.mutation.removeStoreDocument",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "83a4ba4ddedbbb32c7b111488444dffe181800ecd09dea747cc038e06420d977",
+      "fingerprint": "860f83c1d5e53f71fb6ac02bd235c4c3a2f5e115d8611647c189e9177dd04936",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -1868,7 +481,7 @@
     {
       "operationId": "graphql.mutation.restoreOrganization",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f23ca0d1ce1508da7872c8cab904936ace38b4bbec97ca33f19537d95c4d0629",
+      "fingerprint": "4728813262d267c1bf180de64494b89f9f9229964c7ba1445da0a21791d02727",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -1877,7 +490,7 @@
     {
       "operationId": "graphql.mutation.reviewStore",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "12a304f6f7a8b377099365a14914c750954be063994375a391de7f61b89d272d",
+      "fingerprint": "6f2b2b33c7603188a1124101665547fb034550c06c5cea91926b94c096838a34",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -1886,7 +499,7 @@
     {
       "operationId": "graphql.mutation.selectWorkspace",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f0cce2acec85b9f8e4c812ec76c6b96dff41dfa0f64dad111bc09ac6d23182b2",
+      "fingerprint": "40fe7a207abf09d229ce18572f60cff0d4f13dd20756b637ce25cb3e41c92afb",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -1896,7 +509,7 @@
     {
       "operationId": "graphql.mutation.setStoreDocument",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "1fe8aadc74c04338e8687e9b9b70e9d06533a26a4d42ef8a955d299dabc9a8ff",
+      "fingerprint": "0770625dab8c53b8244e241c9f0e38f93085a1490e5f80a28742f95610ad19ed",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -1907,7 +520,7 @@
     {
       "operationId": "graphql.mutation.submitStore",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "631fb3d69ae7d261f166401a29375ee0254e6f4c5f2291dfe3078aba8b3dfc54",
+      "fingerprint": "dab9e668439a705117e3df88bdc46b090afb81514f4e37b7302b3097e089196c",
       "classifications": [
         "FRANCHISE_ADMIN"
       ],
@@ -1916,7 +529,7 @@
     {
       "operationId": "graphql.mutation.suspendOrganization",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b3eec14c4a705d160187a7649b9de829d9961a2c82e6193a482a150f2468badc",
+      "fingerprint": "e8bf02dce461b4116fc30ee60b3435ce01c7f523dd230ba58b653629ef857984",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -1925,7 +538,7 @@
     {
       "operationId": "graphql.mutation.updateAccount",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "1867cb75b91ad231bc8f29092e20363b702cc770a39e6c5d681e2b0248a8e6c8",
+      "fingerprint": "ba16b77793940a484f9e5bc79b63c69f587e406af90c87d1279f500a5aa09176",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -1935,7 +548,7 @@
     {
       "operationId": "graphql.mutation.updateAuditLog",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "dc19ee79b341d86d8aa74d973863708b2dd22e8a01d7aa6a1822a3f462f279c5",
+      "fingerprint": "3de4a97da69c091861cc290acfce7379ae903920e1263b27241e6f4e92f4eccc",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -1943,79 +556,9 @@
       "nonCallableReason": "AUDIT_LOG_MUTATION_DENIED"
     },
     {
-      "operationId": "graphql.mutation.updateCustomerBenefitPolicy",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "dbfb6e10e5d1876254569abf72f602a244f381a0177797e378a28e413115a41e",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateCustomerCouponDistributionJob",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "61151cafb8320ae552f67ccae8db24f07e8aa3c6af112efa6079873f47c89d48",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateCustomerCouponGrant",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "22be20bbd47d4cc4f8f77167906f432aa46bc7c7bc67281ecbe9d6cb4b0da9a1",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateCustomerCouponTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "8d31c46f42a1b1664e0d3981ff9c94d066e3bcc112517c3e1caf7dfa60a85a8c",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateCustomerDailyPointGrantBudget",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "5681c506bc307e5a593d29da51993d5afb0a1abfe1399a962de302301a3f0535",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateCustomerMember",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "76133cca4bfb7fc70813bd4ac0260a94aaf81d9dc0930286bcebec060ed05485",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateCustomerPointEntry",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "62240df3c2242a2633e67b017685011ef67aa883e3bada6ac5886a8260d9f06f",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.updateFranchiseOpeningRecord",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "377eab9460e5a6b373cfcfac103abd087d2082169de327d7d0599a437a2ef326",
+      "fingerprint": "b63057765cc4c2ea2b33b1a21cc56ce92a1b84536681a60757128aeba281ed38",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2025,7 +568,7 @@
     {
       "operationId": "graphql.mutation.updateFranchisePaymentConfig",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "9e5cdec35c0b60f0a067daca798210031bf78865296b0c2d0c87d051dd56b5a4",
+      "fingerprint": "96b8fedbfec3633ff4c70fa19f03030db3a86ae4c479f81c435f02d5d9236754",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2045,7 +588,7 @@
     {
       "operationId": "graphql.mutation.updateMembershipInvitation",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "5fb8130ef1fa915ef5ab142906d0a34355582a58df5e851711a29e98830903e6",
+      "fingerprint": "ab42c63444b83a6f54e06e7439a1bba28ada2628cac7125aafe1c8e8029eac30",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2055,7 +598,7 @@
     {
       "operationId": "graphql.mutation.updateOperatorMembership",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ee34f3415cbcc8a48b328cc7fe505bbd36e27652f011a06a4f8fbf764c668ed5",
+      "fingerprint": "6ef5508e9a18b8bc549a239dc4e76733333d93178ae00c526b7aa23c21a7c20a",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2065,7 +608,7 @@
     {
       "operationId": "graphql.mutation.updateOperatorRole",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "16f5508265128b44c928b885d6222b2b011905df3db26ee1f85acd5b292c1a32",
+      "fingerprint": "f85fe8e0c20f7af115fdb73c0cd68583c80ea83bef1bb663d32d1bf13fc5fe5a",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2075,7 +618,7 @@
     {
       "operationId": "graphql.mutation.updateOrganization",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "4f45ac16f7cc5ca4b902dbb219e5ffee67f400acb14f413bfe90e0d4205ebef5",
+      "fingerprint": "502ba8cd5fbfa52a489ef1c1141bab4655f078ab842732152626b12a777dd1b5",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2085,7 +628,7 @@
     {
       "operationId": "graphql.mutation.updatePermission",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "dd48e038730c5168586e16d12579edd8fc0d28caa0f1053e03e27aff44d2db48",
+      "fingerprint": "7f69d6eb08bbe3e50fd1e1965264ab96688fa7f017d5539cadcc41c7d896e700",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2093,89 +636,9 @@
       "nonCallableReason": "PERMISSION_CATALOG_MUTATION_DENIED"
     },
     {
-      "operationId": "graphql.mutation.updateProduct",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "7faeb340861dc9d606f90297ba5900c001ad8638f717500ece68961375d7d3d3",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateProductBrand",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ae746ad52390ea7d7c80f9c207563be12c56075e448be163c0ec81e12fbff249",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateProductCategory",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a1a84068b2dbb80d0fffa5afba6a965b902b73da12a941c24230fa59216b7085",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateProductPackage",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "763c222f8b884e754cc9cbcca9c0f66ac6f95fc018f16fa55e929cde04647d9f",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateProductPackageTemplate",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "6db734e89b53c1ad89b7feb979c3fff6b6fbac635fc17d67988c6db0a20b695a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateProductSku",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f0c1f278b6584fdf7b8469596468aca768cd795e15eb41d7906124da4ea89c09",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateProductSkuSpecificationValue",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "ca0171038b4124b712532a480c704c354cef292ebe663ed2ffa10f0ea74effc4",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateProductSpecificationChoice",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "0942525c1db2fcb52ec6b99093c1daf711a7b0eecdfc291fea479fcf673efa38",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.updateSession",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f8a023d144d70a566812bf8a7624c96be51fefe572946ab5c599e3760eda6fb5",
+      "fingerprint": "18501af39f4c0e6fc5fd1d850d667009526275a4bb68728840b3244cfa640217",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2183,29 +646,9 @@
       "nonCallableReason": "SESSION_OR_IDENTITY_OPERATION"
     },
     {
-      "operationId": "graphql.mutation.updateSpecificationDefinition",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "5ea240e2494197aa38967cf7e010d07473eca0778c1e874d8d80b1c8afed9449",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateSpecificationValue",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "c83f0cf847777f77951a6d2994af503625668d68bc62116ef52d3c4dc294d857",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.updateStore",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "f4e4746dbf7219ae0ca00766bcceb3af0e3494f66928f29dd7f56456885c3c79",
+      "fingerprint": "e7d6053cce1f1cea4cf90af243a6cd38a50ffa0ec03b29ecb53552454d041d7b",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2213,114 +656,14 @@
       "availability": "CALLABLE"
     },
     {
-      "operationId": "graphql.mutation.updateStoreInventoryBatch",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b32319a157a0f39b8295234213fb23d7b7b67c53528d824010ff67004c0ca972",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateStoreListing",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "5875ca180e8ea71374b63777e625f288340b03a74df138cd45715ca11e261b2b",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateStorePackageOffer",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "eba0a37a0a21870bedadcf3ecc96226aa6579cf5a7bd931011ace96496cd857b",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.mutation.updateStorePaymentConfig",
       "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "a800c3757947e4f93a3d44ec5982d397d985ce0c76ba96a5eaaa96c38855099d",
+      "fingerprint": "c275705e967eea71a90b04d710bb3531fdd0d022a1ca278bad6a1ad4120c5d4b",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
       "availability": "NON_CALLABLE",
       "nonCallableReason": "GENERATED_PAYMENT_CONFIG_BYPASSES_PROTECTED_API"
-    },
-    {
-      "operationId": "graphql.mutation.updateStorePriceRevision",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "cdae211cdfffbaed7f8d954635342bd7e746af2e98aa12ddb732f9ae3db3da19",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateStorePromotion",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "58ef52b210a38557cbd8c519eaa5406b442d3faf7ea2185b7bc3d965043d864f",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateStorePromotionTarget",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "8c6a4e6a3f0f9a12566ce5e70bb5876d024fd4dec29c7dacc6252dbbb63775f7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateStoreStockBalance",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "6bbd221f1175736f24fe107adb8b5bc1958c7676e58119758070d2d3946c6e3c",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateStoreStockMovement",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "36271a97cc31347e91e4a00ae7719c0125667b8e77e7be97d9d84b9b08367468",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateStoreStocktake",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "b1f168f75d5fb1346b3bcfff386747f67e19a2ffe6b7cacb891579592271a1e7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.mutation.updateStoreStocktakeLine",
-      "protocol": "GRAPHQL_MUTATION",
-      "fingerprint": "3b2a7c527864b1dba0f638bbe6333f8083581431fdd97932a90b7cc73d7a056b",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
     },
     {
       "operationId": "graphql.query.__schema",
@@ -2345,7 +688,7 @@
     {
       "operationId": "graphql.query.account",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "0860d011c0dfa65816a81141d49298cd754c1ab29922c9bcce1045d5f29aff3a",
+      "fingerprint": "c429c2bb7ac860ded0137483b85785ff1f3bbb322bfd1a452ef1e02fc18e27fa",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2355,7 +698,7 @@
     {
       "operationId": "graphql.query.accounts",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "f9388369bf70530620400a81b483e5dac0b7e8d94fc30bf32beb47fcfe6ed2f5",
+      "fingerprint": "cd566f49af5a8c1cfb8591dfe37d35cca260cd48777fbc55c78e01ec3507ee46",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2365,7 +708,7 @@
     {
       "operationId": "graphql.query.auditLog",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "8c59986e8dd2a0bfea35572f89db8ec6a2d8afeddf595f2a4b0ced6cec8b85a6",
+      "fingerprint": "59ebd2e797f26c4ab761f59d6cdb891a6de05e60b89bad20c09bb02c99b1e558",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2375,7 +718,7 @@
     {
       "operationId": "graphql.query.auditLogs",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "6446f2a32f75501cd16341ec83bb682645fc540a6e5479a575b581f70554f5fc",
+      "fingerprint": "22b8cd8923039f0bd47240703bcfe51389bda77d9eca784941d59660744d1825",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2383,212 +726,9 @@
       "availability": "CALLABLE"
     },
     {
-      "operationId": "graphql.query.customerBenefitPolicies",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "013433f68d2f603e7be8eae061762252a3643c4d9d8b929e6616a8f47598af32",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerBenefitPolicy",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "acf873ff8961d755fa1775fb24c74517872d01c966f053781cf2031fb48cd35e",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerCouponDistributionJob",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "87f9d3a79e6bff2c239a6759a8c8b1935403146eec4c662f1b18e4df33a554a7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerCouponDistributionJobs",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "8a87fdba637cbbb82ffe030554c9c66a9a0ad1d9ea352d2305faca24955f4413",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerCouponGrant",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "1275ecf86e0d134a3e194f043ca02bd63d8be01574e4794f315528318d3afbe9",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerCouponGrants",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "277246e1d5ab6fcf9f79fb7a546d58097ea011bf64f00ad0686c5baf30f4f9ed",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerCouponTemplate",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "f3fe89c97a839fdce9a31efd0e86bc40f5273bb8c05fad6dd4783422cb8fa3ad",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerCouponTemplates",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "effd108ebccba48f099ec2ae161926d26b9e0c0c6b179d57bc4599b41e6838d0",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerDailyPointGrantBudget",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "2f67ac5437531f186e5907b2bd77133d4213c0e528718606d16403491813f1a2",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerDailyPointGrantBudgets",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "60fc683180d56a91a0c1eb05d29e326e825e170d41c5696ccd72a9e2c09e4103",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerMember",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "baacb5192adfa173fbb73f5dc45dd6c262f6a7c3db648b5fec0961136439c985",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerMembers",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "10b163f45fce8cc3c444fa59f86728625d982e95e9ee8b99d90a0e5754304770",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerPointEntries",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "f5d141357315ddd02185a3d40e0d3c4ce638b1d194e14bbf6e1c84841dc4a754",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.customerPointEntry",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "02ff81a88e767411ce09c091f82963101bde35a1260c42ac83b17df446efc8d3",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_CUSTOMER_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.franchiseCatalog",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "53c0b4e9ed876346e452fab51195f911374de3cda213c3307a3274252355f2d3",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseCatalogCategories",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "e495acecef58ba159bac9abb8029a8b5a672e4e9f5a8b41dde15909287449870",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseCouponGrants",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "fb3793b57f7abc60eb65c415d2edeeb4a1245c4c2c9a3aa5f86b9901158c265a",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseCouponMember",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "c71cd774788ddb4e5cfcce9f10eb2baebdcc7e3d666e928e2cdc0b7674ac43d3",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseCouponTemplates",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "cca34e82a2b822986322ca1fe4313230a871bb0d6bd51f1216f95f49f3c16a82",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseMerchandisingStores",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "bc6b5af703010592bf4440b08e5558c8bbd044e28e33369c3420d2d3beae88b9",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseOfferPriceRevisions",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "4c3ba0432ac4a67a2355ca80e8f445b8c152854d6ef6d45c50e2eefa73be7ead",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
       "operationId": "graphql.query.franchiseOpeningRecord",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "302b5b9eb0c60b58f3c9355dc69e785f5a229dbc851b1062aaa2170fe6707b7b",
+      "fingerprint": "f6866a5fdff76121fdbff59bdaaedf6a04b26d754bcf4527cded3f4793a729f0",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2598,7 +738,7 @@
     {
       "operationId": "graphql.query.franchiseOpeningRecords",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "7f39b54a3c304fd9e2f8e8eb5ea52dc0ef052a0224c136b4b18accfc1b3f9542",
+      "fingerprint": "83ddbf3a14803e64a080ffe9834f3deaa17e574d7b6e6e25574e124dc25c6616",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2608,7 +748,7 @@
     {
       "operationId": "graphql.query.franchisePaymentConfig",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "0ee25f31ba212f4cc2ce237cca06685cb64e8658f65af573b1540a81b573cef1",
+      "fingerprint": "efde91bd4ee2d70d2f738da55916eb9edef63f6d0eb773a2a62eb1b2967d6bcf",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2618,93 +758,12 @@
     {
       "operationId": "graphql.query.franchisePaymentConfigs",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "244ce5c6ae63c77fb79d86c79bfd0e74f698031378453f7050acc5a1956c4ba6",
+      "fingerprint": "c0d05f66ce9289175f17779271c78d78e0ccbc2ace85dde5aa52a65f792276b0",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
       "availability": "NON_CALLABLE",
       "nonCallableReason": "GENERATED_PAYMENT_CONFIG_BYPASSES_PROTECTED_API"
-    },
-    {
-      "operationId": "graphql.query.franchisePromotions",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "d8b5fecf89be9fa5ced9e5721f495e1eddbc2c2167ff5789e2d8ffc7abfe5145",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseStockBatches",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "d6d97986602ad7f5da6600067977339a27ee35d67d6a0fd024f2155cdf5701a9",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseStockMovements",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "53d0cc5975ea88cbaa84f51eee1ab965809b97527b112ae88fd093f57c8c9553",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseStockPackageByBarcode",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "c7684919aa7e762317b3623c5340f7ccdfe29bae29ad0fd4de7503ae8e81e9c5",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseStocktake",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "717f747c575c21cc215f7bb42d5ce5838f669e5ab5796831caa456d5cb3bb033",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseStocktakeBatchChoices",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "9db5c30774eabd6b0d4711b0c8a243c65ba3659e9993ba760ef8513e87f31058",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseStocktakes",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "2ac42111b9d0fb63a94b1341a14dacc5f0023ae2f5456b07f1fef58ec59ea815",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseStoreListings",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "8e6206d25f194b1388db376713278714205626cf6a3a3a5d5d55a8ef51db2aa8",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.franchiseStoreOffers",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "dee8a96863a6021a58e4894f2e7179b157dd908db2374581b7c48bec2bd0fb31",
-      "classifications": [
-        "FRANCHISE_ADMIN"
-      ],
-      "availability": "CALLABLE"
     },
     {
       "operationId": "graphql.query.globalPaymentConfig",
@@ -2727,153 +786,9 @@
       "nonCallableReason": "GENERATED_PAYMENT_CONFIG_BYPASSES_PROTECTED_API"
     },
     {
-      "operationId": "graphql.query.hqCustomerBenefitPolicy",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "c158db87a61151fed33711acc06712201ab1b83f921cafd6f3d0c1c4e8463a9b",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqCustomerCouponGrants",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "688cec607bf20c3d94b8668bda9ac781a4ecf0e727e0db406fab1ec8798d444d",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqCustomerCouponTemplates",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "8d8ae3c2abdd8f503ef7cac026468b2c60c88615418aca4ae50f24a4bb8d4c11",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqCustomerMember",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "4d4132db93aeb7eb2b8076467ba9d4bde5de361fe54fc4059cdbe08845d94b42",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqCustomerMembers",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "8d105ce2634ac01a714c6b1207629b577934b0a70e3eb0144d5cfc0cf37e0615",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqCustomerPointEntries",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "35d6f8b64236587cab895f2ac87605ca9be3f2f093b8a1c7ec1058ca6248bff1",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqCustomerSensitivePhone",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "05bdf526364122e7beb8fd6b863e394ced341e229d4f5484699c0e264bf38590",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqGenerateProductPackageBarcode",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "34d66b8d75a01d39c76c8ba27d1626e1ac35b0fb894be8f679e066b14e06f54a",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqProductBrands",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "7fd638d3acaa8ac2ce56edf186954b67fc31bdbcbacd6307c8a4118b6adefcf8",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqProductCategories",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "11521195eac2b84d2e4b7a0139e2a665ec1912848e212462521c9181f3ad847b",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqProductPackageTemplates",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "8ea41dc5e8f9abfbcd995e25c7859c7122c672d4dc27a2d63c0d5f328c463fc3",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqProductPackages",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "9358f2a23d66ef4c638d032c7cba56f45c70079f832de5c305603f9a36c722e8",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqProductSkus",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "3540fd83ca7825608d52d66ba766794856435369755bc92491f7243582c2f393",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqProducts",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "1bf1fd5e5ed16de3576ea551c373f30eb96d1a7e1777a008a1a7e36b88e1a73f",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqSpecificationValues",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "8581c235c76335eb71cdd2579bead4fb192d6d4fa68e076937a532f71967d3e3",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
-      "operationId": "graphql.query.hqSpecifications",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "99f452bf861a7d56b664696d5606d16265622ebfe4e399fab4985ac253411e4e",
-      "classifications": [
-        "HEADQUARTERS_ADMIN"
-      ],
-      "availability": "CALLABLE"
-    },
-    {
       "operationId": "graphql.query.membershipInvitation",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "dd8c3fbb222ecb44adea8cc8b6ab3632b79e8198823e1cea4afb79f1cab8afe0",
+      "fingerprint": "f4b8cc8d99f54a8dab493e06c54fb5106b3308b4a6cb2838ee7f1064d45e88a6",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2883,7 +798,7 @@
     {
       "operationId": "graphql.query.membershipInvitations",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "f2aa9f3ea4840171fa22a777365b19bcc53221e4694933bafb33196f5d68e747",
+      "fingerprint": "d02a246c3d4cf56e5ef3f8e54f32321d5d815384754c4137daa50648a11b53c2",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2893,7 +808,7 @@
     {
       "operationId": "graphql.query.operatorMembership",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "3db50947db74253c9a05c1ce00a67b07c9697bcbd57a1759b85b6095cb6f0ea1",
+      "fingerprint": "314e0779f64324e0bd0cbc77117633bcfc1ee2065b2e3329cb26e2375eecc1d4",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2903,7 +818,7 @@
     {
       "operationId": "graphql.query.operatorMemberships",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "a94ee9e7c99483ddff1631eb5d826ca85938c6d4dc3f36a3aa85d1368f8e8462",
+      "fingerprint": "c44d3cd9c7c88949c00cf6cdc29a14471cc78aa3232d6837bc323f71142fdb36",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2913,7 +828,7 @@
     {
       "operationId": "graphql.query.operatorRole",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "46aa0732efb484ded0dfe8c9708f6ff417b14aab4ef39212d48260b57d41da45",
+      "fingerprint": "960f4f88d7f30b6de9038ad09dddb58b230d2016ca8ecd05d5fea9a21b23c5e4",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2923,7 +838,7 @@
     {
       "operationId": "graphql.query.operatorRoles",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "3b77ea89b02b0d502a652659430b7ffc070487a926961d0f50f8cdf0d501f3d3",
+      "fingerprint": "eaff28bd55db8204e92d5c792cc3703530c5c50bf0acd4d587694171775f3804",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2933,7 +848,7 @@
     {
       "operationId": "graphql.query.organization",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "c59140096684af24451fe409d913062deff29004e22647bc2e6e5b821cdf92cb",
+      "fingerprint": "f4c9d2af393910320c5825bbfd6653e283a8a592acabb72baf97ec81d37f4e23",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -2942,7 +857,7 @@
     {
       "operationId": "graphql.query.organizations",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "b8527af65f753c5d03c13a816cb660fc9626181e075cd180819b40294f03eff4",
+      "fingerprint": "a9b899513c3d1c8efd984575080cc21ee71ac7609f5b6a79da49bbf742a19847",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -2951,7 +866,7 @@
     {
       "operationId": "graphql.query.pendingMembershipInvitations",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "d650e0e481302f477c05d3af66b292b70dd7179c3752e6f77448a86f4c8fdcde",
+      "fingerprint": "bf0239b4fe85d2f260f7748ef9f239a7beeb572a755356a53bc43499b621edf5",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -2961,7 +876,7 @@
     {
       "operationId": "graphql.query.permission",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "fa2e2ac998593ba65aee5cdbd6935880ac05a161371f02a5c076a2339090f28c",
+      "fingerprint": "f5f06595d9924ea6cd710862e7ec20770158d1990b9847668719f2e411cfcca3",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2971,7 +886,7 @@
     {
       "operationId": "graphql.query.permissions",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "71e0c50cdf84bd83b860997d9840c78baf4d7428a7d4e222cf38040beb7a79e1",
+      "fingerprint": "53c8bc43274bebf24688780349a9e2defbf2cbd3027522970cd2c265f2adaf22",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -2979,169 +894,9 @@
       "availability": "CALLABLE"
     },
     {
-      "operationId": "graphql.query.product",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "43554f556ba1c421af00ca9eadce1f46157674fb99b02d436be1b96f34a2e6c9",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productBrand",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "986a1d4bf478025b64f864a195708e6f62c60549b120d3b4f6d20f28da4318a9",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productBrands",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "0ce7fb131954e91e256012ea67e419cdc9dfb1f3d35992be42546364585a89d7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productCategories",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "238785bcf153164c3611af22056e54055967946869c05fa27063434a6937a7aa",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productCategory",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "9001bf5813d7814df8924a03eb0799ba0145ca2fbc40a6e697f4d381afde206b",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productPackage",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "c69cd7bf9476a5433173cc040b696348b54878c59654d73f1b507dc0016cbfe9",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productPackageTemplate",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "b0ae75b54c89e19f87497ce2c97750b6aa45cd89689a6c4a8a4e8f47124a7d35",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productPackageTemplates",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "c5db51faa38dbf1f90f3c26142d18772bc0d5812a5d7ab2bb0c5e82a064793ec",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productPackages",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "ed7bb69e15a4f617746239128dd68a69339436510f098c59b8556872185cadf2",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productSku",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "096e6bf2d353197a07c1b68e926ffa8cb24f79deab848ec101775c0b23b6c9f5",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productSkuSpecificationValue",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "856bebc1c08ea414c8e8b57712c4490264c0ac2887b54ec6614ed35999325fe8",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productSkuSpecificationValues",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "7a642fe25f454756143d73a38d30371253e79fd0469677df0892fa96a4a790f0",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productSkus",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "d13ce8f4e2171cd6c19e6e04f1b85fc755c77595678e9392aaa371cd3b1ebacd",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productSpecificationChoice",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "b1e4d4849a80a170a369e4dfcd6e21b09dfcd1c3dfa15632f40e0740da6de4cc",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.productSpecificationChoices",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "9f71ad907fd5a5cff33fbad90b329844548c2342aba13493f3a5893b7bfccfd7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.products",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "cce24b0068af1db667c6cc10d03f9a43b0ed7791ceedc5ba123cd4ce5a2a5db9",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.query.session",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "566ba025f99a1751388675aa44024fa765fa9b54a63cbe7697faeea042d53d11",
+      "fingerprint": "b2d903bb2ca9befaa8b6e81cf557b58dff2a905e6df3210adebd92eb57e5a140",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -3151,7 +906,7 @@
     {
       "operationId": "graphql.query.sessions",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "f4a75f4a5149c8221f87598f538723223d995f0b4f671b10d5499319080b4bca",
+      "fingerprint": "86871dc5509060f001b6a646ca26e64829f0640b1ba6f61ce6b4977fb732c24b",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -3159,49 +914,9 @@
       "nonCallableReason": "SESSION_OR_IDENTITY_OPERATION"
     },
     {
-      "operationId": "graphql.query.specificationDefinition",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "b37b9b235606e8ce48ccd8fc189ad854b58afeeaabe85bfa38c2debba8af7fa6",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.specificationDefinitions",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "9ee7004c7a179a2717010a9e3ea95af420f292226e1457931790333408002521",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.specificationValue",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "5fb6486dc0e85e57d55615b19bcf5279ef09dca85a93459bf923fc84c18f2637",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.specificationValues",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "90448614a6f20d02022c2ef03a660d2fbd9ba6ae34066a1777a9c69fbf0452ae",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.query.store",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "69c167ab16c422924677245e8c9b137d699069abb93350252b5fbf5fc181be2e",
+      "fingerprint": "2ba24c4c701cc882f0a554cb276c27bf86ad25700b20035b9ac1b8352dc6b8f9",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -3209,69 +924,9 @@
       "availability": "CALLABLE"
     },
     {
-      "operationId": "graphql.query.storeInventoryBatch",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "9cebe16635e6c1cacce98a1eff9ffcf5f8da1e5f343ab5cf96f3bb1a0d0701b5",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeInventoryBatches",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "9b6fb05267a6e2f302f7a59ceb510c12d6ec32ef3358c7056ee3bed89c8848a8",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeListing",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "bf4793386b2a4f51e86394025d65da9e0c5238e7d544174c0b3d0bd76f996a83",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeListings",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "6b3d0050c663f8b2d5e572f3466cf6420444c64d27ffa72cf848716ae3f3b5c0",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storePackageOffer",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "1e48f3d75b669231cda971b6527eb79938d25c939e7540b588ab66a1bd5a1f82",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storePackageOffers",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "737e7e2ea42a4af8d55b15bde725563b5755cc307d20e77cdec77adff6c4fe97",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.query.storePaymentConfig",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "5a80e1346ec83fa4de21285d0a4b36bc4183662d3fc71206fb466bcc15fbd699",
+      "fingerprint": "f52d5c4366b12a5e1f617548e07acac4be3b784e85ea5d8450c22081312550ef",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -3281,7 +936,7 @@
     {
       "operationId": "graphql.query.storePaymentConfigs",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "a133e74ac1884b758cb2e4d98ae558321abd552494719e3ad165c0eb5bcec9b6",
+      "fingerprint": "e7d2dd4e011e86da745c6f197e1ad370cd83289207606bc287a8dfbe53e7746d",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -3289,149 +944,9 @@
       "nonCallableReason": "GENERATED_PAYMENT_CONFIG_BYPASSES_PROTECTED_API"
     },
     {
-      "operationId": "graphql.query.storePriceRevision",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "c30e8d3dfad116c004644b7df794c1b59bf0747f8c5d78058db16289fd11abbd",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storePriceRevisions",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "1cc8846e8912594170c29ec46c5b2d47467ed449aecf745d6a2ea4874f9b23c7",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storePromotion",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "f5b121c0935a1791eae11a8c682ea9fe7eb25b59e6a232357e6c34b45a66c567",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storePromotionTarget",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "ee165fa86b7f75a55bdd8c2f90e588452bbced2430b7a78db9419a7e788b0368",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storePromotionTargets",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "3cd7c673ec34c15fb9be03c6f4f79f70f77321833ea07ae19fd84cefbd5469d2",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storePromotions",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "c6da99da2ffbf2ec2bbfb7c2efa2f83a3180c249918b1503399cf03e7b61698d",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeStockBalance",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "e5d8c479e3d7f9a156373461e1289fb20bf1cf5fca3824d267ca810f191af04a",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeStockBalances",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "9c5d49fe73f9610b54399116fff24e74a3b26aaa9876f32105e9bd6231cc74a2",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeStockMovement",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "8c4a44f477a97656be95693e989f21253a6f798cb3b5a0106b0292a41af30151",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeStockMovements",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "67b2809453fb9dba1043c05236aa0ea35f4e8619e61b13281b6727f8345ffc63",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeStocktake",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "ad9aab0e5c230d7755694e6042b3fab59ca42844613eeef1a8724583f420210b",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeStocktakeLine",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "2e4cbe5130f3d4fccf4c9dcbb841cb3fd40550e2febdfb3a3730b5c458bb73a0",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeStocktakeLines",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "32ba8e240fc3f286b2ecbeadbad262c20ee8239d61a6219eb1b31a2ff7385076",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
-      "operationId": "graphql.query.storeStocktakes",
-      "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "307f034e9b35375b4042c5cac0ab2d1526a4462913aa54b58670c366a8f880eb",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "GENERATED_PRODUCT_OPERATION_DENIED"
-    },
-    {
       "operationId": "graphql.query.stores",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "aaf690e5cb50c98ec1e2c1a2c73c6f9f569dbbd533310ce708859574cd15b835",
+      "fingerprint": "dcc751baf8d9953a6b80f8beba741892b6bf92cbc1a61efd835f842435fa61e2",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -3441,7 +956,7 @@
     {
       "operationId": "graphql.query.viewer",
       "protocol": "GRAPHQL_QUERY",
-      "fingerprint": "45420c3f6cfc864531c6d3017121ad5b25a2bdb482b5e244d7c77396daac0e1c",
+      "fingerprint": "2fa86716e50681b962262c972572e4cc52889908ce71a9ecff7d47db13509b07",
       "classifications": [
         "HEADQUARTERS_ADMIN",
         "FRANCHISE_ADMIN"
@@ -3510,7 +1025,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "GET",
       "path": "/graphql",
-      "fingerprint": "600cea1bc831406330ccaf6bf18bad4b87ad2c23638ff75d2674d8a413b7d5e4",
+      "fingerprint": "5a6237b227cec21411e9f2c9e2d0f659c7d1e9b8725b3688bd15bb5f4853288c",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -3522,7 +1037,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/graphql",
-      "fingerprint": "be90368cf0d77f207c6efd3d94e942ebe4c61289bc12c4f720d81bff59adb749",
+      "fingerprint": "b6df747317a85621d3fdb84e07ea7806d1aa5f26f0719b8e4f98085400388928",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -3534,7 +1049,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/ai/preview",
-      "fingerprint": "6bab453f6989c4db738dd6c94bf029d55155fa355fe47945b0052f4714cf92d9",
+      "fingerprint": "4da9d6a20124549cb108b1228c0ed99dc32990bc7c03cec696c718b3405e2ac6",
       "classifications": [
         "HEADQUARTERS_ADMIN",
         "FRANCHISE_ADMIN"
@@ -3547,7 +1062,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/ai/run",
-      "fingerprint": "d589ccd83870ce5ba68fe39f134e9d8ec78a5fb7715f01db23a7b2b4454c0571",
+      "fingerprint": "db01f043e1b6c95b59a73cbd1f0ab36b861ea3408536887c1d3b7d02ddc0430b",
       "classifications": [
         "HEADQUARTERS_ADMIN",
         "FRANCHISE_ADMIN"
@@ -3560,7 +1075,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/ai/model-config/activate",
-      "fingerprint": "22ff567d7ea88bae9bfd0c6159314388a6ce7006f175c8a5518a3ddd5c9d1c6b",
+      "fingerprint": "cb502b6ac3847860be408495e7563d66342a14f6ed242a7563aa258b4c997d74",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3572,7 +1087,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/ai/model-config/deactivate",
-      "fingerprint": "29586fe98904c333bfd17dc69dceec9ef9c0d599af9016659e5a962d8b5ae2ae",
+      "fingerprint": "9b2fb0398568bc67af59d653bb38db515218f7f546578e253e92725c4bbd0ce3",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3584,7 +1099,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/ai/model-config/probe",
-      "fingerprint": "37f9c04a6ce301094df7756e43c72d199a600a4266b8b0d8233ea4fd379a612b",
+      "fingerprint": "96caceade5865ea739cc20c33fe67e02e22ea46165ced6cc51c74c516e1f1b4a",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3596,7 +1111,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "PUT",
       "path": "/api/ai/model-config",
-      "fingerprint": "e5ac5095558e24a2a61f4827c9f01a8cc44f147f67b831a120c259bd6dbe29c9",
+      "fingerprint": "6727b08091cdc7f6ba043137913bf1aeb849fdaae1b53449c5503dd8f5197158",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3608,7 +1123,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "GET",
       "path": "/api/ai/model-config",
-      "fingerprint": "3176fa1e70cc32cfc3a474d96d5e410cc14b7cf637b1cf6d72e8c63ce93847fc",
+      "fingerprint": "a3c009a5493171c7cf4581815fcf7d571a6f2ea5ff36be84e3950ca458684c54",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3620,7 +1135,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/franchise-initial-account",
-      "fingerprint": "b32f3180391030d2d33322f674b810d6107f5e4cf2867e21fee09948c35a76b9",
+      "fingerprint": "111c317397a529ed86f0f1a76473a35346bf277ba7a3092d2ffb858753a8e952",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3631,7 +1146,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "GET",
       "path": "/api/payment-config",
-      "fingerprint": "dc068777b71ce6ca012771b26f8a5574d49361e70c7a5cf7dc086eb167af089e",
+      "fingerprint": "5e285a0c3d21951f7e7f206a7a1c03589a7606c8c8ff37f3b22a535cf81b9753",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3642,7 +1157,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/payment-config/restore-inheritance",
-      "fingerprint": "5003ce2960a1e2981287093a9b7e4abc09e51521f8c770a5019ae89e8cac46f4",
+      "fingerprint": "046ca070195c7d0ade590decf909fec0188b95fe39382adabca0440c2a4b94ce",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3653,7 +1168,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "PUT",
       "path": "/api/payment-config",
-      "fingerprint": "f00e59667e3910b6746042cff841213020641841c0a208cb71068e63e31c1b18",
+      "fingerprint": "febcde7ac8f0eb798125a213ef2f00fc09913cf36ef03077544ac1fc39bdb6be",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
@@ -3665,35 +1180,11 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/payment-config/state",
-      "fingerprint": "509f490176c80975ee7d6a60ef9ed2d812d9e86ca19f0c94cdf657adfc2f80fd",
+      "fingerprint": "c00cfaef3322827cbfbffbccc60ef3e20cd943250ed670b7c375091c52774922",
       "classifications": [
         "HEADQUARTERS_ADMIN"
       ],
       "availability": "CALLABLE"
-    },
-    {
-      "operationId": "http.productMainImage.read",
-      "protocol": "HTTP_ROUTE",
-      "method": "GET",
-      "path": "/uploads/products/{productId}/{filename}",
-      "fingerprint": "92135413568170d9aca3cdc66217739af5b4a9e9506aaa59fc644f5862c174de",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "BOUND_IMAGE_ASSET_ROUTE"
-    },
-    {
-      "operationId": "http.productMainImage.upload",
-      "protocol": "HTTP_ROUTE",
-      "method": "POST",
-      "path": "/api/product-main-images",
-      "fingerprint": "c0596b640414b0516090ddd1d3996067085ea1987189c2606932b26e0ef82f53",
-      "classifications": [
-        "OTHER_EXTERNAL_API"
-      ],
-      "availability": "NON_CALLABLE",
-      "nonCallableReason": "USER_BINARY_UPLOAD_ROUTE"
     },
     {
       "operationId": "http.storeDocument.read",
@@ -3713,7 +1204,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/store-documents",
-      "fingerprint": "1575430548ade4fc736d7b9275222d89cf801d0f3f22d9f720074e94e933e261",
+      "fingerprint": "7b296eba5fea7444fa63bbdc1132202b1146b606b2d9bc79af4f2854235a1a02",
       "classifications": [
         "FRANCHISE_ADMIN",
         "HEADQUARTERS_ADMIN"
@@ -3726,7 +1217,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "POST",
       "path": "/api/system-initialization",
-      "fingerprint": "0187e0253d40fcbba1f0720acd26943fa9787fca4fde2b8f6aef5c36c5a6d299",
+      "fingerprint": "69c30460f23f9cfffca773085375da6b7650a6ed093022a69bbed21979b6a878",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],
@@ -3738,7 +1229,7 @@
       "protocol": "HTTP_ROUTE",
       "method": "GET",
       "path": "/api/system-initialization",
-      "fingerprint": "0a9c775a59ca8df423996cfe2e3c58f94249bbdf538f4a53f2bed7ca837ce311",
+      "fingerprint": "592cc4a5144f21c0fa9307c65756e2146abca9a6cb51bad28cd6050cf867e0ad",
       "classifications": [
         "OTHER_EXTERNAL_API"
       ],

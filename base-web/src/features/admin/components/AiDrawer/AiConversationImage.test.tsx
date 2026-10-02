@@ -31,7 +31,7 @@ it('复制整段会话时包含所有轮次并保留工具展开状态', async (
   ];
   const state: AiSessionState = { phase: 'completed', messages: [], transcript, secrets: [], interrupted: false };
   const session = { state, startPreview: vi.fn(), confirmRun: vi.fn(), stop: vi.fn(), clear: vi.fn(), retractLastExchange: vi.fn(), canRetractLastExchange: false };
-  render(<AdminToastProvider><AiDrawer open onOpenChange={vi.fn()} session={session} showSensitivePhoneNotice={false} /></AdminToastProvider>);
+  render(<AdminToastProvider><AiDrawer open onOpenChange={vi.fn()} session={session} /></AdminToastProvider>);
   fireEvent.click(screen.getByRole('button', { name: '复制整个会话图片' }));
   await waitFor(() => expect(write).toHaveBeenCalledTimes(1));
   expect(captured[0].querySelector('[data-ai-tool-group]')?.getAttribute('data-state')).toBe('closed');
@@ -60,7 +60,7 @@ it('长图生成期间禁用截图按钮以防重复复制', async () => {
   const transcript: AiSessionState['transcript'] = [{ kind: 'message', role: 'user', text: '需要截图' }];
   const state: AiSessionState = { phase: 'completed', messages: [], transcript, secrets: [], interrupted: false };
   const session = { state, startPreview: vi.fn(), confirmRun: vi.fn(), stop: vi.fn(), clear: vi.fn(), retractLastExchange: vi.fn(), canRetractLastExchange: false };
-  render(<AdminToastProvider><AiDrawer open onOpenChange={vi.fn()} session={session} showSensitivePhoneNotice={false} /></AdminToastProvider>);
+  render(<AdminToastProvider><AiDrawer open onOpenChange={vi.fn()} session={session} /></AdminToastProvider>);
   const button = screen.getByRole('button', { name: '复制整个会话图片' }) as HTMLButtonElement;
   fireEvent.click(button);
   expect(button.disabled).toBe(true);
@@ -74,7 +74,7 @@ it('长图生成期间禁用截图按钮以防重复复制', async () => {
 it('会话截图按钮在聚焦时显示操作提示', async () => {
   const state: AiSessionState = { phase: 'completed', messages: [], transcript: [{ kind: 'message', role: 'user', text: '你好' }], secrets: [], interrupted: false };
   const session = { state, startPreview: vi.fn(), confirmRun: vi.fn(), stop: vi.fn(), clear: vi.fn(), retractLastExchange: vi.fn(), canRetractLastExchange: false };
-  render(<AdminToastProvider><AiDrawer open onOpenChange={vi.fn()} session={session} showSensitivePhoneNotice={false} /></AdminToastProvider>);
+  render(<AdminToastProvider><AiDrawer open onOpenChange={vi.fn()} session={session} /></AdminToastProvider>);
   fireEvent.focus(screen.getByRole('button', { name: '复制整个会话图片' }));
   expect((await screen.findByRole('tooltip')).textContent).toContain('截图并复制整个会话');
 });

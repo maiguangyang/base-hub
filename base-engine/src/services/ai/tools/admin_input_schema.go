@@ -74,30 +74,13 @@ func reviewedInputSchema(spec ai.ToolSpec) (*jsonschema.Schema, error) {
 
 func describeReviewedField(spec ai.ToolSpec, name string, field *jsonschema.Schema) {
 	describeInputSchema(name, field, spec.Title)
-	if spec.ID == "FranchiseSetStocktakeReason" && name == "note" {
-		field.Description = "盘点差异的可选补充说明，仅按门店确认的事实填写，最多 256 字。"
-	}
 }
 
 func constrainMemberPhone(specID, variable string, field *jsonschema.Schema) error {
-	if specID != "HqCreateCustomerMember" || variable != "input" {
-		return nil
-	}
-	phone := field.Properties["phone"]
-	if phone == nil {
-		return errors.New("MISSING_CUSTOMER_MEMBER_PHONE_INPUT")
-	}
-	phone.Pattern = `^1[3-9][0-9]{9}$`
 	return nil
 }
 
 func applyReviewedEnum(specID, variable string, field *jsonschema.Schema) {
-	if specID == "HqSetCustomerMemberStatus" && variable == "status" {
-		field.Enum = []any{"ACTIVE", "SUSPENDED"}
-	}
-	if specID == "FranchiseSetStocktakeReason" && variable == "reasonCode" {
-		field.Enum = []any{"COUNT_DIFFERENCE", "COUNT_OMISSION", "RECORD_ERROR", "PACKAGE_MISMATCH", "OTHER"}
-	}
 }
 
 func removeTrustedSpecFields(spec ai.ToolSpec, schema *jsonschema.Schema) error {

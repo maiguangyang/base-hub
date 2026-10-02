@@ -25,14 +25,9 @@ type PermissionSeed struct {
 var systemCRUDResources = []string{
 	"account", "organization", "permission", "session", "auditLog", "franchiseOpeningRecord",
 	"globalPaymentConfig", "franchisePaymentConfig", "storePaymentConfig",
-	"customerMember", "customerBenefitPolicy", "customerDailyPointGrantBudget",
-	"customerPointEntry", "customerCouponTemplate", "customerCouponGrant", "customerCouponDistributionJob",
-	"productCategory", "productBrand", "product", "productSku", "productPackage", "specificationDefinition", "specificationValue", "productSpecificationChoice", "productSkuSpecificationValue", "productPackageTemplate",
 }
 var tenantCRUDResources = []string{
 	"operatorMembership", "operatorRole", "store", "membershipInvitation",
-	"storeListing", "storePackageOffer", "storePriceRevision", "storeInventoryBatch",
-	"storeStockBalance", "storeStockMovement", "storeStocktake", "storeStocktakeLine", "storePromotion", "storePromotionTarget",
 }
 
 var systemActions = []string{
@@ -40,17 +35,12 @@ var systemActions = []string{
 	"hqRole:read", "hqRole:create", "hqRole:update", "hqRole:delete",
 	"hqMembership:read", "hqMembership:create", "hqMembership:update", "hqMembership:delete",
 	"hqStore:read", "hqStore:create", "hqStore:update", "hqStore:delete",
-	"store:read_all", "store:approve", "store:reject", "customer:read_sensitive", "report:export",
+	"store:read_all", "store:approve", "store:reject", "report:export",
 	"aiModelConfig:read", "aiModelConfig:manage",
 	"paymentConfig:read", "paymentConfig:manage",
-	"hqCustomer:read", "hqCustomer:create", "hqCustomer:update", "hqCustomer:cancel",
-	"hqCustomerPolicy:read", "hqCustomerPolicy:manage",
-	"hqCustomerPoints:read", "hqCustomerPoints:grant", "hqCustomerPoints:reverse", "hqCustomerPoints:correct",
-	"hqCustomerCoupon:read", "hqCustomerCoupon:manage", "hqCustomerCoupon:grant", "hqCustomerCoupon:revoke",
-	"hqProductCatalog:read", "hqProductCatalog:manage",
 }
 
-var tenantActions = []string{"tenantAudit:read", "store:submit", "franchiseProduct:read", "franchiseProduct:manage", "franchiseStock:read", "franchiseStock:manage", "franchiseStocktake:read", "franchiseStocktake:record", "franchiseStocktake:post", "franchisePromotion:read", "franchisePromotion:manage", "franchiseCoupon:read", "franchiseCoupon:manage", "franchiseCoupon:grant", "franchiseCoupon:revoke"}
+var tenantActions = []string{"tenantAudit:read", "store:submit"}
 
 // PermissionSeeds 返回完整且确定有序的权限目录。
 func PermissionSeeds() []PermissionSeed {

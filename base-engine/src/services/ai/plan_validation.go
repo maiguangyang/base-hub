@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"regexp"
 	"sort"
 	"strings"
 
@@ -41,10 +40,6 @@ func (s *ApprovalService) validateStep(proposed ApprovedStep, sequence int, prin
 	return validateStepTargets(proposed, spec, principal)
 }
 
-var customerPointReferencePattern = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9_-]{3,63}$`)
-var customerEvidencePattern = regexp.MustCompile(`(?i)(?:凭证编号|证明编号|工单号|proof reference|\bproof\b|work order)\s*[:：为]?\s*([A-Za-z0-9][A-Za-z0-9_-]{0,127})`)
-var customerBasisPattern = regexp.MustCompile(`(?i)(?:处理依据代码|依据代码|basis code)\s*[:：为]?\s*([A-Za-z0-9][A-Za-z0-9_-]{0,127})`)
-
 func validateEvidenceSource(args map[string]any, spec ToolSpec, operatorMessage string) error {
 	for _, path := range spec.EvidencePaths {
 		value, err := lookupArgumentPath(args, path)
@@ -60,44 +55,7 @@ func validateEvidenceSource(args map[string]any, spec ToolSpec, operatorMessage 
 }
 
 func evidenceProofMatchesOperator(toolID, path, proof, operatorMessage string) bool {
-	if !isCustomerEvidenceMutation(toolID) {
-		return strings.Contains(operatorMessage, proof)
-	}
-	if isCustomerPointMutation(toolID) && path == "note" && !validCustomerPointReference(proof) {
-		return false
-	}
-	return operatorHasCustomerEvidence(operatorMessage, proof, path)
-}
-
-func isCustomerPointMutation(toolID string) bool {
-	return toolID == "HqGrantCustomerPoints" || toolID == "HqReverseCustomerPoints"
-}
-
-func isCustomerEvidenceMutation(toolID string) bool {
-	switch toolID {
-	case "HqRequestCustomerCancellation", "HqCompleteCustomerCancellation", "HqGrantCustomerPoints",
-		"HqReverseCustomerPoints", "HqCorrectCustomerPoints":
-		return true
-	default:
-		return false
-	}
-}
-
-func validCustomerPointReference(value string) bool {
-	return customerPointReferencePattern.MatchString(value) && strings.ContainsAny(value, "0123456789_-")
-}
-
-func operatorHasCustomerEvidence(message, proof, path string) bool {
-	pattern := customerEvidencePattern
-	if path == "basisCode" {
-		pattern = customerBasisPattern
-	}
-	for _, match := range pattern.FindAllStringSubmatch(message, -1) {
-		if match[1] == proof {
-			return true
-		}
-	}
-	return false
+	return strings.Contains(operatorMessage, proof)
 }
 
 func validatePlanArguments(raw json.RawMessage, spec ToolSpec) error {
