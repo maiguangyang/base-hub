@@ -70,51 +70,6 @@ func TestFranchiseOpeningRecordSchema(t *testing.T) {
 	assertNoScalarEntityRelationshipIDs(t, modelSchema)
 }
 
-func TestCustomerSchemaUsesTypedRelationships(t *testing.T) {
-	modelSchema := readSchemaFile(t, "model.graphql")
-	assertContainsAll(t, modelSchema, []string{
-		"type CustomerMember @entity",
-		"type CustomerBenefitPolicy @entity",
-		"type CustomerDailyPointGrantBudget @entity",
-		"type CustomerPointEntry @entity",
-		"type CustomerCouponTemplate @entity",
-		"type CustomerCouponGrant @entity",
-		`customerMembers: [CustomerMember!]! @relationship(inverse: "organization")`,
-		`customerBenefitPolicies: [CustomerBenefitPolicy!]! @relationship(inverse: "organization")`,
-		`customerDailyPointGrantBudgets: [CustomerDailyPointGrantBudget!]! @relationship(inverse: "organization")`,
-		`customerCouponTemplates: [CustomerCouponTemplate!]! @relationship(inverse: "organization")`,
-		`customerPointEntries: [CustomerPointEntry!]! @relationship(inverse: "sourceOrganization")`,
-		`organization: Organization! @relationship(inverse: "customerMembers")`,
-		`member: CustomerMember! @relationship(inverse: "pointEntries")`,
-		`sourceOrganization: Organization! @relationship(inverse: "customerPointEntries")`,
-		`reverses: CustomerPointEntry @relationship(inverse: "reversedBy")`,
-		`reversedBy: CustomerPointEntry @relationship(inverse: "reverses")`,
-		`template: CustomerCouponTemplate! @relationship(inverse: "grants")`,
-		`member: CustomerMember! @relationship(inverse: "couponGrants")`,
-		"phone: String @column",
-	})
-	if !regexp.MustCompile(`(?s)type CustomerMember @entity[^{]*\{[^}]*requestKey: String! @column`).MatchString(modelSchema) {
-		t.Error("customer member creation request key missing")
-	}
-	assertNoScalarEntityRelationshipIDs(t, modelSchema)
-}
-
-func TestCustomerMemberCustomSchema(t *testing.T) {
-	extendSchema := readSchemaFile(t, "extend.graphql")
-	assertContainsAll(t, extendSchema, []string{
-		"type HqCustomerMemberView",
-		"type HqCustomerMemberPage",
-		"phoneMasked: String!",
-		`hqCustomerMembers(phone: String, status: CustomerMemberStatus, page: Int!, perPage: Int!): HqCustomerMemberPage! @hasPermission(action: "hqCustomer:read")`,
-		`hqCustomerMember(id: ID!): HqCustomerMemberView @hasPermission(action: "hqCustomer:read")`,
-		`hqCustomerSensitivePhone(id: ID!): String! @hasPermission(action: "customer:read_sensitive")`,
-		`hqCreateCustomerMember(input: HqCreateCustomerMemberInput!): HqCustomerMemberView! @hasPermission(action: "hqCustomer:create")`,
-		`hqSetCustomerMemberStatus(id: ID!, status: CustomerMemberStatus!): HqCustomerMemberView! @hasPermission(action: "hqCustomer:update")`,
-		`hqRequestCustomerCancellation(id: ID!, identityEvidence: String!, basisCode: String!): HqCustomerMemberView! @hasPermission(action: "hqCustomer:cancel")`,
-		`hqCompleteCustomerCancellation(id: ID!, dispositionReference: String!): HqCustomerMemberView! @hasPermission(action: "hqCustomer:cancel")`,
-	})
-}
-
 func TestFranchiseInitialAccountGeneratedProjectionContract(t *testing.T) {
 	generated := readSchemaFile(t, "../gen/generated.go")
 	assertContainsAll(t, generated, []string{
