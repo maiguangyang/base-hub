@@ -5,6 +5,7 @@ gateway
 web
 design-output/
 kiosk_ui_assets/
+node_modules/
 
 # Tooling
 .idea/
