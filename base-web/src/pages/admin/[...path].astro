@@ -1,0 +1,18 @@
+---
+import { knownAdminPaths } from '@/features/admin/config/navigation';
+import { AdminApp } from '@/features/admin/routes';
+import AdminBaseLayout from '@/layouts/AdminBaseLayout.astro';
+
+/** 为每条已知后台路由生成一个 HTML 文件，内容均为同一个 SPA。
+ *  纯静态托管下没有 rewrite 能力，不枚举就会让后台深层链接直接 404。 */
+export function getStaticPaths() {
+  return knownAdminPaths.map((full) => {
+    const rest = full.replace(/^\/admin\/?/, '');
+    return { params: { path: rest === '' ? undefined : rest } };
+  });
+}
+---
+
+<AdminBaseLayout title="管理后台">
+  <AdminApp client:only="react" />
+</AdminBaseLayout>

@@ -1,0 +1,12 @@
+---
+import { HomePage } from '@/features/public-home/pages/HomePage';
+import { messagesFor } from '@/i18n';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const locale = 'zh-CN';
+const messages = messagesFor(locale);
+---
+
+<BaseLayout locale={locale} entry="home" messages={messages} title={messages.publicHome.title}>
+  <HomePage locale={locale} messages={messages.publicHome} />
+</BaseLayout>

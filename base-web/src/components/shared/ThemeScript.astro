@@ -1,0 +1,33 @@
+---
+/** 首帧主题脚本，官网与后台共用。必须在 <head> 内以 is:inline 输出，
+ *  在首次绘制前决定 .dark 类，避免主题闪烁。
+ *  korean-theme 键名与 korean-theme-change 事件名为既有契约，不得改动。 */
+---
+
+<script is:inline>
+  (() => {
+    const key = 'korean-theme';
+    const root = document.documentElement;
+    const system = window.matchMedia('(prefers-color-scheme: dark)');
+    let currentPageMode = null;
+    const apply = () => {
+      let mode = currentPageMode || 'system';
+      if (!currentPageMode) {
+        try {
+          mode = localStorage.getItem(key) || 'system';
+        } catch {
+          // 本地存储不可用时按系统模式开始。
+        }
+      }
+      if (mode !== 'light' && mode !== 'dark') mode = 'system';
+      root.dataset.theme = mode;
+      root.classList.toggle('dark', mode === 'dark' || (mode === 'system' && system.matches));
+    };
+    apply();
+    system.addEventListener('change', apply);
+    window.addEventListener('korean-theme-change', (event) => {
+      currentPageMode = event.detail;
+      apply();
+    });
+  })();
+</script>

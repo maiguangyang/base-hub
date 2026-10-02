@@ -1,0 +1,2389 @@
+{
+  "version": 1,
+  "candidates": [
+    {
+      "candidate": "FranchiseAccount",
+      "toolId": "FranchiseAccount",
+      "operationId": "graphql.query.account",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "operatorMembership:read",
+      "outputFields": [
+        "account"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseAccounts",
+      "toolId": "FranchiseAccounts",
+      "operationId": "graphql.query.accounts",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "operatorMembership:read",
+      "outputFields": [
+        "accounts"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseAddStocktakeLine",
+      "toolId": "FranchiseAddStocktakeLine",
+      "operationId": "graphql.mutation.franchiseAddStocktakeLine",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStocktake:record",
+      "outputFields": [
+        "franchiseAddStocktakeLine"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseAdjustStock",
+      "toolId": "FranchiseAdjustStock",
+      "operationId": "graphql.mutation.franchiseAdjustStock",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStock:manage",
+      "outputFields": [
+        "franchiseAdjustStock"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseAuditLog",
+      "toolId": "FranchiseAuditLog",
+      "operationId": "graphql.query.auditLog",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "tenantAudit:read",
+      "outputFields": [
+        "auditLog"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseAuditLogs",
+      "toolId": "FranchiseAuditLogs",
+      "operationId": "graphql.query.auditLogs",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "tenantAudit:read",
+      "outputFields": [
+        "auditLogs"
+      ],
+      "implementationTask": 13,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCancelStocktake",
+      "toolId": "FranchiseCancelStocktake",
+      "operationId": "graphql.mutation.franchiseCancelStocktake",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStocktake:post",
+      "outputFields": [
+        "franchiseCancelStocktake"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCatalog",
+      "toolId": "FranchiseCatalog",
+      "operationId": "graphql.query.franchiseCatalog",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseProduct:read",
+      "outputFields": [
+        "franchiseCatalog"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCatalogCategories",
+      "toolId": "FranchiseCatalogCategories",
+      "operationId": "graphql.query.franchiseCatalogCategories",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseProduct:read",
+      "outputFields": [
+        "franchiseCatalogCategories"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseChangeMembershipStatus",
+      "toolId": "FranchiseChangeMembershipStatus",
+      "operationId": "graphql.mutation.changeMembershipStatus",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "operatorMembership:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 11,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCouponGrants",
+      "toolId": "FranchiseCouponGrants",
+      "operationId": "graphql.query.franchiseCouponGrants",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseCoupon:read",
+      "outputFields": [
+        "franchiseCouponGrants"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCouponMember",
+      "toolId": "FranchiseCouponMember",
+      "operationId": "graphql.query.franchiseCouponMember",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseCoupon:read",
+      "outputFields": [
+        "franchiseCouponMember"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCouponTemplates",
+      "toolId": "FranchiseCouponTemplates",
+      "operationId": "graphql.query.franchiseCouponTemplates",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseCoupon:read",
+      "outputFields": [
+        "franchiseCouponTemplates"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCreateCouponTemplate",
+      "toolId": "FranchiseCreateCouponTemplate",
+      "operationId": "graphql.mutation.franchiseCreateCouponTemplate",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseCoupon:manage",
+      "outputFields": [
+        "franchiseCreateCouponTemplate"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCreateRole",
+      "toolId": "FranchiseCreateRole",
+      "operationId": "graphql.mutation.createOperatorRole",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "operatorRole:create",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 12,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCreateStocktake",
+      "toolId": "FranchiseCreateStocktake",
+      "operationId": "graphql.mutation.franchiseCreateStocktake",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStocktake:record",
+      "outputFields": [
+        "franchiseCreateStocktake"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseCreateStore",
+      "toolId": "FranchiseCreateStore",
+      "operationId": "graphql.mutation.createStore",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "MEDIUM",
+      "permission": "store:create",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 13,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseDeleteMembershipInvitations",
+      "toolId": "FranchiseDeleteMembershipInvitations",
+      "operationId": "graphql.mutation.deleteMembershipInvitations",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "membershipInvitation:delete",
+      "outputFields": [
+        "deleteMembershipInvitations",
+        "id"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED",
+      "additionalPermissions": [
+        "operatorMembership:read"
+      ]
+    },
+    {
+      "candidate": "FranchiseDeleteRoles",
+      "toolId": "FranchiseDeleteRoles",
+      "operationId": "graphql.mutation.deleteOperatorRoles",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "operatorRole:delete",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 12,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseDeleteStores",
+      "toolId": "FranchiseDeleteStores",
+      "operationId": "graphql.mutation.deleteStores",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "store:delete",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 13,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseGrantCoupon",
+      "toolId": "FranchiseGrantCoupon",
+      "operationId": "graphql.mutation.franchiseGrantCoupon",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseCoupon:grant",
+      "outputFields": [
+        "franchiseGrantCoupon"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseInviteStaff",
+      "toolId": "FranchiseInviteStaff",
+      "operationId": "graphql.mutation.inviteOperator",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "operatorMembership:create",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 11,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseMembershipInvitation",
+      "toolId": "FranchiseMembershipInvitation",
+      "operationId": "graphql.query.membershipInvitation",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "membershipInvitation:read",
+      "outputFields": [
+        "membershipInvitation"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseMembershipInvitations",
+      "toolId": "FranchiseMembershipInvitations",
+      "operationId": "graphql.query.membershipInvitations",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "membershipInvitation:read",
+      "outputFields": [
+        "membershipInvitations"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseMerchandisingStores",
+      "toolId": "FranchiseMerchandisingStores",
+      "operationId": "graphql.query.franchiseMerchandisingStores",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseProduct:read",
+      "outputFields": [
+        "franchiseMerchandisingStores"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseOfferPriceRevisions",
+      "toolId": "FranchiseOfferPriceRevisions",
+      "operationId": "graphql.query.franchiseOfferPriceRevisions",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseProduct:read",
+      "outputFields": [
+        "franchiseOfferPriceRevisions"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseOperatorMembership",
+      "toolId": "FranchiseOperatorMembership",
+      "operationId": "graphql.query.operatorMembership",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "operatorMembership:read",
+      "outputFields": [
+        "operatorMembership"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseOperatorRole",
+      "toolId": "FranchiseOperatorRole",
+      "operationId": "graphql.query.operatorRole",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "operatorRole:read",
+      "outputFields": [
+        "operatorRole"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchisePermission",
+      "toolId": "FranchisePermission",
+      "operationId": "graphql.query.permission",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "operatorRole:read",
+      "outputFields": [
+        "permission"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchisePostStocktake",
+      "toolId": "FranchisePostStocktake",
+      "operationId": "graphql.mutation.franchisePostStocktake",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStocktake:post",
+      "outputFields": [
+        "franchisePostStocktake"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchisePromotions",
+      "toolId": "FranchisePromotions",
+      "operationId": "graphql.query.franchisePromotions",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchisePromotion:read",
+      "outputFields": [
+        "franchisePromotions"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseReceiveStock",
+      "toolId": "FranchiseReceiveStock",
+      "operationId": "graphql.mutation.franchiseReceiveStock",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStock:manage",
+      "outputFields": [
+        "franchiseReceiveStock"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseRecordStocktakeLine",
+      "toolId": "FranchiseRecordStocktakeLine",
+      "operationId": "graphql.mutation.franchiseRecordStocktakeLine",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStocktake:record",
+      "outputFields": [
+        "franchiseRecordStocktakeLine"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseReturnStocktake",
+      "toolId": "FranchiseReturnStocktake",
+      "operationId": "graphql.mutation.franchiseReturnStocktake",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStocktake:post",
+      "outputFields": [
+        "franchiseReturnStocktake"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseRevokeCoupon",
+      "toolId": "FranchiseRevokeCoupon",
+      "operationId": "graphql.mutation.franchiseRevokeCoupon",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseCoupon:revoke",
+      "outputFields": [
+        "franchiseRevokeCoupon"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseRoles",
+      "toolId": "FranchiseRoles",
+      "operationId": "graphql.query.operatorRoles",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "operatorRole:read",
+      "outputFields": [
+        "operatorRoles"
+      ],
+      "implementationTask": 12,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseSavePromotion",
+      "toolId": "FranchiseSavePromotion",
+      "operationId": "graphql.mutation.franchiseSavePromotion",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchisePromotion:manage",
+      "outputFields": [
+        "franchiseSavePromotion"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseSetCouponTemplateEnabled",
+      "toolId": "FranchiseSetCouponTemplateEnabled",
+      "operationId": "graphql.mutation.franchiseSetCouponTemplateEnabled",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseCoupon:manage",
+      "outputFields": [
+        "franchiseSetCouponTemplateEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseSetPromotionEnabled",
+      "toolId": "FranchiseSetPromotionEnabled",
+      "operationId": "graphql.mutation.franchiseSetPromotionEnabled",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchisePromotion:manage",
+      "outputFields": [
+        "franchiseSetPromotionEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseSetStocktakeReason",
+      "toolId": "FranchiseSetStocktakeReason",
+      "operationId": "graphql.mutation.franchiseSetStocktakeReason",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStocktake:post",
+      "outputFields": [
+        "franchiseSetStocktakeReason"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseSetStoreListing",
+      "toolId": "FranchiseSetStoreListing",
+      "operationId": "graphql.mutation.franchiseSetStoreListing",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseProduct:manage",
+      "outputFields": [
+        "franchiseSetStoreListing"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseSetStorePrice",
+      "toolId": "FranchiseSetStorePrice",
+      "operationId": "graphql.mutation.franchiseSetStorePrice",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseProduct:manage",
+      "outputFields": [
+        "franchiseSetStorePrice"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStaff",
+      "toolId": "FranchiseStaff",
+      "operationId": "graphql.query.operatorMemberships",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "operatorMembership:read",
+      "outputFields": [
+        "operatorMemberships"
+      ],
+      "implementationTask": 11,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStockBatches",
+      "toolId": "FranchiseStockBatches",
+      "operationId": "graphql.query.franchiseStockBatches",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseStock:read",
+      "outputFields": [
+        "franchiseStockBatches"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStockMovements",
+      "toolId": "FranchiseStockMovements",
+      "operationId": "graphql.query.franchiseStockMovements",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseStock:read",
+      "outputFields": [
+        "franchiseStockMovements"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStockPackageByBarcode",
+      "toolId": "FranchiseStockPackageByBarcode",
+      "operationId": "graphql.query.franchiseStockPackageByBarcode",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseStock:read",
+      "outputFields": [
+        "franchiseStockPackageByBarcode"
+      ],
+      "implementationTask": 2,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStocktake",
+      "toolId": "FranchiseStocktake",
+      "operationId": "graphql.query.franchiseStocktake",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseStocktake:read",
+      "outputFields": [
+        "franchiseStocktake"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStocktakeBatchChoices",
+      "toolId": "FranchiseStocktakeBatchChoices",
+      "operationId": "graphql.query.franchiseStocktakeBatchChoices",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseStocktake:read",
+      "outputFields": [
+        "franchiseStocktakeBatchChoices"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStocktakes",
+      "toolId": "FranchiseStocktakes",
+      "operationId": "graphql.query.franchiseStocktakes",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseStocktake:read",
+      "outputFields": [
+        "franchiseStocktakes"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStore",
+      "toolId": "FranchiseStore",
+      "operationId": "graphql.query.store",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "store:read",
+      "outputFields": [
+        "store"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStoreListings",
+      "toolId": "FranchiseStoreListings",
+      "operationId": "graphql.query.franchiseStoreListings",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseProduct:read",
+      "outputFields": [
+        "franchiseStoreListings"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStoreOffers",
+      "toolId": "FranchiseStoreOffers",
+      "operationId": "graphql.query.franchiseStoreOffers",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "franchiseProduct:read",
+      "outputFields": [
+        "franchiseStoreOffers"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseStores",
+      "toolId": "FranchiseStores",
+      "operationId": "graphql.query.stores",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "store:read",
+      "outputFields": [
+        "stores"
+      ],
+      "implementationTask": 13,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseSubmitStocktake",
+      "toolId": "FranchiseSubmitStocktake",
+      "operationId": "graphql.mutation.franchiseSubmitStocktake",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStocktake:record",
+      "outputFields": [
+        "franchiseSubmitStocktake"
+      ],
+      "implementationTask": 3,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseSubmitStore",
+      "toolId": "FranchiseSubmitStore",
+      "operationId": "graphql.mutation.submitStore",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "MEDIUM",
+      "permission": "store:submit",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 13,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseUnpackStock",
+      "toolId": "FranchiseUnpackStock",
+      "operationId": "graphql.mutation.franchiseUnpackStock",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchiseStock:manage",
+      "outputFields": [
+        "franchiseUnpackStock"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseUpdateRole",
+      "toolId": "FranchiseUpdateRole",
+      "operationId": "graphql.mutation.updateOperatorRole",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "operatorRole:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 12,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseUpdateStaff",
+      "toolId": "FranchiseUpdateStaff",
+      "operationId": "graphql.mutation.updateOperatorMembership",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "MEDIUM",
+      "permission": "operatorMembership:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 11,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "FranchiseUpdateStore",
+      "toolId": "FranchiseUpdateStore",
+      "operationId": "graphql.mutation.updateStore",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "WRITE",
+      "risk": "MEDIUM",
+      "permission": "store:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 13,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqAccount",
+      "toolId": "HqAccount",
+      "operationId": "graphql.query.account",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "account:read",
+      "outputFields": [
+        "account"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqAccounts",
+      "toolId": "HqAccounts",
+      "operationId": "graphql.query.accounts",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "account:read",
+      "outputFields": [
+        "accounts"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqAdministratorIdentity",
+      "toolId": "HqAdministratorIdentity",
+      "operationId": "graphql.query.operatorMemberships",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqMembership:read",
+      "outputFields": [
+        "operatorMemberships"
+      ],
+      "implementationTask": 8,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqAdministrators",
+      "toolId": "HqAdministrators",
+      "operationId": "graphql.query.operatorMemberships",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqMembership:read",
+      "outputFields": [
+        "operatorMemberships"
+      ],
+      "implementationTask": 8,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqAuditLog",
+      "toolId": "HqAuditLog",
+      "operationId": "graphql.query.auditLog",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "auditLog:read",
+      "outputFields": [
+        "auditLog"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqAuditLogs",
+      "toolId": "HqAuditLogs",
+      "operationId": "graphql.query.auditLogs",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "auditLog:read",
+      "outputFields": [
+        "auditLogs"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqChangeAdministratorStatus",
+      "toolId": "HqChangeAdministratorStatus",
+      "operationId": "graphql.mutation.changeMembershipStatus",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqMembership:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 8,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCompleteCustomerCancellation",
+      "toolId": "HqCompleteCustomerCancellation",
+      "operationId": "graphql.mutation.hqCompleteCustomerCancellation",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomer:cancel",
+      "outputFields": [
+        "hqCompleteCustomerCancellation"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCorrectCustomerPoints",
+      "toolId": "HqCorrectCustomerPoints",
+      "operationId": "graphql.mutation.hqCorrectCustomerPoints",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomerPoints:correct",
+      "outputFields": [
+        "hqCorrectCustomerPoints"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateCustomerCouponTemplate",
+      "toolId": "HqCreateCustomerCouponTemplate",
+      "operationId": "graphql.mutation.hqCreateCustomerCouponTemplate",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomerCoupon:manage",
+      "outputFields": [
+        "hqCreateCustomerCouponTemplate"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateCustomerMember",
+      "toolId": "HqCreateCustomerMember",
+      "operationId": "graphql.mutation.hqCreateCustomerMember",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomer:create",
+      "outputFields": [
+        "hqCreateCustomerMember"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateDirectStore",
+      "toolId": "HqCreateDirectStore",
+      "operationId": "graphql.mutation.createStore",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "MEDIUM",
+      "permission": "hqStore:create",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateProduct",
+      "toolId": "HqCreateProduct",
+      "operationId": "graphql.mutation.hqCreateProduct",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqCreateProduct"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateProductBrand",
+      "toolId": "HqCreateProductBrand",
+      "operationId": "graphql.mutation.hqCreateProductBrand",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqCreateProductBrand"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateProductCategory",
+      "toolId": "HqCreateProductCategory",
+      "operationId": "graphql.mutation.hqCreateProductCategory",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqCreateProductCategory"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateProductPackage",
+      "toolId": "HqCreateProductPackage",
+      "operationId": "graphql.mutation.hqCreateProductPackage",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqCreateProductPackage"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateProductPackageTemplate",
+      "toolId": "HqCreateProductPackageTemplate",
+      "operationId": "graphql.mutation.hqCreateProductPackageTemplate",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqCreateProductPackageTemplate"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateRole",
+      "toolId": "HqCreateRole",
+      "operationId": "graphql.mutation.createOperatorRole",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqRole:create",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 9,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateSpecification",
+      "toolId": "HqCreateSpecification",
+      "operationId": "graphql.mutation.hqCreateSpecification",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqCreateSpecification"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCreateSpecificationValue",
+      "toolId": "HqCreateSpecificationValue",
+      "operationId": "graphql.mutation.hqCreateSpecificationValue",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqCreateSpecificationValue"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCustomerBenefitPolicy",
+      "toolId": "HqCustomerBenefitPolicy",
+      "operationId": "graphql.query.hqCustomerBenefitPolicy",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqCustomerPolicy:read",
+      "outputFields": [
+        "hqCustomerBenefitPolicy"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCustomerCouponGrants",
+      "toolId": "HqCustomerCouponGrants",
+      "operationId": "graphql.query.hqCustomerCouponGrants",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqCustomerCoupon:read",
+      "outputFields": [
+        "hqCustomerCouponGrants"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCustomerCouponTemplates",
+      "toolId": "HqCustomerCouponTemplates",
+      "operationId": "graphql.query.hqCustomerCouponTemplates",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqCustomerCoupon:read",
+      "outputFields": [
+        "hqCustomerCouponTemplates"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCustomerMember",
+      "toolId": "HqCustomerMember",
+      "operationId": "graphql.query.hqCustomerMember",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqCustomer:read",
+      "outputFields": [
+        "hqCustomerMember"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCustomerMembers",
+      "toolId": "HqCustomerMembers",
+      "operationId": "graphql.query.hqCustomerMembers",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqCustomer:read",
+      "outputFields": [
+        "hqCustomerMembers"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCustomerPointEntries",
+      "toolId": "HqCustomerPointEntries",
+      "operationId": "graphql.query.hqCustomerPointEntries",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqCustomerPoints:read",
+      "outputFields": [
+        "hqCustomerPointEntries"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqCustomerSensitivePhone",
+      "toolId": "HqCustomerSensitivePhone",
+      "operationId": "graphql.query.hqCustomerSensitivePhone",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "HIGH",
+      "permission": "customer:read_sensitive",
+      "outputFields": [
+        "hqCustomerSensitivePhone"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDeleteAdministrators",
+      "toolId": "HqDeleteAdministrators",
+      "operationId": "graphql.mutation.deleteOperatorMemberships",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqMembership:delete",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 8,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDeleteDirectStores",
+      "toolId": "HqDeleteDirectStores",
+      "operationId": "graphql.mutation.deleteStores",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqStore:delete",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDeleteMembershipInvitations",
+      "toolId": "HqDeleteMembershipInvitations",
+      "operationId": "graphql.mutation.deleteMembershipInvitations",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqMembership:delete",
+      "outputFields": [
+        "deleteMembershipInvitations",
+        "id"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED",
+      "additionalPermissions": [
+        "hqMembership:read"
+      ]
+    },
+    {
+      "candidate": "HqDeleteProduct",
+      "toolId": "HqDeleteProduct",
+      "operationId": "graphql.mutation.hqDeleteProduct",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqDeleteProduct"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDeleteProductBrand",
+      "toolId": "HqDeleteProductBrand",
+      "operationId": "graphql.mutation.hqDeleteProductBrand",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqDeleteProductBrand"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDeleteProductPackageTemplate",
+      "toolId": "HqDeleteProductPackageTemplate",
+      "operationId": "graphql.mutation.hqDeleteProductPackageTemplate",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqDeleteProductPackageTemplate"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDeleteRoles",
+      "toolId": "HqDeleteRoles",
+      "operationId": "graphql.mutation.deleteOperatorRoles",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqRole:delete",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 9,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDeleteSpecification",
+      "toolId": "HqDeleteSpecification",
+      "operationId": "graphql.mutation.hqDeleteSpecification",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqDeleteSpecification"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDeleteSpecificationValue",
+      "toolId": "HqDeleteSpecificationValue",
+      "operationId": "graphql.mutation.hqDeleteSpecificationValue",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqDeleteSpecificationValue"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDirectStore",
+      "toolId": "HqDirectStore",
+      "operationId": "graphql.query.store",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqStore:read",
+      "outputFields": [
+        "store"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqDirectStores",
+      "toolId": "HqDirectStores",
+      "operationId": "graphql.query.stores",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqStore:read",
+      "outputFields": [
+        "stores"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqFranchiseInitialAccountCandidates",
+      "toolId": "HqFranchiseInitialAccountCandidates",
+      "operationId": "graphql.query.organization",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "organization:read",
+      "outputFields": [
+        "organization"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqFranchisePaymentRestore",
+      "toolId": "HqFranchisePaymentRestore",
+      "operationId": "http.paymentConfig.restoreInheritance",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "paymentConfig:manage",
+      "additionalPermissions": [
+        "paymentConfig:read"
+      ],
+      "outputFields": [
+        "channels",
+        "validationOnly"
+      ],
+      "implementationTask": 17,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqFranchisePaymentState",
+      "toolId": "HqFranchisePaymentState",
+      "operationId": "http.paymentConfig.state",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "paymentConfig:manage",
+      "additionalPermissions": [
+        "paymentConfig:read"
+      ],
+      "outputFields": [
+        "channels",
+        "validationOnly"
+      ],
+      "implementationTask": 17,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqFranchiseStores",
+      "toolId": "HqFranchiseStores",
+      "operationId": "graphql.query.stores",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "store:read_all",
+      "outputFields": [
+        "stores"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqFranchises",
+      "toolId": "HqFranchises",
+      "operationId": "graphql.query.organizations",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "organization:read",
+      "outputFields": [
+        "organizations"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqGenerateProductPackageBarcode",
+      "toolId": "HqGenerateProductPackageBarcode",
+      "operationId": "graphql.query.hqGenerateProductPackageBarcode",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqGenerateProductPackageBarcode"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqGlobalPaymentState",
+      "toolId": "HqGlobalPaymentState",
+      "operationId": "http.paymentConfig.state",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "paymentConfig:manage",
+      "additionalPermissions": [
+        "paymentConfig:read"
+      ],
+      "outputFields": [
+        "channels",
+        "validationOnly"
+      ],
+      "implementationTask": 17,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqGrantCustomerCoupon",
+      "toolId": "HqGrantCustomerCoupon",
+      "operationId": "graphql.mutation.hqGrantCustomerCoupon",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomerCoupon:grant",
+      "outputFields": [
+        "hqGrantCustomerCoupon"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqGrantCustomerPoints",
+      "toolId": "HqGrantCustomerPoints",
+      "operationId": "graphql.mutation.hqGrantCustomerPoints",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomerPoints:grant",
+      "outputFields": [
+        "hqGrantCustomerPoints"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqInviteAdministrator",
+      "toolId": "HqInviteAdministrator",
+      "operationId": "graphql.mutation.inviteOperator",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqMembership:create",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 8,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqMembershipInvitation",
+      "toolId": "HqMembershipInvitation",
+      "operationId": "graphql.query.membershipInvitation",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqMembership:read",
+      "outputFields": [
+        "membershipInvitation"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqMembershipInvitations",
+      "toolId": "HqMembershipInvitations",
+      "operationId": "graphql.query.membershipInvitations",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqMembership:read",
+      "outputFields": [
+        "membershipInvitations"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqOperatorMembership",
+      "toolId": "HqOperatorMembership",
+      "operationId": "graphql.query.operatorMembership",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqMembership:read",
+      "outputFields": [
+        "operatorMembership"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqOperatorRole",
+      "toolId": "HqOperatorRole",
+      "operationId": "graphql.query.operatorRole",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqRole:read",
+      "outputFields": [
+        "operatorRole"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqPaymentConfigRead",
+      "toolId": "HqPaymentConfigRead",
+      "operationId": "http.paymentConfig.read",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "paymentConfig:read",
+      "outputFields": [
+        "channels",
+        "validationOnly"
+      ],
+      "implementationTask": 17,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqPermission",
+      "toolId": "HqPermission",
+      "operationId": "graphql.query.permission",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqRole:read",
+      "outputFields": [
+        "permission"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqPermissionByGrant",
+      "toolId": "HqPermissionByGrant",
+      "operationId": "graphql.query.permission",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "permission:read",
+      "outputFields": [
+        "permission"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqProductBrands",
+      "toolId": "HqProductBrands",
+      "operationId": "graphql.query.hqProductBrands",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:read",
+      "outputFields": [
+        "hqProductBrands"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqProductCategories",
+      "toolId": "HqProductCategories",
+      "operationId": "graphql.query.hqProductCategories",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:read",
+      "outputFields": [
+        "hqProductCategories"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqProductPackageTemplates",
+      "toolId": "HqProductPackageTemplates",
+      "operationId": "graphql.query.hqProductPackageTemplates",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:read",
+      "outputFields": [
+        "hqProductPackageTemplates"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqProductPackages",
+      "toolId": "HqProductPackages",
+      "operationId": "graphql.query.hqProductPackages",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:read",
+      "outputFields": [
+        "hqProductPackages"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqProductSkus",
+      "toolId": "HqProductSkus",
+      "operationId": "graphql.query.hqProductSkus",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:read",
+      "outputFields": [
+        "hqProductSkus"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqProducts",
+      "toolId": "HqProducts",
+      "operationId": "graphql.query.hqProducts",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:read",
+      "outputFields": [
+        "hqProducts"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqProvisionFranchise",
+      "toolId": "HqProvisionFranchise",
+      "operationId": "graphql.mutation.provisionFranchise",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "franchise:provision",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqPublishProductPackageSet",
+      "toolId": "HqPublishProductPackageSet",
+      "operationId": "graphql.mutation.hqPublishProductPackageSet",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqPublishProductPackageSet"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqRemoveProductMainImage",
+      "toolId": "HqRemoveProductMainImage",
+      "operationId": "graphql.mutation.hqRemoveProductMainImage",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqRemoveProductMainImage"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqReorderSpecificationValues",
+      "toolId": "HqReorderSpecificationValues",
+      "operationId": "graphql.mutation.hqReorderSpecificationValues",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqReorderSpecificationValues"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqRequestCustomerCancellation",
+      "toolId": "HqRequestCustomerCancellation",
+      "operationId": "graphql.mutation.hqRequestCustomerCancellation",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomer:cancel",
+      "outputFields": [
+        "hqRequestCustomerCancellation"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqResetAdministratorPassword",
+      "toolId": "HqResetAdministratorPassword",
+      "operationId": "graphql.mutation.resetTemporaryPassword",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "account:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 8,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqResetFranchiseInitialPassword",
+      "toolId": "HqResetFranchiseInitialPassword",
+      "operationId": "graphql.mutation.resetFranchiseInitialPassword",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "account:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqRestoreOrganization",
+      "toolId": "HqRestoreOrganization",
+      "operationId": "graphql.mutation.restoreOrganization",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "organization:restore",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqRetireProductPackage",
+      "toolId": "HqRetireProductPackage",
+      "operationId": "graphql.mutation.hqRetireProductPackage",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqRetireProductPackage"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqReverseCustomerPoints",
+      "toolId": "HqReverseCustomerPoints",
+      "operationId": "graphql.mutation.hqReverseCustomerPoints",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomerPoints:reverse",
+      "outputFields": [
+        "hqReverseCustomerPoints"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqReviewStore",
+      "toolId": "HqApproveStore",
+      "operationId": "graphql.mutation.reviewStore",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "store:approve",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqReviewStore",
+      "toolId": "HqRejectStore",
+      "operationId": "graphql.mutation.reviewStore",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "store:reject",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqRevokeCustomerCoupon",
+      "toolId": "HqRevokeCustomerCoupon",
+      "operationId": "graphql.mutation.hqRevokeCustomerCoupon",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomerCoupon:revoke",
+      "outputFields": [
+        "hqRevokeCustomerCoupon"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqRoles",
+      "toolId": "HqRoles",
+      "operationId": "graphql.query.operatorRoles",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqRole:read",
+      "outputFields": [
+        "operatorRoles"
+      ],
+      "implementationTask": 9,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSaveCustomerBenefitPolicy",
+      "toolId": "HqSaveCustomerBenefitPolicy",
+      "operationId": "graphql.mutation.hqSaveCustomerBenefitPolicy",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomerPolicy:manage",
+      "outputFields": [
+        "hqSaveCustomerBenefitPolicy"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetCustomerCouponTemplateEnabled",
+      "toolId": "HqSetCustomerCouponTemplateEnabled",
+      "operationId": "graphql.mutation.hqSetCustomerCouponTemplateEnabled",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomerCoupon:manage",
+      "outputFields": [
+        "hqSetCustomerCouponTemplateEnabled"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetCustomerMemberStatus",
+      "toolId": "HqSetCustomerMemberStatus",
+      "operationId": "graphql.mutation.hqSetCustomerMemberStatus",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqCustomer:update",
+      "outputFields": [
+        "hqSetCustomerMemberStatus"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetProductBrandEnabled",
+      "toolId": "HqSetProductBrandEnabled",
+      "operationId": "graphql.mutation.hqSetProductBrandEnabled",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetProductBrandEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetProductCategoryEnabled",
+      "toolId": "HqSetProductCategoryEnabled",
+      "operationId": "graphql.mutation.hqSetProductCategoryEnabled",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetProductCategoryEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetProductEnabled",
+      "toolId": "HqSetProductEnabled",
+      "operationId": "graphql.mutation.hqSetProductEnabled",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetProductEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetProductMainImage",
+      "toolId": "HqSetProductMainImage",
+      "operationId": "graphql.mutation.hqSetProductMainImage",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetProductMainImage"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetProductPackageBarcode",
+      "toolId": "HqSetProductPackageBarcode",
+      "operationId": "graphql.mutation.hqSetProductPackageBarcode",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetProductPackageBarcode"
+      ],
+      "implementationTask": 1,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetProductPackageTemplateEnabled",
+      "toolId": "HqSetProductPackageTemplateEnabled",
+      "operationId": "graphql.mutation.hqSetProductPackageTemplateEnabled",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetProductPackageTemplateEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetProductSkuEnabled",
+      "toolId": "HqSetProductSkuEnabled",
+      "operationId": "graphql.mutation.hqSetProductSkuEnabled",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetProductSkuEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetSpecificationEnabled",
+      "toolId": "HqSetSpecificationEnabled",
+      "operationId": "graphql.mutation.hqSetSpecificationEnabled",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetSpecificationEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSetSpecificationValueEnabled",
+      "toolId": "HqSetSpecificationValueEnabled",
+      "operationId": "graphql.mutation.hqSetSpecificationValueEnabled",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqSetSpecificationValueEnabled"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSpecificationValues",
+      "toolId": "HqSpecificationValues",
+      "operationId": "graphql.query.hqSpecificationValues",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:read",
+      "outputFields": [
+        "hqSpecificationValues"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSpecifications",
+      "toolId": "HqSpecifications",
+      "operationId": "graphql.query.hqSpecifications",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqProductCatalog:read",
+      "outputFields": [
+        "hqSpecifications"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqStore",
+      "toolId": "HqStore",
+      "operationId": "graphql.query.store",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "store:read_all",
+      "outputFields": [
+        "store"
+      ],
+      "implementationTask": 18,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqStoreApprovals",
+      "toolId": "HqStoreApprovals",
+      "operationId": "graphql.query.stores",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "store:read_all",
+      "outputFields": [
+        "stores"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqStorePaymentRestore",
+      "toolId": "HqStorePaymentRestore",
+      "operationId": "http.paymentConfig.restoreInheritance",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "paymentConfig:manage",
+      "additionalPermissions": [
+        "paymentConfig:read"
+      ],
+      "outputFields": [
+        "channels",
+        "validationOnly"
+      ],
+      "implementationTask": 17,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqStorePaymentState",
+      "toolId": "HqStorePaymentState",
+      "operationId": "http.paymentConfig.state",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "paymentConfig:manage",
+      "additionalPermissions": [
+        "paymentConfig:read"
+      ],
+      "outputFields": [
+        "channels",
+        "validationOnly"
+      ],
+      "implementationTask": 17,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqSuspendOrganization",
+      "toolId": "HqSuspendOrganization",
+      "operationId": "graphql.mutation.suspendOrganization",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "organization:suspend",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateAdministrator",
+      "toolId": "HqUpdateAdministrator",
+      "operationId": "graphql.mutation.updateOperatorMembership",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "MEDIUM",
+      "permission": "hqMembership:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 8,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateDirectStore",
+      "toolId": "HqUpdateDirectStore",
+      "operationId": "graphql.mutation.updateStore",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "MEDIUM",
+      "permission": "hqStore:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 10,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateProduct",
+      "toolId": "HqUpdateProduct",
+      "operationId": "graphql.mutation.hqUpdateProduct",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqUpdateProduct"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateProductBrand",
+      "toolId": "HqUpdateProductBrand",
+      "operationId": "graphql.mutation.hqUpdateProductBrand",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqUpdateProductBrand"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateProductCategory",
+      "toolId": "HqUpdateProductCategory",
+      "operationId": "graphql.mutation.hqUpdateProductCategory",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqUpdateProductCategory"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateProductPackageMetadata",
+      "toolId": "HqUpdateProductPackageMetadata",
+      "operationId": "graphql.mutation.hqUpdateProductPackageMetadata",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqUpdateProductPackageMetadata"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateProductPackageTemplate",
+      "toolId": "HqUpdateProductPackageTemplate",
+      "operationId": "graphql.mutation.hqUpdateProductPackageTemplate",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqUpdateProductPackageTemplate"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateRole",
+      "toolId": "HqUpdateRole",
+      "operationId": "graphql.mutation.updateOperatorRole",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqRole:update",
+      "outputFields": [
+        "id",
+        "status"
+      ],
+      "implementationTask": 9,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateSpecification",
+      "toolId": "HqUpdateSpecification",
+      "operationId": "graphql.mutation.hqUpdateSpecification",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqUpdateSpecification"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "HqUpdateSpecificationValue",
+      "toolId": "HqUpdateSpecificationValue",
+      "operationId": "graphql.mutation.hqUpdateSpecificationValue",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "hqProductCatalog:manage",
+      "outputFields": [
+        "hqUpdateSpecificationValue"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "POST /api/franchise-initial-account",
+      "toolId": "HqSetFranchiseInitialAccount",
+      "operationId": "http.franchiseInitialAccount.set",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "WRITE",
+      "risk": "HIGH",
+      "permission": "account:update",
+      "additionalPermissions": [
+        "hqMembership:read"
+      ],
+      "outputFields": [
+        "organizationId",
+        "accountId"
+      ],
+      "implementationTask": 7,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "SystemPermissions",
+      "toolId": "SystemPermissions",
+      "operationId": "graphql.query.permissions",
+      "classification": "HEADQUARTERS_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "hqRole:read",
+      "outputFields": [
+        "permissions"
+      ],
+      "implementationTask": 9,
+      "availability": "REGISTERED"
+    },
+    {
+      "candidate": "TenantPermissions",
+      "toolId": "TenantPermissions",
+      "operationId": "graphql.query.permissions",
+      "classification": "FRANCHISE_ADMIN",
+      "mode": "READ_ONLY",
+      "risk": "LOW",
+      "permission": "operatorRole:read",
+      "outputFields": [
+        "permissions"
+      ],
+      "implementationTask": 12,
+      "availability": "REGISTERED"
+    }
+  ]
+}

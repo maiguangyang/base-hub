@@ -1,0 +1,8 @@
+{
+  "src/resolver.go#New": { "lines": 69, "complexity": 22, "depth": 5 },
+  "src/resolver.go#closure@87": { "lines": 39, "complexity": 15, "depth": 5 },
+  "utils/uniqueness.go#UniqueRecordExists": { "lines": 25, "complexity": 11, "depth": 2 },
+  "utils/utils.go#IsNil": { "lines": 16, "complexity": 11, "depth": 2 },
+  "utils/validator.go#ValidateField": { "lines": 30, "complexity": 18, "depth": 2 },
+  "utils/validator.go#validateUnique": { "lines": 31, "complexity": 13, "depth": 2 }
+}

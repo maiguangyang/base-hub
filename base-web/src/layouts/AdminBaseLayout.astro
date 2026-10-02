@@ -1,0 +1,55 @@
+---
+import ThemeScript from '@/components/shared/ThemeScript.astro';
+import '@/styles/global.css';
+
+/** 后台文档外壳。后台只走简体中文，不接受 locale 参数。 */
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN" dir="ltr" data-surface="admin">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} · Korean Hub 管理后台</title>
+    <ThemeScript />
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    <!-- 首屏骨架：client:only 下 Astro 不输出任何 HTML，React 挂载前页面为空白。
+         AdminApp 挂载后移除本节点。
+         兜底：外壳若在首次渲染就抛错，AdminApp 的 effect 不会执行，
+         这块不透明全屏遮罩会永久停留，用户既看不到错误也看不到内容。
+         因此另设超时自动撤除，并露出一行说明。 -->
+    <div id="admin-boot-skeleton" class="fixed inset-0 z-50 flex bg-background">
+      <div class="h-full w-64 border-r border-sidebar-border bg-sidebar"></div>
+      <div class="flex-1">
+        <div class="h-14 border-b border-border bg-card"></div>
+        <div class="h-10 border-b border-border bg-background"></div>
+      </div>
+    </div>
+    <script is:inline>
+      // 外壳崩溃时 React 不会走到 effect，骨架会永久遮挡页面。
+      // 超时后撤除遮罩，让底层的真实报错（或空白）可见。
+      // 提示节点带 id，由 AdminApp 挂载时一并清理——慢速加载下 React 最终会挂载成功，
+      // 届时这段提示是错的，不能留在页面上。
+      setTimeout(() => {
+        const skeleton = document.getElementById('admin-boot-skeleton');
+        if (!skeleton) return;
+        skeleton.remove();
+        const notice = document.createElement('p');
+        notice.id = 'admin-boot-notice';
+        notice.className = 'p-6 text-sm text-muted-foreground';
+        notice.textContent = '后台外壳加载较慢或失败。若长时间无内容，请刷新页面或查看浏览器控制台。';
+        document.body.appendChild(notice);
+      }, 8000);
+    </script>
+    <slot />
+  </body>
+</html>

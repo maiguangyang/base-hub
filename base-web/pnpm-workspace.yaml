@@ -1,0 +1,4 @@
+allowBuilds:
+  esbuild: true
+  # Astro 的传递依赖需要构建脚本；移除此项会使 pnpm 安装失败。
+  sharp: true

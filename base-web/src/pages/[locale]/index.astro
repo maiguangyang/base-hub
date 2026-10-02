@@ -1,0 +1,17 @@
+---
+import { HomePage } from '@/features/public-home/pages/HomePage';
+import { localeCodes, messagesFor, type Locale } from '@/i18n';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+/** 静态生成八种目标语言的官网入口。 */
+export function getStaticPaths() {
+  return localeCodes.filter((locale) => locale !== 'zh-CN').map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const messages = messagesFor(locale);
+---
+
+<BaseLayout locale={locale} entry="home" messages={messages} title={messages.publicHome.title}>
+  <HomePage locale={locale} messages={messages.publicHome} />
+</BaseLayout>

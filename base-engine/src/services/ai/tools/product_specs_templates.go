@@ -1,0 +1,42 @@
+package tools
+
+import (
+	"base-engine/auth"
+	"base-engine/src/services/ai"
+)
+
+func productTemplateReadSpecs() []ai.ToolSpec {
+	const hq = auth.WorkspaceTypeHeadquarters
+	return []ai.ToolSpec{
+		reviewedSpec("HqProductBrands", "graphql.query.hqProductBrands", `query HqProductBrands($q:String,$enabled:Boolean,$page:Int!,$perPage:Int!){hqProductBrands(q:$q,enabled:$enabled,page:$page,perPage:$perPage){data{id name enabled} total currentPage perPage}}`, ai.ModeReadOnly, "LOW", "hqProductCatalog:read", hq, "", nil, []string{"q", "enabled", "page", "perPage"}),
+		reviewedSpec("HqSpecifications", "graphql.query.hqSpecifications", `query HqSpecifications($q:String,$enabled:Boolean,$page:Int!,$perPage:Int!){hqSpecifications(q:$q,enabled:$enabled,page:$page,perPage:$perPage){data{id name enabled} total currentPage perPage}}`, ai.ModeReadOnly, "LOW", "hqProductCatalog:read", hq, "", nil, []string{"q", "enabled", "page", "perPage"}),
+		reviewedSpec("HqSpecificationValues", "graphql.query.hqSpecificationValues", `query HqSpecificationValues($specificationId:ID,$q:String,$enabled:Boolean,$page:Int!,$perPage:Int!){hqSpecificationValues(specificationId:$specificationId,q:$q,enabled:$enabled,page:$page,perPage:$perPage){data{id specificationId name enabled} total currentPage perPage}}`, ai.ModeReadOnly, "LOW", "hqProductCatalog:read", hq, "", nil, []string{"specificationId", "q", "enabled", "page", "perPage"}),
+		reviewedSpec("HqProductPackageTemplates", "graphql.query.hqProductPackageTemplates", `query HqProductPackageTemplates($q:String,$enabled:Boolean,$containsPackageId:ID,$page:Int!,$perPage:Int!){hqProductPackageTemplates(q:$q,enabled:$enabled,containsPackageId:$containsPackageId,page:$page,perPage:$perPage){data{id name containsPackageId containsQuantity enabled} total currentPage perPage}}`, ai.ModeReadOnly, "LOW", "hqProductCatalog:read", hq, "", nil, []string{"q", "enabled", "containsPackageId", "page", "perPage"}),
+	}
+}
+
+func productHQTemplateWriteSpecs() []ai.ToolSpec {
+	const hq = auth.WorkspaceTypeHeadquarters
+	return []ai.ToolSpec{
+		reviewedSpec("HqCreateProductBrand", "graphql.mutation.hqCreateProductBrand", `mutation HqCreateProductBrand($name:String!){hqCreateProductBrand(name:$name){id name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteCreate, nil, []string{"name"}),
+		reviewedSpec("HqUpdateProductBrand", "graphql.mutation.hqUpdateProductBrand", `mutation HqUpdateProductBrand($id:ID!,$name:String!){hqUpdateProductBrand(id:$id,name:$name){id name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id", "name"}),
+		reviewedSpec("HqSetProductBrandEnabled", "graphql.mutation.hqSetProductBrandEnabled", `mutation HqSetProductBrandEnabled($id:ID!,$enabled:Boolean!){hqSetProductBrandEnabled(id:$id,enabled:$enabled){id name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id", "enabled"}),
+		reviewedSpec("HqDeleteProductBrand", "graphql.mutation.hqDeleteProductBrand", `mutation HqDeleteProductBrand($id:ID!){hqDeleteProductBrand(id:$id)}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id"}),
+		reviewedSpec("HqDeleteProduct", "graphql.mutation.hqDeleteProduct", `mutation HqDeleteProduct($id:ID!){hqDeleteProduct(id:$id)}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id"}),
+		reviewedSpec("HqSetProductMainImage", "graphql.mutation.hqSetProductMainImage", `mutation HqSetProductMainImage($productId:ID!,$attachmentId:ID!){hqSetProductMainImage(productId:$productId,attachmentId:$attachmentId){id imageUrl}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"productId"}, []string{"productId", "attachmentId"}),
+		reviewedSpec("HqRemoveProductMainImage", "graphql.mutation.hqRemoveProductMainImage", `mutation HqRemoveProductMainImage($productId:ID!){hqRemoveProductMainImage(productId:$productId){id imageUrl}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"productId"}, []string{"productId"}),
+		reviewedSpec("HqCreateSpecification", "graphql.mutation.hqCreateSpecification", `mutation HqCreateSpecification($name:String!){hqCreateSpecification(name:$name){id name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteCreate, nil, []string{"name"}),
+		reviewedSpec("HqUpdateSpecification", "graphql.mutation.hqUpdateSpecification", `mutation HqUpdateSpecification($id:ID!,$name:String!){hqUpdateSpecification(id:$id,name:$name){id name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id", "name"}),
+		reviewedSpec("HqSetSpecificationEnabled", "graphql.mutation.hqSetSpecificationEnabled", `mutation HqSetSpecificationEnabled($id:ID!,$enabled:Boolean!){hqSetSpecificationEnabled(id:$id,enabled:$enabled){id enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id", "enabled"}),
+		reviewedSpec("HqDeleteSpecification", "graphql.mutation.hqDeleteSpecification", `mutation HqDeleteSpecification($id:ID!){hqDeleteSpecification(id:$id)}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id"}),
+		reviewedSpec("HqCreateSpecificationValue", "graphql.mutation.hqCreateSpecificationValue", `mutation HqCreateSpecificationValue($specificationId:ID!,$name:String!){hqCreateSpecificationValue(specificationId:$specificationId,name:$name){id specificationId name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteCreate, nil, []string{"specificationId", "name"}),
+		reviewedSpec("HqUpdateSpecificationValue", "graphql.mutation.hqUpdateSpecificationValue", `mutation HqUpdateSpecificationValue($id:ID!,$name:String!){hqUpdateSpecificationValue(id:$id,name:$name){id specificationId name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id", "name"}),
+		reviewedSpec("HqSetSpecificationValueEnabled", "graphql.mutation.hqSetSpecificationValueEnabled", `mutation HqSetSpecificationValueEnabled($id:ID!,$enabled:Boolean!){hqSetSpecificationValueEnabled(id:$id,enabled:$enabled){id enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id", "enabled"}),
+		reviewedSpec("HqReorderSpecificationValues", "graphql.mutation.hqReorderSpecificationValues", `mutation HqReorderSpecificationValues($specificationId:ID!,$orderedIds:[ID!]!){hqReorderSpecificationValues(specificationId:$specificationId,orderedIds:$orderedIds)}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"specificationId"}, []string{"specificationId", "orderedIds"}),
+		reviewedSpec("HqDeleteSpecificationValue", "graphql.mutation.hqDeleteSpecificationValue", `mutation HqDeleteSpecificationValue($id:ID!){hqDeleteSpecificationValue(id:$id)}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id"}),
+		reviewedSpec("HqCreateProductPackageTemplate", "graphql.mutation.hqCreateProductPackageTemplate", `mutation HqCreateProductPackageTemplate($input:HqProductPackageTemplateInput!){hqCreateProductPackageTemplate(input:$input){id name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteCreate, nil, []string{"input"}),
+		reviewedSpec("HqUpdateProductPackageTemplate", "graphql.mutation.hqUpdateProductPackageTemplate", `mutation HqUpdateProductPackageTemplate($id:ID!,$input:HqProductPackageTemplateInput!){hqUpdateProductPackageTemplate(id:$id,input:$input){id name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id", "input"}),
+		reviewedSpec("HqSetProductPackageTemplateEnabled", "graphql.mutation.hqSetProductPackageTemplateEnabled", `mutation HqSetProductPackageTemplateEnabled($id:ID!,$enabled:Boolean!){hqSetProductPackageTemplateEnabled(id:$id,enabled:$enabled){id name enabled}}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id", "enabled"}),
+		reviewedSpec("HqDeleteProductPackageTemplate", "graphql.mutation.hqDeleteProductPackageTemplate", `mutation HqDeleteProductPackageTemplate($id:ID!){hqDeleteProductPackageTemplate(id:$id)}`, ai.ModeWrite, "HIGH", "hqProductCatalog:manage", hq, ai.WriteExisting, []string{"id"}, []string{"id"}),
+	}
+}

@@ -1,0 +1,1 @@
+export { FranchiseDashboardPage } from './FranchiseDashboardPage';

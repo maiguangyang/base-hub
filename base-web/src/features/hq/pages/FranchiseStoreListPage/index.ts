@@ -1,0 +1,1 @@
+export { FranchiseStoreListPage } from './FranchiseStoreListPage';

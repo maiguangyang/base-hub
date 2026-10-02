@@ -1,0 +1,189 @@
+package gen
+
+import (
+	"context"
+	"strings"
+
+	"github.com/vektah/gqlparser/v2/ast"
+	"gorm.io/gorm"
+)
+
+func GetItem(ctx context.Context, db *gorm.DB, table string, out interface{}, id *string) error {
+	return db.Table(TableName(table, ctx)).First(out, table+".id = ?", id).Error
+}
+
+// UniqueStrings returns a new slice with duplicate strings removed, preserving order.
+func UniqueStrings(items []string) []string {
+	seen := make(map[string]bool)
+	result := make([]string, 0, len(items))
+	for _, item := range items {
+		if !seen[item] {
+			seen[item] = true
+			result = append(result, item)
+		}
+	}
+	return result
+}
+
+type EntityFilter interface {
+	Apply(ctx context.Context, wheres *[]string, values *[]interface{}, joins *[]string) error
+}
+
+type EntityFilterQuery interface {
+	Apply(ctx context.Context, db *gorm.DB, selectionSet *ast.SelectionSet, wheres *[]string, values *[]interface{}, joins *[]string) error
+}
+
+type EntitySort interface {
+	Apply(ctx context.Context, sorts *[]string, joins *[]string) error
+}
+
+type EntityResultType struct {
+	Offset       *int
+	Limit        *int
+	CurrentPage  *int
+	PerPage      *int
+	Rand         *bool
+	Query        EntityFilterQuery
+	Sort         []EntitySort
+	Filter       EntityFilter
+	Fields       []*ast.Field
+	SelectionSet *ast.SelectionSet
+}
+
+type GetItemsOptions struct {
+	Alias      string
+	Preloaders []string
+	Item       interface{}
+}
+
+type CountResult struct {
+	Count int
+}
+
+func (r *EntityResultType) GetData(ctx context.Context, db *gorm.DB, opts GetItemsOptions, out interface{}) error {
+	q := db
+
+	selects := GetFieldsRequested(ctx, opts.Alias)
+	if len(selects) > 0 && IndexOf(selects, opts.Alias+".*") == -1 && IndexOf(selects, opts.Alias+".id") == -1 {
+		selects = append(selects, opts.Alias+".id")
+	}
+
+	if len(selects) > 0 {
+		q = q.Select(selects)
+	}
+
+	if r.PerPage != nil {
+		if int(*r.PerPage) != 0 {
+			q = q.Limit(*r.PerPage)
+		}
+	}
+
+	if r.CurrentPage != nil {
+		q = q.Offset((int(*r.CurrentPage) - 1) * int(*r.PerPage))
+	}
+
+	wheres := []string{}
+	values := []interface{}{}
+	joins := []string{}
+	sorts := []string{}
+
+	if r.Rand != nil && *r.Rand {
+		sorts = append(sorts, "Rand()")
+	}
+
+	err := r.Query.Apply(ctx, db, r.SelectionSet, &wheres, &values, &joins)
+	if err != nil {
+		return err
+	}
+
+	for _, sort := range r.Sort {
+		sort.Apply(ctx, &sorts, &joins)
+	}
+
+	if r.Filter != nil {
+		err = r.Filter.Apply(ctx, &wheres, &values, &joins)
+		if err != nil {
+			return err
+		}
+	}
+
+	isAt := false
+	hasIDSort := false
+	idSortPrefix := strings.ToLower(opts.Alias + ".id ")
+
+	for _, s := range sorts {
+		if strings.Contains(s, "_at") {
+			isAt = true
+		}
+		if strings.HasPrefix(strings.ToLower(strings.TrimSpace(s)), idSortPrefix) {
+			hasIDSort = true
+		}
+	}
+
+	if !isAt {
+		sorts = append(sorts, opts.Alias+".created_at DESC")
+	}
+	if !hasIDSort {
+		sorts = append(sorts, opts.Alias+".id DESC")
+	}
+
+	if len(sorts) > 0 {
+		q = q.Order(strings.Join(sorts, ", "))
+	}
+
+	if len(wheres) > 0 {
+		q = q.Where(strings.Join(wheres, " AND "), values...)
+	}
+
+	for _, join := range UniqueStrings(joins) {
+		q = q.Joins(join)
+	}
+	if len(opts.Preloaders) > 0 {
+		for _, p := range opts.Preloaders {
+			q = q.Preload(p)
+		}
+	}
+
+	return q.Table(TableName(opts.Alias, ctx)).WithContext(ctx).Find(out).Error
+}
+
+// GetTotal ...
+func (r *EntityResultType) GetTotal(ctx context.Context, db *gorm.DB, table string, out interface{}) (count int, err error) {
+	q := db.Model(out).Select(table + ".id")
+
+	wheres := []string{}
+	values := []interface{}{}
+	joins := []string{}
+
+	err = r.Query.Apply(ctx, db, r.SelectionSet, &wheres, &values, &joins)
+	if err != nil {
+		return 0, err
+	}
+
+	if r.Filter != nil {
+		err = r.Filter.Apply(ctx, &wheres, &values, &joins)
+		if err != nil {
+			return 0, err
+		}
+	}
+
+	if len(wheres) > 0 {
+		q = q.Where(strings.Join(wheres, " AND "), values...)
+	}
+
+	for _, join := range UniqueStrings(joins) {
+		q = q.Joins(join)
+	}
+
+	var result CountResult
+
+	err = q.WithContext(ctx).Table(TableName(table, ctx)).Select("COUNT(DISTINCT " + table + ".id) as count").Scan(&result).Error
+
+	count = result.Count
+
+	return
+}
+
+func (r *EntityResultType) GetSortStrings() []string {
+	return []string{}
+}

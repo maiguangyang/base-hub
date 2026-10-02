@@ -1,0 +1,97 @@
+{
+  "translate.ts": {
+    "lines": 664,
+    "complexity": 0,
+    "depth": 0
+  },
+  "translate.ts#flattenJSON": {
+    "lines": 15,
+    "complexity": 7,
+    "depth": 3
+  },
+  "translate.ts#hashString": {
+    "lines": 3,
+    "complexity": 1,
+    "depth": 0
+  },
+  "translate.ts#loadCache": {
+    "lines": 15,
+    "complexity": 5,
+    "depth": 2
+  },
+  "translate.ts#saveCache": {
+    "lines": 3,
+    "complexity": 1,
+    "depth": 0
+  },
+  "translate.ts#getLanguageHashes": {
+    "lines": 3,
+    "complexity": 2,
+    "depth": 0
+  },
+  "translate.ts#updateLanguageCache": {
+    "lines": 6,
+    "complexity": 1,
+    "depth": 0
+  },
+  "translate.ts#generateSourceHashes": {
+    "lines": 7,
+    "complexity": 2,
+    "depth": 1
+  },
+  "translate.ts#findKeysToTranslate": {
+    "lines": 26,
+    "complexity": 5,
+    "depth": 3
+  },
+  "translate.ts#unflattenJSON": {
+    "lines": 20,
+    "complexity": 4,
+    "depth": 3
+  },
+  "translate.ts#deepMerge": {
+    "lines": 18,
+    "complexity": 9,
+    "depth": 3
+  },
+  "translate.ts#callAI": {
+    "lines": 42,
+    "complexity": 6,
+    "depth": 1
+  },
+  "translate.ts#translateFile": {
+    "lines": 81,
+    "complexity": 10,
+    "depth": 1
+  },
+  "translate.ts#parseArgs": {
+    "lines": 17,
+    "complexity": 8,
+    "depth": 4
+  },
+  "translate.ts#showHelp": {
+    "lines": 16,
+    "complexity": 1,
+    "depth": 0
+  },
+  "translate.ts#localeToVarName": {
+    "lines": 3,
+    "complexity": 1,
+    "depth": 0
+  },
+  "translate.ts#updateLocalesIndex": {
+    "lines": 105,
+    "complexity": 9,
+    "depth": 4
+  },
+  "translate.ts#cleanupOrphanedLocales": {
+    "lines": 43,
+    "complexity": 8,
+    "depth": 2
+  },
+  "translate.ts#main": {
+    "lines": 75,
+    "complexity": 10,
+    "depth": 2
+  }
+}

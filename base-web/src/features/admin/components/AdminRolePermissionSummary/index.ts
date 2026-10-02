@@ -1,0 +1,1 @@
+export { AdminRolePermissionSummary } from './AdminRolePermissionSummary';

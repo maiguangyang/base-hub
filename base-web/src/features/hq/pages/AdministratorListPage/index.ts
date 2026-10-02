@@ -1,0 +1,1 @@
+export { AdministratorListPage } from './AdministratorListPage';

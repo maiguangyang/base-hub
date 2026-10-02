@@ -1,0 +1,46 @@
+---
+import { AppPreferences } from '@/components/shared/AppPreferences';
+import ThemeScript from '@/components/shared/ThemeScript.astro';
+import { entryPath, type Entry, type Locale, type Messages } from '@/i18n';
+import '@/styles/global.css';
+
+/** 两个入口共用的文档属性、导航与偏好控件。 */
+interface Props {
+  locale: Locale;
+  entry: Entry;
+  messages: Messages;
+  title: string;
+}
+
+const { locale, entry, messages, title } = Astro.props;
+const direction = locale === 'ar-SA' ? 'rtl' : 'ltr';
+---
+
+<!doctype html>
+<html lang={locale} dir={direction}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={title} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} · {messages.common.brand}</title>
+    <ThemeScript />
+  </head>
+  <body class="min-h-screen">
+    <header class="border-b bg-background/90">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-4 lg:px-8">
+        <a class="text-lg font-semibold tracking-tight text-primary" href={entryPath(locale, 'home')}>{messages.common.brand}</a>
+        <div class="flex flex-wrap items-center gap-4">
+          <nav aria-label={messages.common.nav.label} class="flex items-center gap-4 text-sm font-medium">
+            <a aria-current={entry === 'home' ? 'page' : undefined} class="hover:text-primary aria-[current=page]:text-primary" href={entryPath(locale, 'home')}>{messages.common.nav.home}</a>
+            <a aria-current={entry === 'admin' ? 'page' : undefined} class="hover:text-primary aria-[current=page]:text-primary" href={entryPath(locale, 'admin')}>{messages.common.nav.admin}</a>
+          </nav>
+          <AppPreferences client:load locale={locale} messages={messages.common} />
+        </div>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="border-t px-5 py-5 text-center text-sm text-muted-foreground">{messages.common.footer}</footer>
+  </body>
+</html>

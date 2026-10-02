@@ -1,0 +1,489 @@
+input LoginInput {
+  phone: String!
+  password: String!
+}
+
+input ChangePasswordInput {
+  currentPassword: String!
+  newPassword: String!
+}
+
+input SelectWorkspaceInput {
+  workspaceType: WorkspaceType!
+  organizationId: ID
+}
+
+input ProvisionFranchiseInput {
+  code: String!
+  name: String!
+  ownerPhone: String!
+  ownerDisplayName: String!
+  ownerEmail: String
+}
+
+input InviteOperatorInput {
+  phone: String!
+  displayName: String!
+  email: String
+  roleIds: [ID!]!
+  storeAccessMode: StoreAccessMode!
+  storeIds: [ID!]!
+}
+
+input ReviewStoreInput {
+  storeId: ID!
+  approved: Boolean!
+  rejectionReason: String
+}
+
+enum StoreDocumentKind {
+  BUSINESS_LICENSE
+  OTHER
+}
+
+input SuspendOrganizationInput {
+  organizationId: ID!
+  reasonCode: String!
+}
+
+input ChangeMembershipStatusInput {
+  membershipId: ID!
+  status: MembershipStatus!
+}
+
+type Workspace {
+  workspaceType: WorkspaceType!
+  organizationId: ID
+  organizationName: String!
+  homePath: String!
+}
+
+type Viewer {
+  account: Account!
+  currentWorkspace: Workspace
+  workspaces: [Workspace!]!
+  permissions: [String!]!
+}
+
+type LoginPayload {
+  viewer: Viewer!
+  requiresPasswordChange: Boolean!
+}
+
+type ProvisionFranchisePayload {
+  organization: Organization!
+  membership: OperatorMembership!
+  temporaryPassword: String
+  invitationPending: Boolean!
+}
+
+type InviteOperatorPayload {
+  membership: OperatorMembership!
+  temporaryPassword: String
+  invitationPending: Boolean!
+}
+
+type TemporaryPasswordPayload {
+  accountId: ID!
+  temporaryPassword: String!
+}
+
+enum SessionEventCode {
+  SESSION_REVOKED
+  ORGANIZATION_SUSPENDED
+  CREDENTIALS_CHANGED
+}
+
+type SessionEvent {
+  code: SessionEventCode!
+  sessionId: ID!
+  organizationId: ID
+  occurredAt: Time!
+}
+
+input HqCreateCustomerMemberInput {
+  phone: String!
+  requestKey: String!
+}
+
+type HqCustomerMemberView {
+  id: ID!
+  memberNumber: String!
+  phoneMasked: String!
+  status: CustomerMemberStatus!
+  pointsBalance: Int!
+  pointsFrozen: Boolean!
+  pendingCouponCount: Int!
+  createdAt: Time!
+}
+
+type HqCustomerMemberPage {
+  data: [HqCustomerMemberView!]!
+  total: Int!
+  currentPage: Int!
+  perPage: Int!
+}
+
+type HqCustomerBenefitPolicyView {
+  version: Int!
+  discountEnabled: Boolean!
+  discountBasisPoints: Int!
+  purchaseEarnEnabled: Boolean!
+  earnAmountFen: Int!
+  earnPoints: Int!
+  redemptionEnabled: Boolean!
+  redeemPoints: Int!
+  redeemAmountFen: Int!
+  maxRedemptionBasisPoints: Int!
+  maxRedemptionPoints: Int!
+  manualGrantMaxSingle: Int!
+  manualGrantMaxDaily: Int!
+  promotionWithHqCoupon: Boolean!
+  promotionWithStoreCoupon: Boolean!
+  memberPriceWithPromotion: Boolean!
+  pointsWithPromotion: Boolean!
+  pointsWithCoupon: Boolean!
+}
+
+input HqCustomerBenefitPolicyInput {
+  discountEnabled: Boolean!
+  discountBasisPoints: Int!
+  purchaseEarnEnabled: Boolean!
+  earnAmountFen: Int!
+  earnPoints: Int!
+  redemptionEnabled: Boolean!
+  redeemPoints: Int!
+  redeemAmountFen: Int!
+  maxRedemptionBasisPoints: Int!
+  maxRedemptionPoints: Int!
+  manualGrantMaxSingle: Int!
+  manualGrantMaxDaily: Int!
+  promotionWithHqCoupon: Boolean
+  promotionWithStoreCoupon: Boolean
+  memberPriceWithPromotion: Boolean
+  pointsWithPromotion: Boolean
+  pointsWithCoupon: Boolean
+}
+
+type HqCustomerPointEntryView {
+  id: ID!
+  memberId: ID!
+  delta: Int!
+  source: CustomerPointSource!
+  operationKind: CustomerPointOperationKind!
+  reasonCode: CustomerPointReasonCode!
+  note: String
+  reversesId: ID
+  createdAt: Time!
+}
+
+type HqCustomerPointPage {
+  data: [HqCustomerPointEntryView!]!
+  total: Int!
+  currentPage: Int!
+  perPage: Int!
+}
+
+type HqCustomerPointMutationView {
+  entry: HqCustomerPointEntryView!
+  currentBalance: Int!
+}
+
+type HqCustomerCouponTemplateView {
+  id: ID!
+  code: String!
+  title: String!
+  amountFen: Int!
+  minSpendFen: Int!
+  daysAfterActivation: Int!
+  effectiveAt: Time!
+  distributionEndsAt: Time
+  perMemberLimit: Int!
+  totalIssueLimit: Int!
+  issuedCount: Int!
+  enabled: Boolean!
+  createdAt: Time!
+}
+
+type HqCustomerCouponTemplatePage {
+  data: [HqCustomerCouponTemplateView!]!
+  total: Int!
+  currentPage: Int!
+  perPage: Int!
+}
+
+type HqCustomerCouponGrantView {
+  id: ID!
+  templateId: ID!
+  memberId: ID!
+  status: CustomerCouponGrantStatus!
+  amountFen: Int!
+  minSpendFen: Int!
+  daysAfterActivation: Int!
+  issuedAt: Time!
+  activatedAt: Time
+  expiresAt: Time
+  revokedAt: Time
+}
+
+type HqCustomerCouponGrantPage {
+  data: [HqCustomerCouponGrantView!]!
+  total: Int!
+  currentPage: Int!
+  perPage: Int!
+}
+
+input HqCreateCustomerCouponTemplateInput {
+  code: String!
+  requestKey: String!
+  title: String!
+  amountFen: Int!
+  minSpendFen: Int!
+  daysAfterActivation: Int!
+  effectiveAt: Time
+  distributionEndsAt: Time
+  perMemberLimit: Int!
+  totalIssueLimit: Int
+  enabled: Boolean!
+}
+
+extend type Query {
+  viewer: Viewer!
+  workspaces: [Workspace!]!
+  pendingMembershipInvitations: [MembershipInvitation!]!
+  hqCustomerMembers(phone: String, status: CustomerMemberStatus, page: Int!, perPage: Int!): HqCustomerMemberPage! @hasPermission(action: "hqCustomer:read")
+  hqCustomerMember(id: ID!): HqCustomerMemberView @hasPermission(action: "hqCustomer:read")
+  hqCustomerSensitivePhone(id: ID!): String! @hasPermission(action: "customer:read_sensitive")
+  hqCustomerBenefitPolicy: HqCustomerBenefitPolicyView! @hasPermission(action: "hqCustomerPolicy:read")
+  hqCustomerPointEntries(memberId: ID!, page: Int!, perPage: Int!): HqCustomerPointPage! @hasPermission(action: "hqCustomerPoints:read")
+  hqCustomerCouponTemplates(q: String, enabled: Boolean, page: Int!, perPage: Int!): HqCustomerCouponTemplatePage! @hasPermission(action: "hqCustomerCoupon:read")
+  hqCustomerCouponGrants(memberId: ID!, templateId: ID, status: CustomerCouponGrantStatus, page: Int!, perPage: Int!): HqCustomerCouponGrantPage! @hasPermission(action: "hqCustomerCoupon:read")
+}
+
+extend type Mutation {
+  login(input: LoginInput!): LoginPayload!
+  logout: Boolean!
+  changeTemporaryPassword(input: ChangePasswordInput!): Viewer!
+  selectWorkspace(input: SelectWorkspaceInput!): Viewer!
+  provisionFranchise(input: ProvisionFranchiseInput!): ProvisionFranchisePayload! @hasPermission(action: "franchise:provision")
+  inviteOperator(input: InviteOperatorInput!): InviteOperatorPayload! @hasPermission(action: "operatorMembership:create")
+  changeMembershipStatus(input: ChangeMembershipStatusInput!): OperatorMembership! @hasPermission(action: "operatorMembership:update")
+  acceptMembershipInvitation(id: ID!): OperatorMembership!
+  submitStore(id: ID!): Store! @hasPermission(action: "store:submit")
+  reviewStore(input: ReviewStoreInput!): Store!
+  setStoreDocument(storeId: ID!, kind: StoreDocumentKind!, attachmentId: ID!): Store!
+  removeStoreDocument(storeId: ID!, kind: StoreDocumentKind!): Store!
+  suspendOrganization(input: SuspendOrganizationInput!): Organization! @hasPermission(action: "organization:suspend")
+  restoreOrganization(id: ID!): Organization! @hasPermission(action: "organization:restore")
+  resetTemporaryPassword(accountId: ID!): TemporaryPasswordPayload! @hasPermission(action: "account:update")
+  resetFranchiseInitialPassword(organizationId: ID!): TemporaryPasswordPayload! @hasPermission(action: "account:update")
+  hqCreateCustomerMember(input: HqCreateCustomerMemberInput!): HqCustomerMemberView! @hasPermission(action: "hqCustomer:create")
+  hqSetCustomerMemberStatus(id: ID!, status: CustomerMemberStatus!): HqCustomerMemberView! @hasPermission(action: "hqCustomer:update")
+  hqRequestCustomerCancellation(id: ID!, identityEvidence: String!, basisCode: String!): HqCustomerMemberView! @hasPermission(action: "hqCustomer:cancel")
+  hqCompleteCustomerCancellation(id: ID!, dispositionReference: String!): HqCustomerMemberView! @hasPermission(action: "hqCustomer:cancel")
+  hqSaveCustomerBenefitPolicy(expectedVersion: Int!, input: HqCustomerBenefitPolicyInput!): HqCustomerBenefitPolicyView! @hasPermission(action: "hqCustomerPolicy:manage")
+  hqGrantCustomerPoints(memberId: ID!, points: Int!, reasonCode: CustomerPointReasonCode!, note: String!, requestKey: String!): HqCustomerPointMutationView! @hasPermission(action: "hqCustomerPoints:grant")
+  hqReverseCustomerPoints(entryId: ID!, reasonCode: CustomerPointReasonCode!, note: String!, requestKey: String!): HqCustomerPointMutationView! @hasPermission(action: "hqCustomerPoints:reverse")
+  hqCorrectCustomerPoints(memberId: ID!, evidenceReference: String!, requestKey: String!): HqCustomerPointMutationView! @hasPermission(action: "hqCustomerPoints:correct")
+  hqCreateCustomerCouponTemplate(input: HqCreateCustomerCouponTemplateInput!): HqCustomerCouponTemplateView! @hasPermission(action: "hqCustomerCoupon:manage")
+  hqSetCustomerCouponTemplateEnabled(templateId: ID!, enabled: Boolean!): HqCustomerCouponTemplateView! @hasPermission(action: "hqCustomerCoupon:manage")
+  hqGrantCustomerCoupon(templateId: ID!, memberId: ID!, requestKey: String!): HqCustomerCouponGrantView! @hasPermission(action: "hqCustomerCoupon:grant")
+  hqRevokeCustomerCoupon(grantId: ID!, reasonCode: String!): HqCustomerCouponGrantView! @hasPermission(action: "hqCustomerCoupon:revoke")
+}
+
+extend type Subscription {
+  sessionEvents: SessionEvent!
+}
+
+type HqProductCategoryView { id: ID! name: String! parentId: ID enabled: Boolean! sortOrder: Int! }
+type HqProductCategoryPage { data: [HqProductCategoryView!]! total: Int! currentPage: Int! perPage: Int! }
+type HqProductBrandView { id: ID! name: String! enabled: Boolean! }
+type HqProductBrandPage { data: [HqProductBrandView!]! total: Int! currentPage: Int! perPage: Int! }
+type HqProductView { id: ID! name: String! categoryId: ID! brandId: ID brand: String description: String imageUrl: String defaultPackageTemplateId: ID selectedValueIds: [ID!]! enabled: Boolean! }
+type HqProductPage { data: [HqProductView!]! total: Int! currentPage: Int! perPage: Int! }
+type HqProductSkuView { id: ID! productId: ID! name: String! valueIds: [ID!]! ingredients: String allergens: String storageInstructions: String shelfLifeDays: Int publishedPackageSetVersion: Int! enabled: Boolean! selectionRetired: Boolean! }
+type HqProductSkuPage { data: [HqProductSkuView!]! total: Int! currentPage: Int! perPage: Int! }
+type HqProductPackageView { id: ID! skuId: ID! name: String! barcode: String packageSetVersion: Int! containsPackageId: ID containsQuantity: Int suggestedPriceFen: Int enabled: Boolean! }
+type HqProductPackagePage { data: [HqProductPackageView!]! total: Int! currentPage: Int! perPage: Int! }
+type HqSpecificationView { id: ID! name: String! enabled: Boolean! }
+type HqSpecificationPage { data: [HqSpecificationView!]! total: Int! currentPage: Int! perPage: Int! }
+type HqSpecificationValueView { id: ID! specificationId: ID! name: String! enabled: Boolean! }
+type HqSpecificationValuePage { data: [HqSpecificationValueView!]! total: Int! currentPage: Int! perPage: Int! }
+type HqProductPackageTemplateView { id: ID! name: String! containsPackageId: ID containsQuantity: Int enabled: Boolean! }
+type HqProductPackageTemplatePage { data: [HqProductPackageTemplateView!]! total: Int! currentPage: Int! perPage: Int! }
+
+input HqCreateProductCategoryInput { name: String! parentId: ID }
+input HqProductSpecificationSelectionInput { specificationId: ID! valueIds: [ID!]! }
+input HqProductSkuOverrideInput { valueIds: [ID!]! enabled: Boolean! packageTemplateId: ID disableDefaultPackage: Boolean! }
+input HqCreateProductInput { name: String! categoryId: ID! brandId: ID description: String selections: [HqProductSpecificationSelectionInput!]! defaultPackageTemplateId: ID skuOverrides: [HqProductSkuOverrideInput!]! }
+input HqCreateProductPackageInput { skuId: ID! name: String! barcode: String containsPackageId: ID containsQuantity: Int suggestedPriceFen: Int packageSetVersion: Int }
+input HqProductPackageTemplateInput { name: String! containsPackageId: ID containsQuantity: Int }
+
+extend type Query {
+  hqGenerateProductPackageBarcode: String! @hasPermission(action: "hqProductCatalog:manage")
+  hqProductCategories(q: String, enabled: Boolean, parentId: ID, page: Int!, perPage: Int!): HqProductCategoryPage! @hasPermission(action: "hqProductCatalog:read")
+  hqProductBrands(q: String, enabled: Boolean, page: Int!, perPage: Int!): HqProductBrandPage! @hasPermission(action: "hqProductCatalog:read")
+  hqProducts(categoryId: ID, brandId: ID, q: String, enabled: Boolean, page: Int!, perPage: Int!): HqProductPage! @hasPermission(action: "hqProductCatalog:read")
+  hqProductSkus(productId: ID!, q: String, enabled: Boolean, page: Int!, perPage: Int!): HqProductSkuPage! @hasPermission(action: "hqProductCatalog:read")
+  hqProductPackages(skuId: ID!, q: String, enabled: Boolean, page: Int!, perPage: Int!): HqProductPackagePage! @hasPermission(action: "hqProductCatalog:read")
+  hqSpecifications(q: String, enabled: Boolean, page: Int!, perPage: Int!): HqSpecificationPage! @hasPermission(action: "hqProductCatalog:read")
+  hqSpecificationValues(specificationId: ID, q: String, enabled: Boolean, page: Int!, perPage: Int!): HqSpecificationValuePage! @hasPermission(action: "hqProductCatalog:read")
+  hqProductPackageTemplates(q: String, enabled: Boolean, containsPackageId: ID, page: Int!, perPage: Int!): HqProductPackageTemplatePage! @hasPermission(action: "hqProductCatalog:read")
+}
+
+extend type Mutation {
+  hqCreateProductCategory(input: HqCreateProductCategoryInput!): HqProductCategoryView! @hasPermission(action: "hqProductCatalog:manage")
+  hqUpdateProductCategory(id: ID!, name: String!, parentId: ID): HqProductCategoryView! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetProductCategoryEnabled(id: ID!, enabled: Boolean!): HqProductCategoryView! @hasPermission(action: "hqProductCatalog:manage")
+  hqCreateProductBrand(name: String!): HqProductBrandView! @hasPermission(action: "hqProductCatalog:manage")
+  hqUpdateProductBrand(id: ID!, name: String!): HqProductBrandView! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetProductBrandEnabled(id: ID!, enabled: Boolean!): HqProductBrandView! @hasPermission(action: "hqProductCatalog:manage")
+  hqDeleteProductBrand(id: ID!): Boolean! @hasPermission(action: "hqProductCatalog:manage")
+  hqCreateProduct(input: HqCreateProductInput!): HqProductView! @hasPermission(action: "hqProductCatalog:manage")
+  hqUpdateProduct(id: ID!, input: HqCreateProductInput!): HqProductView! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetProductEnabled(id: ID!, enabled: Boolean!): HqProductView! @hasPermission(action: "hqProductCatalog:manage")
+  hqDeleteProduct(id: ID!): Boolean! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetProductMainImage(productId: ID!, attachmentId: ID!): HqProductView! @hasPermission(action: "hqProductCatalog:manage")
+  hqRemoveProductMainImage(productId: ID!): HqProductView! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetProductSkuEnabled(id: ID!, enabled: Boolean!): HqProductSkuView! @hasPermission(action: "hqProductCatalog:manage")
+  hqCreateProductPackage(input: HqCreateProductPackageInput!): HqProductPackageView! @hasPermission(action: "hqProductCatalog:manage")
+  hqUpdateProductPackageMetadata(id: ID!, name: String!, suggestedPriceFen: Int): HqProductPackageView! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetProductPackageBarcode(id: ID!, barcode: String!): HqProductPackageView! @hasPermission(action: "hqProductCatalog:manage")
+  hqRetireProductPackage(id: ID!): HqProductPackageView! @hasPermission(action: "hqProductCatalog:manage")
+  hqPublishProductPackageSet(skuId: ID!, version: Int!): HqProductPackageView! @hasPermission(action: "hqProductCatalog:manage")
+  hqCreateSpecification(name: String!): HqSpecificationView! @hasPermission(action: "hqProductCatalog:manage")
+  hqUpdateSpecification(id: ID!, name: String!): HqSpecificationView! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetSpecificationEnabled(id: ID!, enabled: Boolean!): HqSpecificationView! @hasPermission(action: "hqProductCatalog:manage")
+  hqDeleteSpecification(id: ID!): Boolean! @hasPermission(action: "hqProductCatalog:manage")
+  hqCreateSpecificationValue(specificationId: ID!, name: String!): HqSpecificationValueView! @hasPermission(action: "hqProductCatalog:manage")
+  hqUpdateSpecificationValue(id: ID!, name: String!): HqSpecificationValueView! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetSpecificationValueEnabled(id: ID!, enabled: Boolean!): HqSpecificationValueView! @hasPermission(action: "hqProductCatalog:manage")
+  hqReorderSpecificationValues(specificationId: ID!, orderedIds: [ID!]!): Boolean! @hasPermission(action: "hqProductCatalog:manage")
+  hqDeleteSpecificationValue(id: ID!): Boolean! @hasPermission(action: "hqProductCatalog:manage")
+  hqCreateProductPackageTemplate(input: HqProductPackageTemplateInput!): HqProductPackageTemplateView! @hasPermission(action: "hqProductCatalog:manage")
+  hqUpdateProductPackageTemplate(id: ID!, input: HqProductPackageTemplateInput!): HqProductPackageTemplateView! @hasPermission(action: "hqProductCatalog:manage")
+  hqSetProductPackageTemplateEnabled(id: ID!, enabled: Boolean!): HqProductPackageTemplateView! @hasPermission(action: "hqProductCatalog:manage")
+  hqDeleteProductPackageTemplate(id: ID!): Boolean! @hasPermission(action: "hqProductCatalog:manage")
+}
+
+type FranchiseCatalogPackageView { id: ID! name: String! barcode: String containsPackageId: ID containsQuantity: Int suggestedPriceFen: Int packageSetVersion: Int! enabled: Boolean! }
+type FranchiseCatalogCategoryView { id: ID! name: String! parentId: ID }
+type FranchiseCatalogCategoryPage { data: [FranchiseCatalogCategoryView!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchiseMerchandisingStoreView { id: ID! name: String! }
+type FranchiseMerchandisingStorePage { data: [FranchiseMerchandisingStoreView!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchiseCatalogSkuView { id: ID! productId: ID! productName: String! categoryId: ID! name: String! published: Boolean! listingId: ID listingEnabled: Boolean packages: [FranchiseCatalogPackageView!]! }
+type FranchiseCatalogPage { data: [FranchiseCatalogSkuView!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchiseListingView { id: ID! storeId: ID! skuId: ID! enabled: Boolean! selectedAt: Time! }
+type FranchiseListingPage { data: [FranchiseListingView!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchisePriceRevisionView { id: ID! oldPriceFen: Int newPriceFen: Int! reasonCode: String! effectiveAt: Time! }
+type FranchisePriceRevisionPage { data: [FranchisePriceRevisionView!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchiseOfferView { id: ID! listingId: ID! packageId: ID! priceFen: Int! enabled: Boolean! priceRevisions: [FranchisePriceRevisionView!]! }
+type FranchiseOfferPage { data: [FranchiseOfferView!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchiseStockBalanceView { packageId: ID! quantity: Int! }
+type FranchiseStockBatchView { id: ID! listingId: ID! skuId: ID! productName: String skuName: String batchNumber: String! producedAt: Time expiresAt: Time sellable: Boolean! packages: [FranchiseCatalogPackageView!]! balances: [FranchiseStockBalanceView!]! }
+type FranchiseStockBatchPage { data: [FranchiseStockBatchView!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchiseStockMovementView { id: ID! storeId: ID! batchId: ID! kind: StockMovementKind! requestKey: String! sourcePackageId: ID targetPackageId: ID sourceQuantity: Int targetQuantity: Int factorSnapshot: Int packageSetVersion: Int! reasonCode: String occurredAt: Time! }
+type FranchiseStockMovementPage { data: [FranchiseStockMovementView!]! total: Int! currentPage: Int! perPage: Int! }
+
+type FranchiseStocktakeCountEvent { actorAccountId: ID! countedQuantity: Int! countedAt: Time! }
+type FranchiseStocktakeLineView { id: ID! batchId: ID! listingId: ID! batchNumber: String! expiresAt: Time packageId: ID! packageName: String! packageSetVersion: Int! packageEnabled: Boolean! countedQuantity: Int snapshotQuantity: Int difference: Int reasonCode: String reasonNote: String countHistory: [FranchiseStocktakeCountEvent!]! needsRecount: Boolean! }
+type FranchiseStocktakeBatchChoice { id: ID! listingId: ID! batchNumber: String! expiresAt: Time }
+type FranchiseStocktakeBatchChoicePage { data: [FranchiseStocktakeBatchChoice!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchiseStocktakeAddLineChoice { batchId: ID! packageId: ID! packageName: String! packageEnabled: Boolean! }
+type FranchiseStocktakeView { id: ID! storeId: ID! status: StocktakeStatus! requestKey: String! startedAt: Time! reviewedAt: Time postedAt: Time canceledAt: Time initiatedByAccountId: ID! postedById: ID lines: [FranchiseStocktakeLineView!]! addLineChoices: [FranchiseStocktakeAddLineChoice!]! }
+type FranchiseStocktakePage { data: [FranchiseStocktakeView!]! total: Int! currentPage: Int! perPage: Int! }
+input FranchiseCreateStocktakeInput { storeId: ID! listingIds: [ID!]! batchIds: [ID!]! requestKey: String! }
+
+input FranchiseReceiveStockInput { barcode: String storeId: ID! listingId: ID! packageId: ID! batchNumber: String producedAt: Time expiresAt: Time sourceReference: String quantity: Int! requestKey: String! }
+input FranchiseUnpackStockInput { storeId: ID! batchId: ID! sourcePackageId: ID! quantity: Int! requestKey: String! }
+input FranchiseAdjustStockInput { storeId: ID! batchId: ID! packageId: ID! delta: Int! loss: Boolean! reasonCode: String! requestKey: String! }
+
+extend type Query {
+  franchiseMerchandisingStores(page: Int!, perPage: Int!): FranchiseMerchandisingStorePage!
+  franchiseCatalogCategories(storeId: ID!, page: Int!, perPage: Int!): FranchiseCatalogCategoryPage!
+  franchiseCatalog(storeId: ID!, q: String, categoryId: ID, listingEnabled: Boolean, published: Boolean, page: Int!, perPage: Int!): FranchiseCatalogPage!
+  franchiseStoreListings(storeId: ID!, page: Int!, perPage: Int!): FranchiseListingPage!
+  franchiseStoreOffers(storeId: ID!, listingId: ID, packageId: ID, enabled: Boolean, page: Int!, perPage: Int!): FranchiseOfferPage!
+  franchiseOfferPriceRevisions(storeId: ID!, offerId: ID!, q: String, from: Time, to: Time, page: Int!, perPage: Int!): FranchisePriceRevisionPage! @hasPermission(action: "franchiseProduct:read")
+  franchiseStockBatches(storeId: ID!, listingId: ID, q: String, sellable: Boolean, page: Int!, perPage: Int!): FranchiseStockBatchPage! @hasPermission(action: "franchiseStock:read")
+  franchiseStockMovements(storeId: ID!, batchId: ID!, kind: StockMovementKind, from: Time, to: Time, page: Int!, perPage: Int!): FranchiseStockMovementPage! @hasPermission(action: "franchiseStock:read")
+  franchiseStocktakes(storeId: ID!, status: StocktakeStatus, listingId: ID, batchId: ID, hasDifference: Boolean, from: Time, to: Time, page: Int!, perPage: Int!, includeHistory: Boolean): FranchiseStocktakePage! @hasPermission(action: "franchiseStocktake:read")
+  franchiseStocktake(storeId: ID!, id: ID!): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:read")
+  franchiseStocktakeBatchChoices(storeId: ID!, listingId: ID!, page: Int!, perPage: Int!): FranchiseStocktakeBatchChoicePage!
+}
+
+extend type Mutation {
+  franchiseSetStoreListing(storeId: ID!, skuId: ID!, enabled: Boolean!): FranchiseListingView! @hasPermission(action: "franchiseProduct:manage")
+  franchiseSetStorePrice(listingId: ID!, packageId: ID!, priceFen: Int!, reasonCode: String!): FranchiseOfferView! @hasPermission(action: "franchiseProduct:manage")
+  franchiseReceiveStock(input: FranchiseReceiveStockInput!): FranchiseStockMovementView! @hasPermission(action: "franchiseStock:manage")
+  franchiseUnpackStock(input: FranchiseUnpackStockInput!): FranchiseStockMovementView! @hasPermission(action: "franchiseStock:manage")
+  franchiseAdjustStock(input: FranchiseAdjustStockInput!): FranchiseStockMovementView! @hasPermission(action: "franchiseStock:manage")
+  franchiseCreateStocktake(input: FranchiseCreateStocktakeInput!): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:record")
+  franchiseAddStocktakeLine(storeId: ID!, id: ID!, batchId: ID!, packageId: ID!): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:record")
+  franchiseRecordStocktakeLine(storeId: ID!, id: ID!, lineId: ID!, quantity: Int!): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:record")
+  franchiseSubmitStocktake(storeId: ID!, id: ID!): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:record")
+  franchiseSetStocktakeReason(storeId: ID!, id: ID!, lineId: ID!, reasonCode: String!, note: String): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:post")
+  franchiseReturnStocktake(storeId: ID!, id: ID!): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:post")
+  franchiseCancelStocktake(storeId: ID!, id: ID!): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:post")
+  franchisePostStocktake(storeId: ID!, id: ID!): FranchiseStocktakeView! @hasPermission(action: "franchiseStocktake:post")
+}
+
+type FranchisePromotionTargetView { offerId: ID! requiredQuantity: Int! }
+type FranchisePromotionView { id: ID! storeId: ID! ruleKey: String! version: Int! latest: Boolean! kind: StorePromotionKind! timeZone: String! enabled: Boolean! startsAt: Time! endsAt: Time! thresholdFen: Int thresholdQuantity: Int discountFen: Int discountBasisPoints: Int fixedPriceFen: Int stackWithHqCoupon: Boolean! stackWithStoreCoupon: Boolean! stackWithMemberPrice: Boolean! checkoutUnavailable: Boolean! targets: [FranchisePromotionTargetView!]! }
+type FranchisePromotionPage { data: [FranchisePromotionView!]! total: Int! currentPage: Int! perPage: Int! }
+input FranchisePromotionTargetInput { offerId: ID! requiredQuantity: Int! }
+input FranchiseSavePromotionInput { storeId: ID! promotionId: ID kind: StorePromotionKind! timeZone: String! startsAt: Time! endsAt: Time! thresholdFen: Int thresholdQuantity: Int discountFen: Int discountBasisPoints: Int fixedPriceFen: Int stackWithHqCoupon: Boolean! stackWithStoreCoupon: Boolean! stackWithMemberPrice: Boolean! targets: [FranchisePromotionTargetInput!]! }
+
+extend type Query {
+  franchisePromotions(storeId: ID!, kind: StorePromotionKind, enabled: Boolean, page: Int!, perPage: Int!): FranchisePromotionPage! @hasPermission(action: "franchisePromotion:read")
+}
+extend type Mutation {
+  franchiseSavePromotion(input: FranchiseSavePromotionInput!): FranchisePromotionView! @hasPermission(action: "franchisePromotion:manage")
+  franchiseSetPromotionEnabled(id: ID!, enabled: Boolean!): FranchisePromotionView! @hasPermission(action: "franchisePromotion:manage")
+}
+
+type FranchiseCouponMemberView { id: ID! memberNumber: String! phoneMasked: String! }
+type FranchiseCouponTemplateView { id: ID! storeId: ID! title: String! code: String! amountFen: Int! minSpendFen: Int! daysAfterActivation: Int! effectiveAt: Time! distributionEndsAt: Time perMemberLimit: Int! totalIssueLimit: Int! issuedCount: Int! enabled: Boolean! issuerScope: CouponIssuerScope! }
+type FranchiseCouponTemplatePage { data: [FranchiseCouponTemplateView!]! total: Int! currentPage: Int! perPage: Int! }
+type FranchiseCouponGrantView { id: ID! templateId: ID! memberId: ID! status: CustomerCouponGrantStatus! amountFen: Int! minSpendFen: Int! daysAfterActivation: Int! issuedAt: Time! revokedAt: Time }
+type FranchiseCouponGrantPage { data: [FranchiseCouponGrantView!]! total: Int! currentPage: Int! perPage: Int! }
+input FranchiseCreateCouponTemplateInput { storeId: ID! code: String! title: String! requestKey: String! amountFen: Int! minSpendFen: Int! daysAfterActivation: Int! effectiveAt: Time distributionEndsAt: Time perMemberLimit: Int! totalIssueLimit: Int enabled: Boolean! }
+
+extend type Query {
+  franchiseCouponMember(storeId: ID!, identifier: String!): FranchiseCouponMemberView @hasPermission(action: "franchiseCoupon:read")
+  franchiseCouponTemplates(storeId: ID!, q: String, enabled: Boolean, page: Int!, perPage: Int!): FranchiseCouponTemplatePage! @hasPermission(action: "franchiseCoupon:read")
+  franchiseCouponGrants(storeId: ID!, templateId: ID!, status: CustomerCouponGrantStatus, page: Int!, perPage: Int!): FranchiseCouponGrantPage! @hasPermission(action: "franchiseCoupon:read")
+}
+extend type Mutation {
+  franchiseCreateCouponTemplate(input: FranchiseCreateCouponTemplateInput!): FranchiseCouponTemplateView! @hasPermission(action: "franchiseCoupon:manage")
+  franchiseSetCouponTemplateEnabled(storeId: ID!, templateId: ID!, enabled: Boolean!): FranchiseCouponTemplateView! @hasPermission(action: "franchiseCoupon:manage")
+  franchiseGrantCoupon(storeId: ID!, templateId: ID!, memberId: ID!, requestKey: String!): FranchiseCouponGrantView! @hasPermission(action: "franchiseCoupon:grant")
+  franchiseRevokeCoupon(storeId: ID!, grantId: ID!, reasonCode: String!): FranchiseCouponGrantView! @hasPermission(action: "franchiseCoupon:revoke")
+}
+
+
+enum FranchiseStockPackageRecognitionStatus { READY NOT_FOUND NOT_SELECTED UNAVAILABLE CONFLICT }
+type FranchiseStockPackageConversion {
+  packageId: ID!
+  name: String!
+  containsQuantity: Int!
+  baseQuantity: Int!
+}
+type FranchiseStockPackageTarget {
+  productName: String!
+  skuId: ID!
+  skuName: String!
+  listingId: ID!
+  packageId: ID!
+  packageName: String!
+  barcode: String!
+  packageSetVersion: Int!
+  conversionChain: [FranchiseStockPackageConversion!]!
+}
+type FranchiseStockPackageRecognition {
+  status: FranchiseStockPackageRecognitionStatus!
+  target: FranchiseStockPackageTarget
+}
+extend type Query {
+  franchiseStockPackageByBarcode(storeId: ID!, barcode: String!): FranchiseStockPackageRecognition! @hasPermission(action: "franchiseStock:read")
+}
