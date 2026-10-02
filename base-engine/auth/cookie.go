@@ -12,7 +12,7 @@ import (
 	"base-engine/config"
 )
 
-const SessionCookieName = "korean_admin_session"
+const SessionCookieName = "base_admin_session"
 
 // SetSessionCookie 写入仅服务端可读的会话 Cookie。
 func SetSessionCookie(writer http.ResponseWriter, token string, cfg config.SecurityConfig) {

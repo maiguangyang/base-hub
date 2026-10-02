@@ -109,7 +109,7 @@ func TestLoadSecurityConfigRejectsUnsafeValues(t *testing.T) {
 func setValidSecurityEnv(t *testing.T) {
 	t.Helper()
 	t.Setenv("AUTH_SIGNING_KEY", strings.Repeat("k", 32))
-	t.Setenv("AUTH_TOKEN_ISSUER", "korean-engine")
+	t.Setenv("AUTH_TOKEN_ISSUER", "base-engine")
 	t.Setenv("AUTH_COOKIE_SECURE", "true")
 	t.Setenv("ALLOWED_ORIGINS", "https://admin.example.com, https://ops.example.com")
 	t.Setenv("ENGINE_REPLICA_COUNT", "1")

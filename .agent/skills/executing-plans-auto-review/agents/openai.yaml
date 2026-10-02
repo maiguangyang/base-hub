@@ -1,0 +1,4 @@
+interface:
+  display_name: "Execute Plans with Auto Review"
+  short_description: "Execute, then fix and re-review until no fixes remain"
+  default_prompt: "Use $executing-plans-auto-review to execute this written plan, then repeat code review plus full repair until the latest review returns no fixes."

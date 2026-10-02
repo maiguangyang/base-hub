@@ -16,7 +16,7 @@ describe('后台标签工作台隔离', () => {
     useAdminTabsStore.getState().openTab('/admin/franchise/stores');
     useAdminTabsStore.getState().markTabError('/admin/franchise/stores');
     await bindAdminWorkspace({ accountId: 'account-1', workspaceType: 'FRANCHISE', organizationId: 'org-b', permissions: [] });
-    expect(useAdminTabsStore.persist.getOptions().name).toBe('korean-admin-tabs:account-1:FRANCHISE:org-b');
+    expect(useAdminTabsStore.persist.getOptions().name).toBe('base-admin-tabs:account-1:FRANCHISE:org-b');
     expect(useAdminTabsStore.getState().tabs.map((tab) => tab.path)).toEqual(['/admin/franchise']);
     expect(useAdminTabsStore.getState().erroredPaths).toEqual([]);
   });

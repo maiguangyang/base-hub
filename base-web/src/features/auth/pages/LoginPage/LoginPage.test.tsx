@@ -27,7 +27,7 @@ describe('登录页视觉层级', () => {
   it('只保留登录标题，并使用更舒展的字段和按钮尺寸', () => {
     const markup = renderToStaticMarkup(<LoginPage />);
 
-    expect(markup).not.toContain('Korean Hub');
+    expect(markup).not.toContain('Base Hub');
     expect(markup).not.toContain('总部、直营店与加盟商共用同一账号入口。');
     expect(markup.match(/class="flex flex-col gap-4 text-sm font-medium"/g)).toHaveLength(2);
     expect(markup.match(/h-11/g)).toHaveLength(3);

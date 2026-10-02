@@ -28,7 +28,7 @@ export function HomePage({ locale, messages }: HomePageProps) {
           <div className="flex size-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground"><Languages className="size-7" aria-hidden="true" /></div>
           <div>
             <p className="mb-3 text-sm font-medium text-muted-foreground">{messages.status}</p>
-            <p className="text-2xl font-semibold tracking-tight">Korean Hub</p>
+            <p className="text-2xl font-semibold tracking-tight">Base Hub</p>
           </div>
         </div>
       </aside>

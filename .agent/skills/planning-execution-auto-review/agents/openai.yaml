@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan, Execute, and Auto Review"
+  short_description: "Plan, then delegate execution through approval"
+  default_prompt: "Use $planning-execution-auto-review to create a minimal plan, then delegate it to $executing-plans-auto-review for autonomous execution and approval."

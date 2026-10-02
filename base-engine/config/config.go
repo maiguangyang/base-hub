@@ -33,7 +33,7 @@ const (
 	// DefaultAuthSigningKey 兼容保留通用默认密钥（缺省以管理员密钥为基底）。
 	DefaultAuthSigningKey = DefaultAdminSigningKey
 	// DefaultTokenIssuer 为系统默认的令牌签发者标识。
-	DefaultTokenIssuer = "korean-engine"
+	DefaultTokenIssuer = "base-engine"
 )
 
 var (

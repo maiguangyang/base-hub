@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "Korean Hub",
+    "brand": "Base Hub",
     "nav": {
       "label": "主导航",
       "home": "官网首页",
@@ -13,10 +13,10 @@
       "dark": "深色",
       "system": "跟随系统"
     },
-    "footer": "Korean Hub · 项目初始化预览"
+    "footer": "Base Hub · 项目初始化预览"
   },
   "publicHome": {
-    "eyebrow": "Korean Hub · Web",
+    "eyebrow": "Base Hub · Web",
     "title": "连接语言与内容的空间",
     "description": "官网入口已准备就绪。这里将承载面向访客的内容与服务。",
     "action": "进入管理后台",

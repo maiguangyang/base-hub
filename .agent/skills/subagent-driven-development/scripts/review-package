@@ -1,0 +1,144 @@
+#!/usr/bin/env bash
+# Generate a review package: commit list, stat summary, and the net
+# diff with extended context, written to a file the reviewer reads in one
+# call. Using the recorded per-task BASE (not HEAD~1) keeps multi-commit
+# tasks intact.
+#
+# This local version also supports a no-commit workflow:
+#   review-package --worktree LABEL [OUTFILE] [-- PATHSPEC...]
+# It writes the current working-tree status, staged/unstaged diffs, and
+# untracked file contents to one review file without mutating git state.
+#
+# Usage: review-package BASE HEAD [OUTFILE]
+#        review-package --worktree LABEL [OUTFILE] [-- PATHSPEC...]
+# Default OUTFILE: <repo-root>/.superpowers/sdd/review-<base7>..<head7>.diff
+# (named per range, so a re-review after fixes gets a distinct fresh file).
+set -euo pipefail
+
+usage() {
+  echo "usage: review-package BASE HEAD [OUTFILE]" >&2
+  echo "       review-package --worktree LABEL [OUTFILE] [-- PATHSPEC...]" >&2
+}
+
+safe_label() {
+  printf '%s' "$1" | tr -c 'A-Za-z0-9._-' '-'
+}
+
+if [ $# -lt 1 ]; then
+  usage
+  exit 2
+fi
+
+if [ "${1:-}" = "--worktree" ]; then
+  if [ $# -lt 2 ]; then
+    usage
+    exit 2
+  fi
+
+  label=$2
+  shift 2
+  out=""
+  paths=()
+
+  if [ $# -gt 0 ] && [ "$1" != "--" ]; then
+    out=$1
+    shift
+  fi
+
+  if [ $# -gt 0 ]; then
+    if [ "$1" != "--" ]; then
+      usage
+      exit 2
+    fi
+    shift
+    paths=("$@")
+  fi
+
+  if [ -z "$out" ]; then
+    dir=$("$(cd "$(dirname "$0")" && pwd)/sdd-workspace")
+    out="$dir/review-worktree-$(safe_label "$label").diff"
+  fi
+
+  run_git_paths() {
+    if [ ${#paths[@]} -gt 0 ]; then
+      git "$@" -- "${paths[@]}"
+    else
+      git "$@"
+    fi
+  }
+
+  {
+    echo "# Review package: working tree (${label})"
+    echo
+    if [ ${#paths[@]} -gt 0 ]; then
+      echo "## Path scope"
+      printf -- "- %s\n" "${paths[@]}"
+      echo
+    fi
+    echo "## Status"
+    run_git_paths status --short
+    echo
+    echo "## Files changed"
+    run_git_paths diff --cached --stat
+    run_git_paths diff --stat
+    run_git_paths ls-files --others --exclude-standard
+    echo
+    echo "## Staged diff"
+    run_git_paths diff --cached -U10
+    echo
+    echo "## Unstaged diff"
+    run_git_paths diff -U10
+    echo
+    echo "## Untracked files"
+
+    while IFS= read -r -d '' file; do
+      [ -f "$file" ] || continue
+      echo
+      echo "### ${file}"
+      set +e
+      git diff --no-index -U10 -- /dev/null "$file"
+      code=$?
+      set -e
+      if [ "$code" -gt 1 ]; then
+        exit "$code"
+      fi
+    done < <(run_git_paths ls-files --others --exclude-standard -z)
+  } > "$out"
+
+  echo "wrote ${out}: working tree package, $(wc -c < "$out" | tr -d ' ') bytes"
+  exit 0
+fi
+
+if [ $# -lt 2 ] || [ $# -gt 3 ]; then
+  usage
+  exit 2
+fi
+
+base=$1
+head=$2
+
+git rev-parse --verify --quiet "$base" >/dev/null || { echo "bad BASE: $base" >&2; exit 2; }
+git rev-parse --verify --quiet "$head" >/dev/null || { echo "bad HEAD: $head" >&2; exit 2; }
+
+if [ $# -eq 3 ]; then
+  out=$3
+else
+  dir=$("$(cd "$(dirname "$0")" && pwd)/sdd-workspace")
+  out="$dir/review-$(git rev-parse --short "$base")..$(git rev-parse --short "$head").diff"
+fi
+
+{
+  echo "# Review package: ${base}..${head}"
+  echo
+  echo "## Commits"
+  git log --oneline "${base}..${head}"
+  echo
+  echo "## Files changed"
+  git diff --stat "${base}..${head}"
+  echo
+  echo "## Diff"
+  git diff -U10 "${base}..${head}"
+} > "$out"
+
+commits=$(git rev-list --count "${base}..${head}")
+echo "wrote ${out}: ${commits} commit(s), $(wc -c < "$out" | tr -d ' ') bytes"

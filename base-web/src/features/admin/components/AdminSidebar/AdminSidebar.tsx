@@ -19,7 +19,7 @@ export function AdminSidebar() {
       <SidebarHeader className="p-2">
         <div className="flex items-center gap-2 rounded-lg bg-sidebar-accent px-2.5 py-2 text-sidebar-accent-foreground">
           <LayoutGrid className="size-4 shrink-0" aria-hidden="true" />
-          <span className="truncate text-sm font-semibold group-data-[collapsible=icon]:hidden">Korean Hub</span>
+          <span className="truncate text-sm font-semibold group-data-[collapsible=icon]:hidden">Base Hub</span>
         </div>
       </SidebarHeader>
       <SidebarContent className="admin-sidebar-scroll gap-0">

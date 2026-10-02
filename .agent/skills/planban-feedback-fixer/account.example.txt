@@ -1,0 +1,3 @@
+# Planban account for feedback export
+# Line 1: Planban username or email
+# Line 2: Planban password

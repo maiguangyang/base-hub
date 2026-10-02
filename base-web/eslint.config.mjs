@@ -38,7 +38,7 @@ export default [
   // 后台 keep-alive 渲染栈：所有已打开标签同时挂载，非活动标签用 hidden 隐藏。
   // 实测（react-router 8.4.0）：useLocation / useSearchParams / useMatches 返回的是
   // 活动标签的值；useParams 虽按标签隔离，但依赖 renderMatches 的 RouteContext 实现细节。
-  // 页面一律通过 useAdminTab() 读取路由上下文。见 rules/korean-web.md §4.8。
+  // 页面一律通过 useAdminTab() 读取路由上下文。见 rules/base-web.md §4.8。
   {
     files: ['src/features/admin/**/*.{ts,tsx}'],
     ignores: [

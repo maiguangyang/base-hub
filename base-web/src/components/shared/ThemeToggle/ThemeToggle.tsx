@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 
 /** 同一浏览器在官网与后台共享的主题偏好。键名为既有契约，首帧脚本依赖它。 */
-const THEME_STORAGE_KEY = 'korean-theme';
+const THEME_STORAGE_KEY = 'base-theme';
 
 /** 主题模式仅表达用户选择，system 的实际颜色由系统媒体查询决定。 */
 export type ThemeMode = 'light' | 'dark' | 'system';
@@ -37,7 +37,7 @@ export function ThemeToggle({ labels, dir = 'ltr' }: ThemeToggleProps) {
     } catch {
       // 本次选择仍由布局脚本应用，但无法跨刷新持久化。
     }
-    window.dispatchEvent(new CustomEvent('korean-theme-change', { detail: mode }));
+    window.dispatchEvent(new CustomEvent('base-theme-change', { detail: mode }));
   }
 
   const options = [

@@ -12,6 +12,7 @@ import (
 
 	"base-engine/config"
 	"base-engine/gen"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -90,18 +91,18 @@ func assertAIModelSaveConflict(t *testing.T, ctx context.Context, writer *gorm.D
 
 func disposableAIModelMySQLDB(t *testing.T) *gorm.DB {
 	t.Helper()
-	rootDSN := os.Getenv("KOREAN_MYSQL_TEST_DSN")
+	rootDSN := os.Getenv("base_MYSQL_TEST_DSN")
 	if rootDSN == "" {
-		t.Skip("set KOREAN_MYSQL_TEST_DSN for MySQL concurrency test")
+		t.Skip("set base_MYSQL_TEST_DSN for MySQL concurrency test")
 	}
 	if !strings.HasSuffix(rootDSN, "/") {
-		t.Fatal("KOREAN_MYSQL_TEST_DSN must end with /")
+		t.Fatal("base_MYSQL_TEST_DSN must end with /")
 	}
 	admin, err := gorm.Open(mysql.Open(rootDSN+"mysql?parseTime=true"), &gorm.Config{})
 	if err != nil {
 		t.Fatal(err)
 	}
-	name := fmt.Sprintf("korean_ai_config_test_%d", time.Now().UnixNano())
+	name := fmt.Sprintf("base_ai_config_test_%d", time.Now().UnixNano())
 	if err := admin.Exec("CREATE DATABASE `" + name + "`").Error; err != nil {
 		t.Fatal(err)
 	}

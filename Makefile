@@ -1,50 +1,39 @@
-.PHONY: help dev engine-migrate engine-bootstrap engine-dev engine-test web-dev web-build web-test web-lint test codegen
+.PHONY: help init update pull reset status clean
 
 help:
-	@echo "Base Hub 通用底座项目快捷命令："
-	@echo "  make dev              - 提示前后端启动方式"
-	@echo "  make engine-migrate   - 运行后端数据库迁移 (SQLite/MySQL)"
-	@echo "  make engine-bootstrap - 初始化初始超级管理员账号"
-	@echo "  make engine-dev       - 启动后端服务 (http://localhost:8085)"
-	@echo "  make engine-test      - 运行后端所有单元与集成测试"
-	@echo "  make web-dev          - 启动前端开发服务 (http://localhost:4321)"
-	@echo "  make web-build        - 编译前端静态产物"
-	@echo "  make web-test         - 运行前端单元测试"
-	@echo "  make web-lint         - 运行前端代码规范检查"
-	@echo "  make test             - 运行前后端全量测试"
-	@echo "  make codegen          - 重新生成前后端 GraphQL 代码"
+	@echo "make init     - 初始化并拉取所有 submodules（首次使用）"
+	@echo "make update   - 更新所有 submodules（拉取最新代码）"
+	@echo "make pull     - 拉取主仓库 + 更新 submodules"
+	@echo "make reset    - 强制重置 submodules（解决异常）"
+	@echo "make status   - 查看 submodule 状态"
+	@echo "make clean    - 清理 submodule（危险操作）"
 
-dev:
-	@echo "请在两个独立终端分别执行："
-	@echo "  终端 1: cd base-engine && go run . start --cors"
-	@echo "  终端 2: cd base-web && pnpm dev"
+# 🚀 初始化（首次 clone 后使用）
+init:
+	git submodule update --init --recursive
 
-engine-migrate:
-	cd base-engine && go run . migrate
+# 🔄 更新 submodule（保持最新）
+update:
+	git submodule update --remote --merge --recursive
 
-engine-bootstrap:
-	cd base-engine && go run . bootstrap-admin
+# 🔄 拉主仓库 + 更新子模块
+pull:
+	git pull
+	git submodule update --init --recursive
+	git submodule update --remote --merge --recursive
 
-engine-dev:
-	cd base-engine && go run . start --cors
+# 🔧 强制修复（submodule 状态错乱时用）
+reset:
+	git submodule foreach --recursive git reset --hard
+	git submodule foreach --recursive git clean -fd
+	git submodule update --init --recursive
 
-engine-test:
-	cd base-engine && go test ./...
+# 📊 查看状态
+status:
+	git submodule status
 
-web-dev:
-	cd base-web && pnpm dev
-
-web-build:
-	cd base-web && pnpm build
-
-web-test:
-	cd base-web && pnpm test
-
-web-lint:
-	cd base-web && pnpm lint
-
-test: engine-test web-test
-
-codegen:
-	cd base-engine && GO111MODULE=on go run github.com/sj-distributor/dolphin && go run ./tools/patchresolver
-	cd base-web && pnpm codegen
+# ☠️ 清理（慎用！会删除 submodule 目录）
+clean:
+	git submodule deinit -f .
+	rm -rf .git/modules/*
+	rm -rf base-app base-engine base-web

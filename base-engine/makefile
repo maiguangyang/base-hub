@@ -1,5 +1,5 @@
 # DATABASE = sqlite3://test.db
-DATABASE = sqlite3://data.db
+DATABASE = mysql://'root:123456@localhost:3306/base_engine?charset=utf8mb4&parseTime=True&loc=Local'
 
 PORT = 8085
 

@@ -91,7 +91,7 @@ func TestSessionCookieAttributes(t *testing.T) {
 // testSecurityConfig 构造不包含环境依赖的安全配置。
 func testSecurityConfig() config.SecurityConfig {
 	return config.SecurityConfig{
-		SigningKey: []byte(strings.Repeat("k", 32)), TokenIssuer: "korean-engine",
+		SigningKey: []byte(strings.Repeat("k", 32)), TokenIssuer: "base-engine",
 		CookieSecure: true, SessionDuration: 12 * time.Hour,
 	}
 }
@@ -120,7 +120,7 @@ func TestRoleKeyIsolation(t *testing.T) {
 		AdminSigningKey:     []byte("admin-secret-key-at-least-32-bytes!"),
 		FranchiseSigningKey: []byte("franchise-key-at-least-32-bytes!!"),
 		ClientSigningKey:    []byte("client-key-at-least-32-bytes-long!"),
-		TokenIssuer:         "korean-engine",
+		TokenIssuer:         "base-engine",
 		SessionDuration:     12 * time.Hour,
 	}
 	assertRoleKey(t, cfg, WorkspaceTypeHeadquarters)

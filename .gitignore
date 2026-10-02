@@ -1,21 +1,47 @@
-# Dependencies
-node_modules/
-.pnpm-store/
+# Binaries
+bin/
+gateway
+*/bin/gateway
+web
+design-output/
+kiosk_ui_assets/
 
-# Build outputs
-dist/
-build/
-.astro/
-
-# Go binaries & DB
-*.db
-*.db-journal
-*.exe
-*.test
-
-# Logs & temp
-*.log
-.DS_Store
-.vscode/
+# Tooling
 .idea/
-.env.local
+.vscode/
+.worktrees/
+.claw/
+.sandbox-home/
+.superpowers/
+Contents/
+.env
+.env.*
+!.env.example
+work/planban-feedback/
+planban-account
+.planban-account
+planban-account.txt
+planban-account.local.txt
+.agent/skills/planban-feedback-fixer/account.txt
+.agent/skills/planban-feedback-fixer/account.local.txt
+
+sms-api-integration.md
+
+# OS files
+.DS_Store
+
+# Local reference repositories used during development.
+/adk-go/
+/hermes-agent/
+
+# Keep SDK module history visible despite global reference-repository ignores.
+!/docs/modules-archive/mcp-auth-web/
+!/docs/modules-archive/mcp-auth-web/*.md
+
+# Go specific
+*.test
+*.out
+cover.out
+
+# Dependency directories
+# vendor/ # Uncomment if not using modules

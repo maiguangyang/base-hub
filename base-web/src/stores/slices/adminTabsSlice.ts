@@ -56,7 +56,7 @@ export const useAdminTabsStore = create<AdminTabsState>()(
       })),
     ),
     {
-      name: 'korean-admin-tabs:unbound', version: 2, skipHydration: true,
+      name: 'base-admin-tabs:unbound', version: 2, skipHydration: true,
       storage: tabStorage,
       partialize: (state) => ({ tabs: state.tabs, activePath: state.activePath }),
       merge: (persisted, current) => ({ ...current, ...sanitizeSnapshot(persisted, current.manifest), erroredPaths: [] }),
@@ -74,7 +74,7 @@ export async function bindAdminWorkspace(binding: WorkspaceBinding): Promise<voi
   const namespace = workspaceNamespace(binding.accountId, binding.workspaceType, binding.organizationId);
   if (useAdminTabsStore.getState().namespace === namespace) return;
   const manifest = createAdminTabManifest(binding.workspaceType, binding.permissions);
-  useAdminTabsStore.persist.setOptions({ name: `korean-admin-tabs:${namespace}` });
+  useAdminTabsStore.persist.setOptions({ name: `base-admin-tabs:${namespace}` });
   useAdminTabsStore.setState({ ...createInitialSnapshot(manifest), namespace, manifest, erroredPaths: [] });
   await useAdminTabsStore.persist.rehydrate();
 }
@@ -83,9 +83,9 @@ export async function bindAdminWorkspace(binding: WorkspaceBinding): Promise<voi
 export function resetAdminWorkspace(): void {
   const state = useAdminTabsStore.getState();
   if (state.namespace !== 'unbound' && typeof window !== 'undefined') {
-    window.localStorage?.removeItem(`korean-admin-tabs:${state.namespace}`);
+    window.localStorage?.removeItem(`base-admin-tabs:${state.namespace}`);
   }
-  useAdminTabsStore.persist.setOptions({ name: 'korean-admin-tabs:unbound' });
+  useAdminTabsStore.persist.setOptions({ name: 'base-admin-tabs:unbound' });
   useAdminTabsStore.setState({ ...createInitialSnapshot(initialManifest), namespace: 'unbound', manifest: initialManifest, erroredPaths: [] });
 }
 

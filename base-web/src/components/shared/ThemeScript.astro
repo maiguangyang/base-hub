@@ -1,12 +1,12 @@
 ---
 /** 首帧主题脚本，官网与后台共用。必须在 <head> 内以 is:inline 输出，
  *  在首次绘制前决定 .dark 类，避免主题闪烁。
- *  korean-theme 键名与 korean-theme-change 事件名为既有契约，不得改动。 */
+ *  base-theme 键名与 base-theme-change 事件名为既有契约，不得改动。 */
 ---
 
 <script is:inline>
   (() => {
-    const key = 'korean-theme';
+    const key = 'base-theme';
     const root = document.documentElement;
     const system = window.matchMedia('(prefers-color-scheme: dark)');
     let currentPageMode = null;
@@ -25,7 +25,7 @@
     };
     apply();
     system.addEventListener('change', apply);
-    window.addEventListener('korean-theme-change', (event) => {
+    window.addEventListener('base-theme-change', (event) => {
       currentPageMode = event.detail;
       apply();
     });
